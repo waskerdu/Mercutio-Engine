@@ -1,0 +1,20 @@
+﻿  Building Custom Rule C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/SFML-master/src/SFML/Network/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/SFML-master/build/src/SFML/Network/CMakeFiles/generate.stamp is up-to-date.
+  Ftp.cpp
+  Http.cpp
+  IpAddress.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\SFML-master\src\SFML\Network\IpAddress.cpp(92): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winsock2.h(1848): note: see declaration of 'inet_ntoa'
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\SFML-master\src\SFML\Network\IpAddress.cpp(184): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winsock2.h(1830): note: see declaration of 'inet_addr'
+  Packet.cpp
+  Socket.cpp
+  SocketSelector.cpp
+  TcpListener.cpp
+  TcpSocket.cpp
+  UdpSocket.cpp
+  SocketImpl.cpp
+  Generating Code...
+     Creating library C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/SFML-master/build/lib/Debug/sfml-network-d.lib and object C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/SFML-master/build/lib/Debug/sfml-network-d.exp
+  sfml-network.vcxproj -> C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\SFML-master\build\lib\Debug\sfml-network-d-2.dll
+  sfml-network.vcxproj -> C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/SFML-master/build/lib/Debug/sfml-network.pdb (Full PDB)

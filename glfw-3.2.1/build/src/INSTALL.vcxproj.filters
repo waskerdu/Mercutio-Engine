@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\glfw-3.2.1\build\CMakeFiles\b176d1e68198b96c26f92e3ba9f2e5fb\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{34201B6C-D13B-3228-9FC5-7F1C92459D8F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

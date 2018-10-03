@@ -1,0 +1,8 @@
+﻿  Building Custom Rule C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/bullet3-2.86.1/bullet3-2.86.1/Extras/HACD/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/bullet3-2.86.1/bullet3-2.86.1/build/Extras/HACD/CMakeFiles/generate.stamp is up-to-date.
+  hacdGraph.cpp
+  hacdHACD.cpp
+  hacdICHull.cpp
+  hacdManifoldMesh.cpp
+  Generating Code...
+  HACD.vcxproj -> C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\build\lib\Release\HACD.lib

@@ -1,0 +1,311 @@
+#LevelEnd 
+Position 0 0 0
+NextLevel assets/levels/official/finale.txt
+Radius 4
+
+#PlayerSpawner 
+Position 0 -32 0
+
+#PressurePlate
+Position 0 -64 0
+Message open
+Target door1
+
+#PressurePlate
+Position -64 0 0
+Message open
+Target door2
+
+#PressurePlate
+Position 64 0 0
+Message open
+Target door3
+
+#PressurePlate
+Position 0 64 0
+Message open
+Target door4
+
+#Door
+Position -8 -64 0
+Open -8 -80 0
+Scale 1 8 1
+Name door1
+
+#Door
+Position -16 -56 0
+Open -32 -56 0
+Scale 8 1 1
+Name door1
+
+#Door
+Position 8 -64 0
+Open 8 -80 0
+Scale 1 8 1
+Name door1
+
+#Door
+Position 16 -56 0
+Open 32 -56 0
+Scale 8 1 1
+Name door1
+
+#Door
+Position -64 -8 0
+Open -80 -8 0
+Scale 8 1 1
+Name door2
+
+#Door
+Position -56 -16 0
+Open -56 -32 0
+Scale 1 8 1
+Name door2
+
+#Door
+Position -64 8 0
+Open -80 8 0
+Scale 8 1 1
+Name door2
+
+#Door
+Position -56 16 0
+Open -56 32 0
+Scale 1 8 1
+Name door2
+
+#Door
+Position 64 -8 0
+Open 80 -8 0
+Scale 8 1 1
+Name door3
+
+#Door
+Position 56 -16 0
+Open 56 -32 0
+Scale 1 8 1
+Name door3
+
+#Door
+Position 64 8 0
+Open 80 8 0
+Scale 8 1 1
+Name door3
+
+#Door
+Position 56 16 0
+Open 52 32 0
+Scale 1 8 1
+Name door3
+
+#Door
+Position -8 64 0
+Open -8 80 0
+Scale 1 8 1
+Name door4
+
+#Door
+Position -16 56 0
+Open -32 56 0
+Scale 8 1 1
+Name door4
+
+#Door
+Position 8 64 0
+Open 8 80 0
+Scale 1 8 1
+Name door4
+
+#Door
+Position 16 56 0
+Open 32 56 0
+Scale 8 1 1
+Name door4
+
+#Door
+Position 2 -8 0
+Open 6 -8 0
+Scale 2 1 1
+Name door1
+
+#Door
+Position -2 -8 0
+Open -6 -8 0
+Scale 2 1 1
+Name door1
+
+#Door
+Position 4 -10 0
+Open 8 -10 0
+Scale 4 1 1
+Name door2
+
+#Door
+Position -4 -10 0
+Open -8 -10 0
+Scale 4 1 1
+Name door2
+
+#Door
+Position 6 -12 0
+Open 10 -12 0
+Scale 6 1 1
+Name door3
+
+#Door
+Position -6 -12 0
+Open -10 -12 0
+Scale 6 1 1
+Name door3
+
+#Door
+Position 8 -14 0
+Open 12 -14 0
+Scale 8 1 1
+Name door4
+
+#Door
+Position -8 -14 0
+Open -12 -14 0
+Scale 8 1 1
+Name door4
+
+#Barrier
+Position 0 14 0
+Scale 16 1 1
+
+#Barrier
+Position 14 0 0
+Scale 1 16 1
+
+#Barrier
+Position -14 0 0
+Scale 1 16 1
+
+#Barrier
+Position -24 -48 0
+Scale 1 24 1
+
+#Barrier
+Position 24 -48 0
+Scale 1 24 1
+
+#Barrier
+Position -24 48 0
+Scale 1 24 1
+
+#Barrier
+Position 24 48 0
+Scale 1 24 1
+
+#Barrier
+Position -48 -24 0
+Scale 24 1 1
+
+#Barrier
+Position 48 -24 0
+Scale 24 1 1
+
+#Barrier
+Position -48 24 0
+Scale 24 1 1
+
+#Barrier
+Position 48 24 0
+Scale 24 1 1
+
+#Barrier
+Position 72 0 0
+Scale 1 24 1
+
+#Barrier
+Position -72 0 0
+Scale 1 24 1
+
+#Barrier
+Position 0 72 0
+Scale 24 1 1
+
+#Barrier
+Position 0 -72 0
+Scale 24 1 1
+
+#EnemySpawner 
+Position -16 -64 0 
+Radius 2
+WaveSize 10
+WaveIncrement 0
+NumberOfWaves 1
+ChargerChance 1
+ThrowerChance 1
+BomberChance 1
+
+#EnemySpawner 
+Position 16 -64 0 
+Radius 2
+WaveSize 10
+WaveIncrement 0
+NumberOfWaves 1
+ChargerChance 1
+ThrowerChance 1
+BomberChance 1
+
+#EnemySpawner 
+Position -64 -16 0 
+Radius 2
+WaveSize 10
+WaveIncrement 0
+NumberOfWaves 1
+ChargerChance 1
+ThrowerChance 1
+BomberChance 1
+
+#EnemySpawner 
+Position -64 16 0 
+Radius 2
+WaveSize 10
+WaveIncrement 0
+NumberOfWaves 1
+ChargerChance 1
+ThrowerChance 1
+BomberChance 1
+
+#EnemySpawner 
+Position -16 64 0 
+Radius 2
+WaveSize 10
+WaveIncrement 0
+NumberOfWaves 1
+ChargerChance 1
+ThrowerChance 1
+BomberChance 1
+
+#EnemySpawner 
+Position 16 64 0 
+Radius 2
+WaveSize 10
+WaveIncrement 0
+NumberOfWaves 1
+ChargerChance 1
+ThrowerChance 1
+BomberChance 1
+
+#EnemySpawner 
+Position 64 -16 0 
+Radius 2
+WaveSize 10
+WaveIncrement 0
+NumberOfWaves 1
+ChargerChance 1
+ThrowerChance 1
+BomberChance 1
+
+#EnemySpawner 
+Position 64 16 0 
+Radius 2
+WaveSize 10
+WaveIncrement 0
+NumberOfWaves 1
+ChargerChance 1
+ThrowerChance 1
+BomberChance 1

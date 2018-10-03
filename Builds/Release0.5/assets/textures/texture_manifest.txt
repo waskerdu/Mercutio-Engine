@@ -1,0 +1,48 @@
+ninja assets/textures/ninja.png animated
+red assets/textures/red.png simple
+ted assets/textures/ted.png simple
+key assets/textures/key.png simple
+tan assets/textures/tan.png simple
+
+red_select assets/textures/red_select.png simple
+ted_select assets/textures/ted_select.png simple
+key_select assets/textures/key_select.png simple
+tan_select assets/textures/tan_select.png simple
+wormhole assets/textures/wormhole.png simple
+wormhole_closed assets/textures/wormhole_closed.png simple
+EnemySpawner assets/textures/EnemySpawner.png simple
+PlayerSpawner assets/textures/PlayerSpawner.png simple
+NavNode assets/textures/NavNode.png simple
+PressurePlateOn assets/textures/pressure_plate_on.png simple
+PressurePlateOff assets/textures/pressure_plate_off.png simple
+
+belt1 assets/textures/belt1.png simple
+belt2 assets/textures/belt2.png simple
+belt3 assets/textures/belt3.png simple
+belt4 assets/textures/belt4.png simple
+belt5 assets/textures/belt5.png simple
+
+wok assets/textures/Wok.png simple
+rolling_pin assets/textures/rolling_pin.png simple
+spoon assets/textures/spoon.png simple
+chopstick assets/textures/chopstick.png simple
+wave assets/textures/wave.png simple
+
+exclamation assets/textures/exclamation.png simple
+goblin assets/textures/goblin.png simple
+goblin_dead assets/textures/goblin_dead.png simple
+
+bomber assets/textures/thrower.png simple
+bomber_dead assets/textures/thrower_dead.png simple
+
+armored_goblin assets/textures/armored_goblin.png simple
+armored_goblin_dead assets/textures/armored_goblin_dead.png simple
+
+monster_spawn assets/textures/monster_spawn.png simple
+spear assets/textures/spear.png simple
+bomb_target assets/textures/bomb_target.png simple
+bomb_explosion assets/textures/bomb_explosion.png simple
+pork_bun assets/textures/pork_bun.png simple
+
+grass_dead assets/textures/grass_dead.png simple
+grass assets/textures/grass.png scaled

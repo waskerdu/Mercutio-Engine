@@ -1,0 +1,17 @@
+﻿  Building Custom Rule C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/bullet3-2.86.1/bullet3-2.86.1/examples/ExampleBrowser/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/bullet3-2.86.1/bullet3-2.86.1/build/examples/ExampleBrowser/CMakeFiles/generate.stamp is up-to-date.
+  OpenGLExampleBrowser.cpp
+  OpenGLGuiHelper.cpp
+  GL_ShapeDrawer.cpp
+  CollisionShape2TriangleMesh.cpp
+  b3Clock.cpp
+  ChromeTraceUtil.cpp
+  b3ResourcePath.cpp
+  GraphingTexture.cpp
+  GwenParameterInterface.cpp
+  GwenProfileWindow.cpp
+  GwenTextureWindow.cpp
+  gwenUserInterface.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\ExampleBrowser\GwenGUISupport\gwenUserInterface.cpp(652): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+  Generating Code...
+  BulletExampleBrowserLib.vcxproj -> C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\build\lib\Release\BulletExampleBrowserLib.lib

@@ -1,0 +1,6 @@
+# CMake generation dependency list for this directory.
+C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/SFML-master/src/SFML/Graphics/CMakeLists.txt
+C:/Program Files/CMake/share/cmake-3.10/Modules/FindOpenGL.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/FindPackageMessage.cmake
+C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/SFML-master/cmake/Modules/FindFreetype.cmake

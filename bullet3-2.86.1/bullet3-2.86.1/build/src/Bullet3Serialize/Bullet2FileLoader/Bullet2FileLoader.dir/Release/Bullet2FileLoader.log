@@ -1,0 +1,9 @@
+﻿  Building Custom Rule C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/bullet3-2.86.1/bullet3-2.86.1/src/Bullet3Serialize/Bullet2FileLoader/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/bullet3-2.86.1/bullet3-2.86.1/build/src/Bullet3Serialize/Bullet2FileLoader/CMakeFiles/generate.stamp is up-to-date.
+  b3BulletFile.cpp
+  b3Chunk.cpp
+  b3DNA.cpp
+  b3File.cpp
+  b3Serializer.cpp
+  Generating Code...
+  Bullet2FileLoader.vcxproj -> C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\build\lib\Release\Bullet2FileLoader.lib

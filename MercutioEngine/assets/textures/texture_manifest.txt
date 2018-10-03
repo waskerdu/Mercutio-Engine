@@ -1,0 +1,48 @@
+ninja assets/textures/ninja.png animated
+red assets/textures/cam_text/red.png simple
+ted assets/textures/cam_text/ted.png simple
+key assets/textures/cam_text/key.png simple
+tan assets/textures/cam_text/tan.png simple
+
+red_select assets/textures/red_select.png simple
+ted_select assets/textures/ted_select.png simple
+key_select assets/textures/key_select.png simple
+tan_select assets/textures/tan_select.png simple
+wormhole assets/textures/wormhole.png simple
+wormhole_closed assets/textures/wormhole_closed.png simple
+EnemySpawner assets/textures/EnemySpawner.png simple
+PlayerSpawner assets/textures/PlayerSpawner.png simple
+NavNode assets/textures/NavNode.png simple
+PressurePlateOn assets/textures/pressure_plate_on.png simple
+PressurePlateOff assets/textures/pressure_plate_off.png simple
+
+belt1 assets/textures/cam_text/belt1.png simple
+belt2 assets/textures/cam_text/belt2.png simple
+belt3 assets/textures/cam_text/belt3.png simple
+belt4 assets/textures/cam_text/belt4.png simple
+belt5 assets/textures/cam_text/belt5.png simple
+
+wok assets/textures/cam_text/wok.png simple
+rolling_pin assets/textures/cam_text/rolling_pin.png simple
+spoon assets/textures/cam_text/spoon.png simple
+chopstick assets/textures/chopstick.png simple
+wave assets/textures/cam_text/dash.png simple
+
+exclamation assets/textures/exclamation.png simple
+goblin assets/textures/cam_text/charger.png simple
+goblin_dead assets/textures/goblin_dead.png simple
+
+bomber assets/textures/cam_text/bomber.png simple
+bomber_dead assets/textures/thrower_dead.png simple
+
+armored_goblin assets/textures/cam_text/thrower.png simple
+armored_goblin_dead assets/textures/armored_goblin_dead.png simple
+
+monster_spawn assets/textures/monster_spawn.png simple
+spear assets/textures/cam_text/kebab.png simple
+bomb_target assets/textures/bomb_target.png simple
+bomb_explosion assets/textures/bomb_explosion.png simple
+pork_bun assets/textures/cam_text/pork_bun.png simple
+
+floor assets/textures/cam_text/floor.png simple
+wall assets/textures/cam_text/wall.png scaled

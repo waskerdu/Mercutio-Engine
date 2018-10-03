@@ -1,0 +1,169 @@
+﻿  Building Custom Rule C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/bullet3-2.86.1/bullet3-2.86.1/test/SharedMemory/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/bullet3-2.86.1/bullet3-2.86.1/build/test/SharedMemory/CMakeFiles/generate.stamp is up-to-date.
+  gtestwrap.cpp
+  PhysicsClient.cpp
+  IKTrajectoryHelper.cpp
+  PhysicsServer.cpp
+  PhysicsServerSharedMemory.cpp
+  PhysicsDirect.cpp
+  PhysicsDirectC_API.cpp
+  PhysicsServerCommandProcessor.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\SharedMemory\PhysicsServerCommandProcessor.cpp(882): warning C4316: 'PhysicsServerCommandProcessorInternalData': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\SharedMemory\PhysicsServerCommandProcessor.cpp(2440): warning C4316: 'btMultiBodyJointFeedback': object allocated on the heap may not be aligned 16
+  PhysicsClientSharedMemory.cpp
+  PhysicsClientSharedMemory_C_API.cpp
+  PhysicsClientC_API.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\SharedMemory\PhysicsClientC_API.cpp(554): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+  PhysicsLoopBack.cpp
+  PhysicsLoopBackC_API.cpp
+  Win32SharedMemory.cpp
+  PosixSharedMemory.cpp
+  b3ResourcePath.cpp
+  RobotLoggingUtil.cpp
+  TinyRendererVisualShapeConverter.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\SharedMemory\TinyRendererVisualShapeConverter.cpp(122): warning C4316: 'TinyRendererVisualShapeConverterInternalData': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\SharedMemory\TinyRendererVisualShapeConverter.cpp(613): warning C4316: 'TinyRenderObjectData': object allocated on the heap may not be aligned 16
+  SimpleCamera.cpp
+  geometry.cpp
+  Generating Code...
+  Compiling...
+  model.cpp
+  tgaimage.cpp
+  our_gl.cpp
+  TinyRenderer.cpp
+  tinystr.cpp
+  tinyxml.cpp
+  tinyxmlerror.cpp
+  tinyxmlparser.cpp
+  tiny_obj_loader.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\ThirdPartyLibs\Wavefront\tiny_obj_loader.cpp(214): warning C4018: '<': signed/unsigned mismatch
+  LoadMeshFromCollada.cpp
+  LoadMeshFromObj.cpp
+  Wavefront2GLInstanceGraphicsShape.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp(52): warning C4018: '<': signed/unsigned mismatch
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp(79): warning C4018: '<': signed/unsigned mismatch
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp(104): warning C4018: '<': signed/unsigned mismatch
+  BulletMJCFImporter.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(270): warning C4316: 'UrdfModel': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(280): warning C4316: 'UrdfModel': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(283): warning C4316: 'UrdfLink': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(438): warning C4316: 'UrdfJoint': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(793): warning C4316: 'UrdfLink': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(975): warning C4316: 'UrdfJoint': object allocated on the heap may not be aligned 16
+  BulletUrdfImporter.cpp
+  MyMultiBodyCreator.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp(65): warning C4316: 'GenericConstraintUserInfo': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp(148): warning C4316: 'GenericConstraintUserInfo': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp(172): warning C4316: 'GenericConstraintUserInfo': object allocated on the heap may not be aligned 16
+  URDF2Bullet.cpp
+  UrdfParser.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(578): warning C4316: 'UrdfMaterial': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(612): warning C4316: 'UrdfMaterial': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1361): warning C4316: 'UrdfMaterial': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1384): warning C4316: 'UrdfLink': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1432): warning C4316: 'UrdfJoint': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1520): warning C4316: 'UrdfModel': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1556): warning C4316: 'UrdfMaterial': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1579): warning C4316: 'UrdfLink': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1627): warning C4316: 'UrdfJoint': object allocated on the heap may not be aligned 16
+  urdfStringSplit.cpp
+  b3ImportMeshUtility.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportMeshUtility\b3ImportMeshUtility.cpp(35): warning C4018: '<': signed/unsigned mismatch
+  stb_image.cpp
+  Generating Code...
+BulletFileLoader.lib(bFile.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletFileLoader.lib(btBulletFile.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletFileLoader.lib(bChunk.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletFileLoader.lib(bDNA.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btMultiBody.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btSequentialImpulseConstraintSolver.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btMultiBodyConstraintSolver.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btMultiBodyPoint2Point.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btMultiBodyFixedConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btMultiBodySliderConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btPoint2PointConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btMultiBodyJointMotor.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btMultiBodyDynamicsWorld.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btRigidBody.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btGeneric6DofSpring2Constraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btMultiBodyJointLimitConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btTypedConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btHingeConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btConeTwistConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btGeneric6DofConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btSliderConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btGeneric6DofSpringConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btGearConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btMultiBodyConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletDynamics.lib(btDiscreteDynamicsWorld.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btCollisionObject.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btCollisionDispatcher.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btOverlappingPairCache.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btCollisionWorld.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btDefaultCollisionConfiguration.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btDbvtBroadphase.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btCollisionShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btConvexShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btConvexHullShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btShapeHull.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btCompoundShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btPolyhedralConvexShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btMultiSphereShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btBvhTriangleMeshShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btTriangleMesh.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btStridingMeshInterface.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btTriangleIndexVertexArray.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btOptimizedBvh.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btScaledBvhTriangleMeshShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btSimulationIslandManager.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btManifoldResult.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btConvexConvexAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btEmptyCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btConvexConcaveCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btCompoundCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btCompoundCompoundCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btConvexPlaneCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btBoxBoxCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btSphereSphereCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btSphereTriangleCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btDbvt.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btConvexPolyhedron.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btQuantizedBvh.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btUnionFind.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btActivatingCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btPolyhedralContactClipping.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+BulletCollision.lib(btHashedSimplePairCache.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+LinearMath.lib(btQuickprof.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+LinearMath.lib(btConvexHullComputer.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+LinearMath.lib(btConvexHull.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+LinearMath.lib(btGeometryUtil.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in gtestwrap.obj
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+BulletFileLoader.lib(bFile.obj) : warning LNK4217: locally defined symbol _free imported in function "public: virtual __thiscall bParse::bFile::~bFile(void)" (??1bFile@bParse@@UAE@XZ)
+LinearMath.lib(btAlignedAllocator.obj) : warning LNK4049: locally defined symbol _free imported
+BulletFileLoader.lib(bFile.obj) : warning LNK4217: locally defined symbol _malloc imported in function "public: __thiscall bParse::bFile::bFile(char const *,char const * const)" (??0bFile@bParse@@QAE@PBDQBD@Z)
+LinearMath.lib(btAlignedAllocator.obj) : warning LNK4049: locally defined symbol _malloc imported
+BulletFileLoader.lib(bFile.obj) : warning LNK4217: locally defined symbol _atoi imported in function "protected: virtual void __thiscall bParse::bFile::parseHeader(void)" (?parseHeader@bFile@bParse@@MAEXXZ)
+BulletFileLoader.lib(bDNA.obj) : warning LNK4217: locally defined symbol _atoi imported in function "public: __thiscall bParse::bDNA::~bDNA(void)" (??1bDNA@bParse@@QAE@XZ)
+BulletFileLoader.lib(bFile.obj) : warning LNK4217: locally defined symbol ___acrt_iob_func imported in function _printf
+BulletFileLoader.lib(btBulletFile.obj) : warning LNK4049: locally defined symbol ___acrt_iob_func imported
+BulletFileLoader.lib(bDNA.obj) : warning LNK4217: locally defined symbol ___acrt_iob_func imported in function _printf
+LinearMath.lib(btQuickprof.obj) : warning LNK4049: locally defined symbol ___acrt_iob_func imported
+BulletFileLoader.lib(bFile.obj) : warning LNK4217: locally defined symbol _fclose imported in function "public: __thiscall bParse::bFile::bFile(char const *,char const * const)" (??0bFile@bParse@@QAE@PBDQBD@Z)
+BulletFileLoader.lib(btBulletFile.obj) : warning LNK4049: locally defined symbol _fclose imported
+BulletFileLoader.lib(bFile.obj) : warning LNK4217: locally defined symbol _fopen imported in function "public: __thiscall bParse::bFile::bFile(char const *,char const * const)" (??0bFile@bParse@@QAE@PBDQBD@Z)
+BulletFileLoader.lib(btBulletFile.obj) : warning LNK4049: locally defined symbol _fopen imported
+BulletFileLoader.lib(bFile.obj) : warning LNK4217: locally defined symbol _fread imported in function "public: __thiscall bParse::bFile::bFile(char const *,char const * const)" (??0bFile@bParse@@QAE@PBDQBD@Z)
+BulletFileLoader.lib(bFile.obj) : warning LNK4217: locally defined symbol _fseek imported in function "public: __thiscall bParse::bFile::bFile(char const *,char const * const)" (??0bFile@bParse@@QAE@PBDQBD@Z)
+BulletFileLoader.lib(bFile.obj) : warning LNK4217: locally defined symbol _ftell imported in function "public: __thiscall bParse::bFile::bFile(char const *,char const * const)" (??0bFile@bParse@@QAE@PBDQBD@Z)
+BulletFileLoader.lib(bFile.obj) : warning LNK4217: locally defined symbol _fwrite imported in function "public: virtual void __thiscall bParse::bFile::writeChunks(struct _iobuf *,bool)" (?writeChunks@bFile@bParse@@UAEXPAU_iobuf@@_N@Z)
+BulletFileLoader.lib(btBulletFile.obj) : warning LNK4049: locally defined symbol _fwrite imported
+BulletFileLoader.lib(bFile.obj) : warning LNK4217: locally defined symbol ___stdio_common_vfprintf imported in function _printf
+BulletFileLoader.lib(btBulletFile.obj) : warning LNK4049: locally defined symbol ___stdio_common_vfprintf imported
+BulletFileLoader.lib(bDNA.obj) : warning LNK4049: locally defined symbol ___stdio_common_vfprintf imported
+LinearMath.lib(btQuickprof.obj) : warning LNK4049: locally defined symbol ___stdio_common_vfprintf imported
+BulletFileLoader.lib(bFile.obj) : warning LNK4217: locally defined symbol _strncmp imported in function "protected: virtual void __thiscall bParse::bFile::parseHeader(void)" (?parseHeader@bFile@bParse@@MAEXXZ)
+BulletFileLoader.lib(bDNA.obj) : warning LNK4049: locally defined symbol _strncmp imported
+BulletFileLoader.lib(bDNA.obj) : warning LNK4217: locally defined symbol _strchr imported in function "int __cdecl name_is_array(char *,int *,int *)" (?name_is_array@@YAHPADPAH1@Z)
+MSVCRT.lib(_chandler4gs_.obj) : error LNK2019: unresolved external symbol __except_handler4_common referenced in function __except_handler4
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\build\test\SharedMemory\Release\Test_PhysicsClientServer.exe : fatal error LNK1120: 1 unresolved externals

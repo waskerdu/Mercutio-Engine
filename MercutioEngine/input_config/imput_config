@@ -1,0 +1,63 @@
+/wok input config
+/NOTE: NOT DESIGNED FOR USERS
+/This file is used and edited by the game. Controller configuration should be performed in game. 
+/If you still want to manually configure this file please make a backup first.
+
+#default
+axis2 move
+	dead_zone 0.25
+	clamp
+	x_axis move_x
+	y_axis move_y
+
+axis1 move_x
+	sources:
+	lx
+	pos:
+	d_right
+	d
+	neg:
+	d_left
+	a
+
+axis1 move_y
+	sources:
+	ly
+	pos:
+	d_up
+	w
+	neg:
+	d_down
+	s
+
+button shoot_left
+	left
+	d_left
+
+button shoot_right
+	right
+	f_right
+button shoot_up
+	up
+	f_up
+button shoot_down
+	down
+	f_down
+button roll
+	space
+	lb
+button attract
+	l_shift
+	rb
+
+button pause
+	esc
+	start
+button confirm
+	space
+	enter
+	f_down
+
+button cancel
+	esc
+	f_right

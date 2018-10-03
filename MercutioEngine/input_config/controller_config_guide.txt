@@ -1,0 +1,35 @@
+/controller config
+/comment
+#configuration start
+axis1 name
+	dead_zone value /uses 0 by default
+	tags
+	/clamp limits value to -1 to 1. for analog sticks
+	/smooth filters input. for analogue sticks
+	/inv
+
+	sources (lx, ly, rx, ry, lt, rt, mx, my, scroll)
+		name
+		name
+		name
+	pos_button
+		name
+		name
+		name
+	neg_button
+		name
+		name
+		name
+axis2 name
+	dead_zone value
+	tags
+	/clamp limits value to -1 to 1. for analog sticks
+	/smooth filters input. for analogue sticks
+	x_axis name
+	y_axis name
+button name
+	keyboard sources (any letter or number, function keys f1-f12,l_shift,l_alt,r_shift,r_alt,l_ctrl,r_ctrl,m1,m2,m3,m4,m5, enter, tab, caps_lock, esc, up,down,left,right) /not case sensitive
+	controller sources (f_up,f_down,f_left,f_right,d_up,d_down,d_left,d_right,ls,rs,lb,rb,lt,rt,back,start)
+	axis1 name
+	threshold
+	sign /pos or neg

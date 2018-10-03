@@ -1,0 +1,115 @@
+﻿  Building Custom Rule C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/bullet3-2.86.1/bullet3-2.86.1/test/InverseDynamics/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/bullet3-2.86.1/bullet3-2.86.1/build/test/InverseDynamics/CMakeFiles/generate.stamp is up-to-date.
+  test_invdyn_bullet.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\test\InverseDynamics\test_invdyn_bullet.cpp(49): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+  b3ResourcePath.cpp
+  MyMultiBodyCreator.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp(65): warning C4316: 'GenericConstraintUserInfo': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp(148): warning C4316: 'GenericConstraintUserInfo': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp(172): warning C4316: 'GenericConstraintUserInfo': object allocated on the heap may not be aligned 16
+  BulletUrdfImporter.cpp
+  urdfStringSplit.cpp
+  UrdfParser.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(578): warning C4316: 'UrdfMaterial': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(612): warning C4316: 'UrdfMaterial': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1361): warning C4316: 'UrdfMaterial': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1384): warning C4316: 'UrdfLink': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1432): warning C4316: 'UrdfJoint': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1520): warning C4316: 'UrdfModel': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1556): warning C4316: 'UrdfMaterial': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1579): warning C4316: 'UrdfLink': object allocated on the heap may not be aligned 16
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1627): warning C4316: 'UrdfJoint': object allocated on the heap may not be aligned 16
+  URDF2Bullet.cpp
+  b3ImportMeshUtility.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportMeshUtility\b3ImportMeshUtility.cpp(35): warning C4018: '<': signed/unsigned mismatch
+  stb_image.cpp
+  b3Clock.cpp
+  btBulletWorldImporter.cpp
+  btWorldImporter.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp(1004): warning C4800: 'char': forcing value to bool 'true' or 'false' (performance warning)
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp(1324): warning C4800: 'char': forcing value to bool 'true' or 'false' (performance warning)
+  bChunk.cpp
+  bFile.cpp
+  bDNA.cpp
+  btBulletFile.cpp
+  Wavefront2GLInstanceGraphicsShape.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp(52): warning C4018: '<': signed/unsigned mismatch
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp(79): warning C4018: '<': signed/unsigned mismatch
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp(104): warning C4018: '<': signed/unsigned mismatch
+  LoadMeshFromObj.cpp
+  LoadMeshFromCollada.cpp
+  tiny_obj_loader.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\ThirdPartyLibs\Wavefront\tiny_obj_loader.cpp(214): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Compiling...
+  tinystr.cpp
+  tinyxml.cpp
+  tinyxmlerror.cpp
+  tinyxmlparser.cpp
+  Generating Code...
+LinearMath.lib(btQuickprof.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btSequentialImpulseConstraintSolver.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btMultiBody.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btMultiBodyConstraintSolver.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btMultiBodyDynamicsWorld.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btRigidBody.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btGeneric6DofSpring2Constraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btMultiBodyJointLimitConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btTypedConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btPoint2PointConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btHingeConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btConeTwistConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btGeneric6DofConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btSliderConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btGeneric6DofSpringConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btGearConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btDiscreteDynamicsWorld.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletDynamics.lib(btMultiBodyConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btCollisionDispatcher.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btDefaultCollisionConfiguration.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btDbvtBroadphase.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btCollisionObject.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btCollisionShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btConvexShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btPolyhedralConvexShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btConvexHullShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btTriangleMesh.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btBvhTriangleMeshShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btCompoundShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btShapeHull.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btStridingMeshInterface.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btTriangleIndexVertexArray.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btOptimizedBvh.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btScaledBvhTriangleMeshShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btMultiSphereShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btCollisionWorld.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btSimulationIslandManager.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btManifoldResult.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btConvexConvexAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btEmptyCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btConvexConcaveCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btCompoundCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btCompoundCompoundCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btConvexPlaneCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btBoxBoxCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btSphereSphereCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btSphereTriangleCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btDbvt.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btOverlappingPairCache.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btConvexPolyhedron.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btQuantizedBvh.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btUnionFind.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btActivatingCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btPolyhedralContactClipping.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btCollisionAlgorithm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+BulletCollision.lib(btHashedSimplePairCache.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+LinearMath.lib(btConvexHullComputer.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+LinearMath.lib(btGeometryUtil.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+LinearMath.lib(btConvexHull.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in test_invdyn_bullet.obj
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+LinearMath.lib(btAlignedAllocator.obj) : warning LNK4217: locally defined symbol _free imported in function "void __cdecl btFreeDefault(void *)" (?btFreeDefault@@YAXPAX@Z)
+LinearMath.lib(btAlignedAllocator.obj) : warning LNK4217: locally defined symbol _malloc imported in function "void * __cdecl btAllocDefault(unsigned int)" (?btAllocDefault@@YAPAXI@Z)
+LinearMath.lib(btQuickprof.obj) : warning LNK4217: locally defined symbol ___acrt_iob_func imported in function _printf
+LinearMath.lib(btQuickprof.obj) : warning LNK4217: locally defined symbol ___stdio_common_vfprintf imported in function _printf
+MSVCRT.lib(_chandler4gs_.obj) : error LNK2019: unresolved external symbol __except_handler4_common referenced in function __except_handler4
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\build\test\InverseDynamics\Release\Test_BulletInverseForwardDynamics.exe : fatal error LNK1120: 1 unresolved externals

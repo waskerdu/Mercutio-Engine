@@ -1,0 +1,4 @@
+﻿  Building Custom Rule C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/SFML-master/src/SFML/Main/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/SFML-master/build/src/SFML/Main/CMakeFiles/generate.stamp is up-to-date.
+  MainWin32.cpp
+  sfml-main.vcxproj -> C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\SFML-master\build\lib\Release\sfml-main.lib

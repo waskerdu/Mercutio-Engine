@@ -1,0 +1,6 @@
+C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/freetype-2.9/build/CMakeFiles/PACKAGE.dir
+C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/freetype-2.9/build/CMakeFiles/freetype.dir
+C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/freetype-2.9/build/CMakeFiles/dist.dir
+C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/freetype-2.9/build/CMakeFiles/INSTALL.dir
+C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/freetype-2.9/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/freetype-2.9/build/CMakeFiles/ZERO_CHECK.dir

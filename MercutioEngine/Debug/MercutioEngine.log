@@ -1,0 +1,127 @@
+﻿  stdafx.cpp
+  wokSpawnWarning.cpp
+  wokNavNode.cpp
+  wokLevelEnd.cpp
+  wokEnemySpawner.cpp
+  wokEditor.cpp
+  stb_image.cpp
+  shaderset.cpp
+  meText.cpp
+  meSceneManager.cpp
+  meRender.cpp
+  MercutioEngine.cpp
+  meRandom.cpp
+  meProjectile.cpp
+  meNavSystem.cpp
+  meMenu.cpp
+  meInput.cpp
+  meEntity.cpp
+  meEngine.cpp
+  meEnemyAggro.cpp
+  meEnemy.cpp
+  Generating Code...
+  Compiling...
+  meCharacterSelector.cpp
+  meBarrier.cpp
+  meAssetManager.cpp
+  meActor.cpp
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+glfw3.lib(init.obj) : warning LNK4217: locally defined symbol ___stdio_common_vsprintf imported in function __glfwInputError
+glfw3.lib(wgl_context.obj) : warning LNK4217: locally defined symbol _calloc imported in function _glfwGetWGLContext
+glfw3.lib(egl_context.obj) : warning LNK4217: locally defined symbol _calloc imported in function _getEGLErrorString
+glfw3.lib(win32_monitor.obj) : warning LNK4049: locally defined symbol _calloc imported
+glfw3.lib(vulkan.obj) : warning LNK4049: locally defined symbol _calloc imported
+glfw3.lib(win32_window.obj) : warning LNK4049: locally defined symbol _calloc imported
+glfw3.lib(win32_joystick.obj) : warning LNK4049: locally defined symbol _calloc imported
+glfw3.lib(monitor.obj) : warning LNK4217: locally defined symbol _calloc imported in function __glfwAllocGammaArrays
+glfw3.lib(window.obj) : warning LNK4049: locally defined symbol _calloc imported
+glfw3.lib(input.obj) : warning LNK4049: locally defined symbol _calloc imported
+glfw3.lib(win32_init.obj) : warning LNK4217: locally defined symbol _calloc imported in function _createKeyTables
+glfw3.lib(wgl_context.obj) : warning LNK4217: locally defined symbol _free imported in function __glfwCreateContextWGL
+glfw3.lib(egl_context.obj) : warning LNK4217: locally defined symbol _free imported in function _getEGLErrorString
+glfw3.lib(win32_monitor.obj) : warning LNK4217: locally defined symbol _free imported in function _createMonitor
+glfw3.lib(vulkan.obj) : warning LNK4217: locally defined symbol _free imported in function __glfwInitVulkan
+glfw3.lib(win32_window.obj) : warning LNK4049: locally defined symbol _free imported
+glfw3.lib(win32_joystick.obj) : warning LNK4049: locally defined symbol _free imported
+glfw3.lib(monitor.obj) : warning LNK4217: locally defined symbol _free imported in function __glfwFreeGammaArrays
+glfw3.lib(window.obj) : warning LNK4049: locally defined symbol _free imported
+glfw3.lib(input.obj) : warning LNK4049: locally defined symbol _free imported
+glfw3.lib(win32_init.obj) : warning LNK4217: locally defined symbol _free imported in function __glfwPlatformInit
+glfw3.lib(monitor.obj) : warning LNK4217: locally defined symbol _qsort imported in function _refreshVideoModes
+glfw3.lib(win32_joystick.obj) : warning LNK4049: locally defined symbol _qsort imported
+glfw3.lib(context.obj) : warning LNK4217: locally defined symbol _strncmp imported in function __glfwRefreshContextAttribs
+glfw3.lib(egl_context.obj) : warning LNK4217: locally defined symbol _strncmp imported in function __glfwCreateContextEGL
+glfw3.lib(win32_monitor.obj) : warning LNK4217: locally defined symbol _realloc imported in function __glfwPlatformGetMonitors
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol __CrtDbgReportW
+libcpmtd.lib(xmbtowc.obj) : error LNK2001: unresolved external symbol __CrtDbgReportW
+libcpmtd.lib(StlCompareStringA.obj) : error LNK2001: unresolved external symbol __CrtDbgReportW
+libcpmtd.lib(cout.obj) : error LNK2001: unresolved external symbol __CrtDbgReportW
+libcpmtd.lib(StlLCMapStringA.obj) : error LNK2001: unresolved external symbol __CrtDbgReportW
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol __CrtDbgReportW
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol __CrtDbgReportW
+wokNavNode.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+wokSpawnWarning.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+libcpmtd.lib(stdthrow.obj) : error LNK2001: unresolved external symbol __CrtDbgReportW
+libcpmtd.lib(syserror.obj) : error LNK2001: unresolved external symbol __CrtDbgReportW
+shaderset.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+wokEditor.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+wokEnemySpawner.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+wokLevelEnd.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+MercutioEngine.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+meRender.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+meSceneManager.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+meText.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+meInput.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+meMenu.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+meNavSystem.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+meProjectile.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+meEnemy.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+meEnemyAggro.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+meEngine.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+meEntity.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+meActor.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+meAssetManager.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+meBarrier.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+meCharacterSelector.obj : error LNK2001: unresolved external symbol __CrtDbgReportW
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol __calloc_dbg
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol __calloc_dbg
+meAssetManager.obj : error LNK2001: unresolved external symbol __calloc_dbg
+meInput.obj : error LNK2001: unresolved external symbol __calloc_dbg
+libcpmtd.lib(_tolower.obj) : error LNK2001: unresolved external symbol __calloc_dbg
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol __calloc_dbg
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(xwcsxfrm.obj) : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(StlCompareStringA.obj) : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(locale0.obj) : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(cout.obj) : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(StlLCMapStringA.obj) : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol __free_dbg
+meAssetManager.obj : error LNK2001: unresolved external symbol __free_dbg
+meInput.obj : error LNK2001: unresolved external symbol __free_dbg
+shaderset.obj : error LNK2001: unresolved external symbol __free_dbg
+wokEditor.obj : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+libcpmtd.lib(xwcsxfrm.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+libcpmtd.lib(StlCompareStringA.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+libcpmtd.lib(locale0.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+libcpmtd.lib(cout.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+libcpmtd.lib(StlLCMapStringA.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+meAssetManager.obj : error LNK2001: unresolved external symbol __malloc_dbg
+meInput.obj : error LNK2001: unresolved external symbol __malloc_dbg
+shaderset.obj : error LNK2001: unresolved external symbol __malloc_dbg
+wokEditor.obj : error LNK2001: unresolved external symbol __malloc_dbg
+glfw3.lib(monitor.obj) : error LNK2019: unresolved external symbol __imp___strdup referenced in function __glfwAllocMonitor
+glfw3.lib(win32_window.obj) : error LNK2001: unresolved external symbol __imp___strdup
+glfw3.lib(win32_joystick.obj) : error LNK2001: unresolved external symbol __imp___strdup
+glfw3.lib(context.obj) : error LNK2019: unresolved external symbol __imp__strstr referenced in function __glfwStringInExtensionString
+glfw3.lib(win32_joystick.obj) : error LNK2001: unresolved external symbol __imp__strstr
+glfw3.lib(context.obj) : error LNK2019: unresolved external symbol __imp____stdio_common_vsscanf referenced in function _sscanf
+libcpmtd.lib(_tolower.obj) : error LNK2019: unresolved external symbol __wcsdup_dbg referenced in function __Getctype
+libcpmtd.lib(xstrcoll.obj) : error LNK2001: unresolved external symbol __wcsdup_dbg
+libcpmtd.lib(locale.obj) : error LNK2019: unresolved external symbol __realloc_dbg referenced in function "private: static void __cdecl std::locale::_Locimp::_Locimp_Addfac(class std::locale::_Locimp *,class std::locale::facet *,unsigned int)" (?_Locimp_Addfac@_Locimp@locale@std@@CAXPAV123@PAVfacet@23@I@Z)
+MSVCRT.lib(_chandler4gs_.obj) : error LNK2019: unresolved external symbol __except_handler4_common referenced in function __except_handler4
+C:\Users\riley\documents\visual studio 2015\Projects\MercutioEngine\Debug\MercutioEngine.exe : fatal error LNK1120: 10 unresolved externals

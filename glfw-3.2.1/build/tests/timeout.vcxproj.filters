@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\glfw-3.2.1\tests\timeout.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\glfw-3.2.1\deps\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\glfw-3.2.1\deps\glad\glad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\glfw-3.2.1\tests\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{3812E61A-773B-350F-8293-7A9568CAE255}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{A6E53443-B3E2-3B4B-9A72-F32F28C2109B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

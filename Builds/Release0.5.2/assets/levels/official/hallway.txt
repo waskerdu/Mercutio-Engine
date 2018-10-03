@@ -1,0 +1,181 @@
+#PressurePlate
+Position 0 96 0
+/Position 0 32 0
+Message open
+Target door1
+
+#Barrier
+Position 0 0 0
+Scale 8 1 1
+
+#Barrier
+Position -8 8 0
+Scale 1 8 1
+
+#Barrier
+Position 8 8 0
+Scale 1 8 1
+
+#Barrier
+Position -12 16 0
+Scale 4 1 1
+
+#Barrier
+Position 12 16 0
+Scale 4 1 1
+
+#Barrier
+Position -16 24 0
+Scale 1 8 1
+
+#Barrier
+Position 16 24 0
+Scale 1 8 1
+
+#Barrier
+Position -24 32 0
+Scale 8 1 1
+
+#Barrier
+Position 24 32 0
+Scale 8 1 1
+
+#Barrier
+Position -24 48 0
+Scale 8 1 1
+
+#Barrier
+Position 24 48 0
+Scale 8 1 1
+
+#Barrier
+Position -24 64 0
+Scale 8 1 1
+
+#Barrier
+Position 24 64 0
+Scale 8 1 1
+
+#Barrier
+Position -24 80 0
+Scale 8 1 1
+
+#Barrier
+Position 24 80 0
+Scale 8 1 1
+
+#Barrier
+Position -32 40 0
+Scale 1 8 1
+
+#Barrier
+Position 32 40 0
+Scale 1 8 1
+
+#Barrier
+Position -16 56 0
+Scale 1 8 1
+
+#Barrier
+Position 16 56 0
+Scale 1 8 1
+
+#Barrier
+Position -32 72 0
+Scale 1 8 1
+
+#Barrier
+Position 32 72 0
+Scale 1 8 1
+
+#Barrier
+Position -16 96 0
+Scale 1 16 1
+
+#Barrier
+Position 16 96 0
+Scale 1 16 1
+
+#Barrier
+Position 0 112 0
+Scale 16 1 1
+
+#Door
+Position 0 16 0
+Open 16 16 0
+Scale 8 1 1
+Name door1
+
+#EnemySpawner 
+Position -24 40 0 
+Radius 2
+WaveSize 5
+WaveIncrement 5
+NumberOfWaves 1 
+BomberChance 1
+
+#EnemySpawner 
+Position 24 40 0 
+Radius 2
+WaveSize 10
+WaveIncrement 5
+NumberOfWaves 1
+ThrowerChance 1
+
+#Door
+Position -16 40 0
+Open -16 24 0
+Scale 1 8 1
+Name door1
+
+#Door
+Position 16 40 0
+Open 16 24 0
+Scale 1 8 1
+Name door1
+
+#EnemySpawner 
+Position -24 72 0 
+Radius 2
+WaveSize 10
+WaveIncrement 5
+NumberOfWaves 1
+ChargerChance 1
+
+#EnemySpawner 
+Position 24 72 0 
+Radius 2
+WaveSize 10
+WaveIncrement 0
+NumberOfWaves 1
+ChargerChance 1
+
+#Door
+Position -16 72 0
+Open -16 56 0
+Scale 1 8 1
+Name door1
+
+#Door
+Position 16 72 0
+Open 16 56 0
+Scale 1 8 1
+Name door1
+
+#EnemySpawner 
+Position 0 8 0 
+Radius 2
+WaveSize 16
+WaveIncrement 0
+NumberOfWaves 1
+ChargerChance 10
+ThrowerChance 5
+BomberChance 1
+
+#LevelEnd 
+Position 0 8 0
+NextLevel assets/levels/official/crossroad.txt
+Radius 4
+
+#PlayerSpawner 
+Position 0 24 0

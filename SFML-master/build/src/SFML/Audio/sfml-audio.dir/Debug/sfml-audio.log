@@ -1,0 +1,26 @@
+﻿  Building Custom Rule C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/SFML-master/src/SFML/Audio/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/SFML-master/build/src/SFML/Audio/CMakeFiles/generate.stamp is up-to-date.
+  ALCheck.cpp
+  AlResource.cpp
+  AudioDevice.cpp
+  Listener.cpp
+  Music.cpp
+  Sound.cpp
+  SoundBuffer.cpp
+  SoundBufferRecorder.cpp
+  InputSoundFile.cpp
+  OutputSoundFile.cpp
+  SoundRecorder.cpp
+  SoundSource.cpp
+  SoundStream.cpp
+  SoundFileFactory.cpp
+  SoundFileReaderFlac.cpp
+  SoundFileReaderOgg.cpp
+  SoundFileReaderWav.cpp
+  SoundFileWriterFlac.cpp
+  SoundFileWriterOgg.cpp
+  SoundFileWriterWav.cpp
+  Generating Code...
+     Creating library C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/SFML-master/build/lib/Debug/sfml-audio-d.lib and object C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/SFML-master/build/lib/Debug/sfml-audio-d.exp
+  sfml-audio.vcxproj -> C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\SFML-master\build\lib\Debug\sfml-audio-d-2.dll
+  sfml-audio.vcxproj -> C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/SFML-master/build/lib/Debug/sfml-audio.pdb (Full PDB)

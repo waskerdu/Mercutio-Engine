@@ -1,0 +1,4 @@
+﻿  glew.c
+     Creating library ..\..\lib\Release\Win32\glew32.lib and object ..\..\lib\Release\Win32\glew32.exp
+  glew_shared.vcxproj -> C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\glew-2.1.0\glew-2.1.0\build\vc12\..\..\bin\Release\Win32\glew32.dll
+  glew_shared.vcxproj -> ..\..\bin\Release\Win32\glew32.pdb (Full PDB)

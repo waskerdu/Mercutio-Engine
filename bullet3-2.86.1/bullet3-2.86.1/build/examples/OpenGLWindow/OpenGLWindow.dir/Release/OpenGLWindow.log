@@ -1,0 +1,22 @@
+﻿  Building Custom Rule C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/bullet3-2.86.1/bullet3-2.86.1/examples/OpenGLWindow/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/riley/Documents/Visual Studio 2015/Projects/MercutioEngine/bullet3-2.86.1/bullet3-2.86.1/build/examples/OpenGLWindow/CMakeFiles/generate.stamp is up-to-date.
+  glew.c
+  Win32OpenGLWindow.cpp
+  Win32Window.cpp
+  EGLOpenGLWindow.cpp
+  GLInstancingRenderer.cpp
+  GLPrimitiveRenderer.cpp
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\OpenGLWindow\GLPrimitiveRenderer.cpp(505): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\examples\OpenGLWindow\GLPrimitiveRenderer.cpp(525): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+  GLRenderToTexture.cpp
+  LoadShader.cpp
+  OpenSans.cpp
+  SimpleCamera.cpp
+  SimpleOpenGL2App.cpp
+  SimpleOpenGL2Renderer.cpp
+  SimpleOpenGL3App.cpp
+  TwFonts.cpp
+  fontstash.cpp
+  opengl_fontstashcallbacks.cpp
+  Generating Code...
+  OpenGLWindow.vcxproj -> C:\Users\riley\Documents\Visual Studio 2015\Projects\MercutioEngine\bullet3-2.86.1\bullet3-2.86.1\build\lib\Release\OpenGLWindow.lib
