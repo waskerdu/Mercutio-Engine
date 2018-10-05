@@ -1,0 +1,154 @@
+﻿  meAssetManager.cpp
+  meActor.cpp
+  Generating Code...
+wokSpawnWarning.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+wokEnemySpawner.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+wokLevelEnd.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+wokNavNode.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+wokPressurePlate.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+meText.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+shaderset.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+wokDoor.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+wokEditor.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+meProjectile.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+MercutioEngine.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+meRender.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+meSceneManager.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+meInput.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+meMenu.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+meNavSystem.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+meParser.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+meEnemy.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+meEnemyAggro.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+meEngine.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+meEntity.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+meActor.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+meAssetManager.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+meBarrier.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+meCharacterSelector.obj : error LNK2001: unresolved external symbol __imp__invalid_parameter
+wokSpawnWarning.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+wokEnemySpawner.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+wokLevelEnd.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+wokNavNode.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+wokPressurePlate.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meText.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+shaderset.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+wokDoor.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+wokEditor.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meProjectile.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+MercutioEngine.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meRender.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meSceneManager.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meInput.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meMenu.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meNavSystem.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meParser.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meEnemy.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meEnemyAggro.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meEngine.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meEntity.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meActor.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meAssetManager.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meBarrier.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meCharacterSelector.obj : error LNK2001: unresolved external symbol __imp__CrtDbgReportW
+meActor.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::Sound::Sound(void)" (__imp_??0Sound@sf@@QEAA@XZ) referenced in function "public: __cdecl Actor::Actor(void)" (??0Actor@@QEAA@XZ)
+meActor.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::Sound::Sound(class sf::Sound const &)" (__imp_??0Sound@sf@@QEAA@AEBV01@@Z) referenced in function "public: __cdecl Actor::Actor(class Actor const &)" (??0Actor@@QEAA@AEBV0@@Z)
+meActor.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: virtual __cdecl sf::Sound::~Sound(void)" (__imp_??1Sound@sf@@UEAA@XZ) referenced in function "int `public: __cdecl Actor::Actor(void)'::`1'::dtor$1" (?dtor$1@?0???0Actor@@QEAA@XZ@4HA)
+meActor.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: class sf::SoundBuffer const * __cdecl sf::Sound::getBuffer(void)const " (__imp_?getBuffer@Sound@sf@@QEBAPEBVSoundBuffer@2@XZ) referenced in function "public: void __cdecl Actor::ManageProjectiles(void)" (?ManageProjectiles@Actor@@QEAAXXZ)
+meAssetManager.obj : error LNK2019: unresolved external symbol glewInit referenced in function "public: __cdecl AssetManager::AssetManager(void)" (??0AssetManager@@QEAA@XZ)
+meAssetManager.obj : error LNK2019: unresolved external symbol glewGetErrorString referenced in function "public: __cdecl AssetManager::AssetManager(void)" (??0AssetManager@@QEAA@XZ)
+meAssetManager.obj : error LNK2019: unresolved external symbol glfwTerminate referenced in function "public: __cdecl AssetManager::AssetManager(void)" (??0AssetManager@@QEAA@XZ)
+MercutioEngine.obj : error LNK2001: unresolved external symbol glfwTerminate
+meAssetManager.obj : error LNK2019: unresolved external symbol glfwGetMonitors referenced in function "public: void __cdecl AssetManager::SetSize(void)" (?SetSize@AssetManager@@QEAAXXZ)
+meAssetManager.obj : error LNK2019: unresolved external symbol glfwGetVideoMode referenced in function "public: void __cdecl AssetManager::SetSize(void)" (?SetSize@AssetManager@@QEAAXXZ)
+meAssetManager.obj : error LNK2019: unresolved external symbol glfwWindowHint referenced in function "public: void __cdecl AssetManager::SetSize(void)" (?SetSize@AssetManager@@QEAAXXZ)
+meAssetManager.obj : error LNK2019: unresolved external symbol glfwCreateWindow referenced in function "public: __cdecl AssetManager::AssetManager(void)" (??0AssetManager@@QEAA@XZ)
+meAssetManager.obj : error LNK2019: unresolved external symbol glfwSetWindowSize referenced in function "public: void __cdecl AssetManager::SetSize(void)" (?SetSize@AssetManager@@QEAAXXZ)
+meAssetManager.obj : error LNK2019: unresolved external symbol glfwSetWindowMonitor referenced in function "public: void __cdecl AssetManager::SetSize(void)" (?SetSize@AssetManager@@QEAAXXZ)
+meAssetManager.obj : error LNK2019: unresolved external symbol glfwMakeContextCurrent referenced in function "public: __cdecl AssetManager::AssetManager(void)" (??0AssetManager@@QEAA@XZ)
+meAssetManager.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::SoundBuffer::SoundBuffer(void)" (__imp_??0SoundBuffer@sf@@QEAA@XZ) referenced in function "public: bool __cdecl AssetManager::LoadSoundBuffer(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadSoundBuffer@AssetManager@@QEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)
+meAssetManager.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::SoundBuffer::~SoundBuffer(void)" (__imp_??1SoundBuffer@sf@@QEAA@XZ) referenced in function "public: void * __cdecl sf::SoundBuffer::`scalar deleting destructor'(unsigned int)" (??_GSoundBuffer@sf@@QEAAPEAXI@Z)
+meAssetManager.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: bool __cdecl sf::SoundBuffer::loadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (__imp_?loadFromFile@SoundBuffer@sf@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) referenced in function "public: bool __cdecl AssetManager::LoadSoundBuffer(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadSoundBuffer@AssetManager@@QEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)
+meAssetManager.obj : error LNK2019: unresolved external symbol FT_Init_FreeType referenced in function "public: __cdecl AssetManager::AssetManager(void)" (??0AssetManager@@QEAA@XZ)
+meAssetManager.obj : error LNK2019: unresolved external symbol FT_Done_FreeType referenced in function "public: void __cdecl AssetManager::FreeMemory(void)" (?FreeMemory@AssetManager@@QEAAXXZ)
+MercutioEngine.obj : error LNK2001: unresolved external symbol FT_Done_FreeType
+meAssetManager.obj : error LNK2019: unresolved external symbol FT_New_Face referenced in function "public: void __cdecl AssetManager::CreateFont(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,float,float)" (?CreateFont@AssetManager@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0MM@Z)
+meAssetManager.obj : error LNK2019: unresolved external symbol FT_Done_Face referenced in function "public: void __cdecl AssetManager::CreateFont(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,float,float)" (?CreateFont@AssetManager@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0MM@Z)
+meAssetManager.obj : error LNK2019: unresolved external symbol FT_Set_Pixel_Sizes referenced in function "public: void __cdecl AssetManager::CreateFont(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,float,float)" (?CreateFont@AssetManager@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0MM@Z)
+meAssetManager.obj : error LNK2019: unresolved external symbol FT_Load_Char referenced in function "public: void __cdecl AssetManager::CreateFont(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,float,float)" (?CreateFont@AssetManager@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0MM@Z)
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewBindBuffer
+meEntity.obj : error LNK2001: unresolved external symbol __glewBindBuffer
+meRender.obj : error LNK2001: unresolved external symbol __glewBindBuffer
+meText.obj : error LNK2001: unresolved external symbol __glewBindBuffer
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewBufferData
+meRender.obj : error LNK2001: unresolved external symbol __glewBufferData
+meText.obj : error LNK2001: unresolved external symbol __glewBufferData
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewGenBuffers
+meRender.obj : error LNK2001: unresolved external symbol __glewGenBuffers
+meText.obj : error LNK2001: unresolved external symbol __glewGenBuffers
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewEnableVertexAttribArray
+meRender.obj : error LNK2001: unresolved external symbol __glewEnableVertexAttribArray
+meText.obj : error LNK2001: unresolved external symbol __glewEnableVertexAttribArray
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewUniform1i
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewUseProgram
+meEntity.obj : error LNK2001: unresolved external symbol __glewUseProgram
+meRender.obj : error LNK2001: unresolved external symbol __glewUseProgram
+meText.obj : error LNK2001: unresolved external symbol __glewUseProgram
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewVertexAttribPointer
+meRender.obj : error LNK2001: unresolved external symbol __glewVertexAttribPointer
+meText.obj : error LNK2001: unresolved external symbol __glewVertexAttribPointer
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewGenerateMipmap
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewBindVertexArray
+meEntity.obj : error LNK2001: unresolved external symbol __glewBindVertexArray
+meRender.obj : error LNK2001: unresolved external symbol __glewBindVertexArray
+meText.obj : error LNK2001: unresolved external symbol __glewBindVertexArray
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewGenVertexArrays
+meRender.obj : error LNK2001: unresolved external symbol __glewGenVertexArrays
+meText.obj : error LNK2001: unresolved external symbol __glewGenVertexArrays
+meEngine.obj : error LNK2019: unresolved external symbol glfwSetWindowShouldClose referenced in function "public: void __cdecl Engine::Update(void)" (?Update@Engine@@QEAAXXZ)
+meEngine.obj : error LNK2019: unresolved external symbol glfwGetTime referenced in function "public: void __cdecl Engine::Update(void)" (?Update@Engine@@QEAAXXZ)
+meEntity.obj : error LNK2001: unresolved external symbol __glewActiveTexture
+meText.obj : error LNK2001: unresolved external symbol __glewActiveTexture
+meEntity.obj : error LNK2001: unresolved external symbol __glewUniform1f
+meEntity.obj : error LNK2001: unresolved external symbol __glewUniformMatrix4fv
+meRender.obj : error LNK2001: unresolved external symbol __glewUniformMatrix4fv
+meText.obj : error LNK2001: unresolved external symbol __glewUniformMatrix4fv
+meInput.obj : error LNK2019: unresolved external symbol glfwGetKey referenced in function "public: void __cdecl RawAxis::Update(struct GLFWwindow *,float const *,int,unsigned char const *,int)" (?Update@RawAxis@@QEAAXPEAUGLFWwindow@@PEBMHPEBEH@Z)
+meInput.obj : error LNK2019: unresolved external symbol glfwGetMouseButton referenced in function "public: void __cdecl RawButton::Update(double,struct GLFWwindow *,float const *,int,unsigned char const *,int)" (?Update@RawButton@@QEAAXNPEAUGLFWwindow@@PEBMHPEBEH@Z)
+meInput.obj : error LNK2019: unresolved external symbol glfwGetCursorPos referenced in function "public: void __cdecl RawAxis::Update(struct GLFWwindow *,float const *,int,unsigned char const *,int)" (?Update@RawAxis@@QEAAXPEAUGLFWwindow@@PEBMHPEBEH@Z)
+meInput.obj : error LNK2019: unresolved external symbol glfwJoystickPresent referenced in function "public: void __cdecl InputManager::Update(double,struct GLFWwindow *)" (?Update@InputManager@@QEAAXNPEAUGLFWwindow@@@Z)
+meInput.obj : error LNK2019: unresolved external symbol glfwGetJoystickAxes referenced in function "public: void __cdecl InputController::Update(double,struct GLFWwindow *)" (?Update@InputController@@QEAAXNPEAUGLFWwindow@@@Z)
+meInput.obj : error LNK2019: unresolved external symbol glfwGetJoystickButtons referenced in function "public: void __cdecl InputController::Update(double,struct GLFWwindow *)" (?Update@InputController@@QEAAXNPEAUGLFWwindow@@@Z)
+meInput.obj : error LNK2019: unresolved external symbol glfwGetJoystickName referenced in function "public: void __cdecl InputManager::Update(double,struct GLFWwindow *)" (?Update@InputManager@@QEAAXNPEAUGLFWwindow@@@Z)
+MercutioEngine.obj : error LNK2019: unresolved external symbol glfwInit referenced in function main
+MercutioEngine.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: void __cdecl sf::Sound::setBuffer(class sf::SoundBuffer const &)" (__imp_?setBuffer@Sound@sf@@QEAAXAEBVSoundBuffer@2@@Z) referenced in function main
+meRender.obj : error LNK2019: unresolved external symbol glfwGetFramebufferSize referenced in function "public: void __cdecl Renderer::RenderLayered(class Camera *)" (?RenderLayered@Renderer@@QEAAXPEAVCamera@@@Z)
+meRender.obj : error LNK2019: unresolved external symbol glfwPollEvents referenced in function "public: void __cdecl Renderer::RenderLayered(class Camera *)" (?RenderLayered@Renderer@@QEAAXPEAVCamera@@@Z)
+meRender.obj : error LNK2019: unresolved external symbol glfwSwapBuffers referenced in function "public: void __cdecl Renderer::RenderLayered(class Camera *)" (?RenderLayered@Renderer@@QEAAXPEAVCamera@@@Z)
+meRender.obj : error LNK2019: unresolved external symbol glfwSwapInterval referenced in function "public: void __cdecl Renderer::RenderLayered(class Camera *)" (?RenderLayered@Renderer@@QEAAXPEAVCamera@@@Z)
+meRender.obj : error LNK2001: unresolved external symbol __glewBufferSubData
+meText.obj : error LNK2001: unresolved external symbol __glewBufferSubData
+meRender.obj : error LNK2001: unresolved external symbol __glewUniform3f
+meText.obj : error LNK2001: unresolved external symbol __glewUniform3f
+shaderset.obj : error LNK2001: unresolved external symbol __glewAttachShader
+shaderset.obj : error LNK2001: unresolved external symbol __glewCompileShader
+shaderset.obj : error LNK2001: unresolved external symbol __glewCreateProgram
+shaderset.obj : error LNK2001: unresolved external symbol __glewCreateShader
+shaderset.obj : error LNK2001: unresolved external symbol __glewDeleteProgram
+shaderset.obj : error LNK2001: unresolved external symbol __glewDeleteShader
+shaderset.obj : error LNK2001: unresolved external symbol __glewGetProgramInfoLog
+shaderset.obj : error LNK2001: unresolved external symbol __glewGetProgramiv
+shaderset.obj : error LNK2001: unresolved external symbol __glewGetShaderInfoLog
+shaderset.obj : error LNK2001: unresolved external symbol __glewGetShaderiv
+shaderset.obj : error LNK2001: unresolved external symbol __glewLinkProgram
+shaderset.obj : error LNK2001: unresolved external symbol __glewShaderSource
+msvcprtd.lib(locale0_implib.obj) : error LNK2019: unresolved external symbol __imp__free_dbg referenced in function "public: static void __cdecl std::_Fac_node::operator delete(void *)" (??3_Fac_node@std@@SAXPEAX@Z)
+msvcprtd.lib(locale0_implib.obj) : error LNK2019: unresolved external symbol __imp__malloc_dbg referenced in function "public: static void * __cdecl std::_Fac_node::operator new(unsigned __int64)" (??2_Fac_node@std@@SAPEAX_K@Z)
+C:\Users\riley\documents\visual studio 2015\Projects\MercutioEngine\MercutioEngine\..\lib\glfw3.lib : warning LNK4272: library machine type 'X86' conflicts with target machine type 'x64'
+C:\Users\riley\documents\visual studio 2015\Projects\MercutioEngine\MercutioEngine\..\lib\glew32s.lib : warning LNK4272: library machine type 'X86' conflicts with target machine type 'x64'
+C:\Users\riley\documents\visual studio 2015\Projects\MercutioEngine\MercutioEngine\..\lib\freetype.lib : warning LNK4272: library machine type 'X86' conflicts with target machine type 'x64'
+C:\Users\riley\documents\visual studio 2015\Projects\MercutioEngine\MercutioEngine\..\lib\sfml-audio.lib : warning LNK4272: library machine type 'X86' conflicts with target machine type 'x64'
+C:\Users\riley\documents\visual studio 2015\Projects\MercutioEngine\MercutioEngine\..\lib\sfml-main.lib : warning LNK4272: library machine type 'X86' conflicts with target machine type 'x64'
+C:\Users\riley\documents\visual studio 2015\Projects\MercutioEngine\MercutioEngine\..\lib\sfml-network.lib : warning LNK4272: library machine type 'X86' conflicts with target machine type 'x64'
+C:\Users\riley\documents\visual studio 2015\Projects\MercutioEngine\MercutioEngine\..\lib\sfml-system.lib : warning LNK4272: library machine type 'X86' conflicts with target machine type 'x64'
+C:\Users\riley\documents\visual studio 2015\Projects\MercutioEngine\x64\Debug\MercutioEngine.exe : fatal error LNK1120: 69 unresolved externals

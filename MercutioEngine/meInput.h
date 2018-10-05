@@ -270,6 +270,17 @@ class InputManager
 	std::map<std::string, int> inputAxisMap;
 	std::vector<InputAxis2*> inputAxes2;
 	std::map<std::string, int> inputAxis2Map;
+	std::map<std::string, int> keyMap;
+	struct ParseMode
+	{
+		enum Mode
+		{
+			Button,
+			Axis,
+			Axis2,
+			none
+		};
+	};
 
 public:
 	std::vector<InputController*> controllers;
@@ -282,11 +293,13 @@ private:
 	InputButton* GetButton(std::string alias);
 	InputAxis* GetAxis(std::string alias);
 	InputAxis2* GetAxis2(std::string alias);
+	void MapKeys();
+	int GetKey(std::string str);
 
 public:
 	InputManager();
 	~InputManager();
-
+	bool ParseInputConfig(std::string);
 	void BuildControllers();
 
 	void AddButton(std::string alias);

@@ -1,0 +1,67 @@
+#Button menuConfirm
+KeyPress enter
+KeyPress space
+JoyButtonPress 0 xbox
+JoyButtonPress 1 ds4
+
+#Button menuCancel
+KeyPress tab
+JoyButtonPress 1 xbox
+JoyButtonPress 2 ds4
+
+#Button menuUp
+KeyPulse w
+KeyPulse up
+JoyButtonPulse 10 xbox
+JoyButtonPulse 14 ds4
+JoyAxisPulse 1 pos xbox
+JoyAxisPulse 1 pos ds4
+
+#Button menuDown
+KeyPulse s
+KeyPulse down
+JoyButtonPulse 12 xbox
+JoyButtonPulse 16 ds4
+JoyAxisPulse 1 neg xbox
+JoyAxisPulse 1 neg ds4
+
+#Button menuLeft
+KeyPulse a
+KeyPulse left
+JoyButtonPulse 13 xbox
+JoyButtonPulse 17 ds4
+JoyAxisPulse 0 pos xbox
+JoyAxisPulse 0 pos ds4
+
+#Button menuRight
+KeyPulse d
+KeyPulse right
+JoyButtonPulse 11 xbox
+JoyButtonPulse 15 ds4
+JoyAxisPulse 0 neg xbox
+JoyAxisPulse 0 neg ds4
+
+#Button togglePause
+KeyPress escape
+JoyButtonPress 7 xbox
+JoyButtonPress 9 ds4
+
+#Button dodge
+KeyPress left_shift
+JoyButtonPress 5 xbox
+JoyButtonPress 7 ds4
+
+#Button dodge_down
+KeyDown left_shift
+JoyButtonDown 5 xbox
+JoyButtonDown 7 ds4
+
+#Axis2 movement
+Key d a w s
+JoyAxis 0 1 xbox
+JoyAxis 0 1 ds4
+
+#Axis2 aim
+Key right left up down
+JoyAxis 2 3 xbox
+JoyAxis 2 5 ds4

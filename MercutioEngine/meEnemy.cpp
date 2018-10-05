@@ -127,7 +127,7 @@ void Enemy::Update()
 		if (enemyAggro->targets.size() > 0)
 		{
 			state = state = Enemy::persuing;
-			randomTarget = RandInt(0, enemyAggro->targets.size() - 1);
+			randomTarget = RandInt(0, (int)enemyAggro->targets.size() - 1);
 			target = enemyAggro->targets[randomTarget];
 			enemyAggro->SetAwake(false);
 		}

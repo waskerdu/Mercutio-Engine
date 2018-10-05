@@ -67,13 +67,13 @@ void AssetManager::MeshInit()
 		-100000.0f,  100000.0f, 0.0f,   1.0f, 1.0f, 0.0f,		-1000.0f, 1000.0f
 	};
 	meshes.push_back(new Mesh(verts, indices));
-	meshRef["quad"] = meshes.size() - 1;
+	meshRef["quad"] = (int)meshes.size() - 1;
 	meshes.push_back(new Mesh(playerVertices, indices));
-	meshRef["ninja"] = meshes.size() - 1;
+	meshRef["ninja"] = (int)meshes.size() - 1;
 	meshes.push_back(new Mesh(wokVertices, indices));
-	meshRef["wok"] = meshes.size() - 1;
+	meshRef["wok"] = (int)meshes.size() - 1;
 	meshes.push_back(new Mesh(tiling, indices));
-	meshRef["terrain"] = meshes.size() - 1;
+	meshRef["terrain"] = (int)meshes.size() - 1;
 }
 
 void AssetManager::CreateMesh(std::string alias, std::string base, glm::mat4 transform)
@@ -89,7 +89,7 @@ void AssetManager::CreateMesh(std::string alias, std::string base, glm::mat4 tra
 	}
 	meshPtr->Init();
 	meshes.push_back(meshPtr);
-	meshRef[alias] = meshes.size() - 1;
+	meshRef[alias] = (int)meshes.size() - 1;
 	//meshRef.insert(std::pair<std::string, int>(alias, meshes.size() - 1));
 	//std::cout << meshRef.count(alias) << "\n";
 }
@@ -110,7 +110,7 @@ bool AssetManager::LoadSoundBuffer(std::string filename, std::string alias)
 	}
 	else
 	{
-		soundRef[alias] = soundBuffers.size() - 1;
+		soundRef[alias] = (int)soundBuffers.size() - 1;
 		return true;
 	}
 }
@@ -130,7 +130,7 @@ char MultiplyAlpha(char a, char b)
 bool AssetManager::CreateMaterial(std::string alias, std::string textureFilename, std::string shaderAlias)
 {
 	textures.push_back(0);
-	textureRef[alias] = textures.size() - 1;
+	textureRef[alias] = (int)textures.size() - 1;
 	unsigned char* textureData;
 	glGenTextures(1, &textures.back());
 	glBindTexture(GL_TEXTURE_2D, textures.back());
@@ -264,7 +264,7 @@ void AssetManager::FreeSoundBuffers()
 void AssetManager::CreateFont(std::string alias, std::string filename, float width, float height)
 {
 	fonts.push_back(new std::map<GLchar, Character>);
-	fontRef[alias] = fonts.size() - 1;
+	fontRef[alias] = (int)fonts.size() - 1;
 	FT_Face face;
 	if (FT_New_Face(ft, filename.c_str(), 0, &face))
 		std::cout << "ERROR::FREETYPE: Failed to load font" << std::endl;

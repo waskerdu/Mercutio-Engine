@@ -52,7 +52,7 @@ public:
 		glBindVertexArray(GetVAO());
 	}
 	
-	int GetSize() { return vertices.size(); }
+	int GetSize() { return (int)vertices.size(); }
 
 	Mesh(std::vector<float> vertices, std::vector<unsigned int> indices)
 	{

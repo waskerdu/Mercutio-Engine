@@ -34,13 +34,13 @@ void Menu::ChangeSelected()
 {
 	if (loopSelection)
 	{
-		if (selectedIndex < lowestIndex) { selectedIndex = children.size() - 1; }
+		if (selectedIndex < lowestIndex) { selectedIndex = (int)children.size() - 1; }
 		else if (selectedIndex == children.size()) { selectedIndex = lowestIndex; }
 	}
 	else
 	{
 		if (selectedIndex < lowestIndex) { selectedIndex = lowestIndex; }
-		else if (selectedIndex == children.size()) { selectedIndex = children.size() - 1; }
+		else if (selectedIndex == children.size()) { selectedIndex = (int)children.size() - 1; }
 	}
 	message = GetChild(selectedIndex)->alias;
 	SetColors();

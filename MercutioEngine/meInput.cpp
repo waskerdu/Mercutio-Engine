@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "meInput.h"
 #include <iostream>
+#include <fstream>
+#include "meParser.h"
 
 InputManager::InputManager()
 {
@@ -28,6 +30,237 @@ InputManager::~InputManager()
 	}
 }
 
+void InputManager::MapKeys()
+{
+	keyMap["a"] = GLFW_KEY_A;
+	keyMap["b"] = GLFW_KEY_B;
+	keyMap["c"] = GLFW_KEY_C;
+	keyMap["d"] = GLFW_KEY_D;
+	keyMap["e"] = GLFW_KEY_E;
+	keyMap["f"] = GLFW_KEY_F;
+	keyMap["g"] = GLFW_KEY_G;
+
+	keyMap["h"] = GLFW_KEY_H;
+	keyMap["i"] = GLFW_KEY_I;
+	keyMap["j"] = GLFW_KEY_J;
+	keyMap["k"] = GLFW_KEY_K;
+	keyMap["l"] = GLFW_KEY_L;
+	keyMap["m"] = GLFW_KEY_M;
+	keyMap["n"] = GLFW_KEY_N;
+
+	keyMap["o"] = GLFW_KEY_O;
+	keyMap["p"] = GLFW_KEY_P;
+	keyMap["q"] = GLFW_KEY_Q;
+	keyMap["r"] = GLFW_KEY_R;
+	keyMap["s"] = GLFW_KEY_S;
+	keyMap["t"] = GLFW_KEY_T;
+	keyMap["u"] = GLFW_KEY_U;
+
+	keyMap["v"] = GLFW_KEY_V;
+	keyMap["w"] = GLFW_KEY_W;
+	keyMap["x"] = GLFW_KEY_X;
+	keyMap["y"] = GLFW_KEY_Y;
+	keyMap["z"] = GLFW_KEY_Z;
+
+	keyMap["0"] = GLFW_KEY_0;
+	keyMap["1"] = GLFW_KEY_1;
+	keyMap["2"] = GLFW_KEY_2;
+	keyMap["3"] = GLFW_KEY_3;
+	keyMap["4"] = GLFW_KEY_4;
+	keyMap["5"] = GLFW_KEY_5;
+	keyMap["6"] = GLFW_KEY_6;
+	keyMap["7"] = GLFW_KEY_7;
+	keyMap["8"] = GLFW_KEY_8;
+	keyMap["9"] = GLFW_KEY_9;
+
+	keyMap["`"] = GLFW_KEY_GRAVE_ACCENT;
+	keyMap["-"] = GLFW_KEY_MINUS;
+	keyMap["="] = GLFW_KEY_EQUAL;
+	keyMap["["] = GLFW_KEY_LEFT_BRACKET;
+	keyMap["]"] = GLFW_KEY_RIGHT_BRACKET;
+	keyMap[";"] = GLFW_KEY_SEMICOLON;
+	keyMap["'"] = GLFW_KEY_APOSTROPHE;
+	keyMap[","] = GLFW_KEY_COMMA;
+	keyMap["."] = GLFW_KEY_PERIOD;
+	keyMap["/"] = GLFW_KEY_SLASH;
+	keyMap["\\"] = GLFW_KEY_BACKSLASH;
+
+	keyMap["up"] = GLFW_KEY_UP;
+	keyMap["down"] = GLFW_KEY_DOWN;
+	keyMap["left"] = GLFW_KEY_LEFT;
+	keyMap["right"] = GLFW_KEY_RIGHT;
+
+	keyMap["escape"] = GLFW_KEY_ESCAPE;
+	keyMap["tab"] = GLFW_KEY_TAB;
+	keyMap["backspace"] = GLFW_KEY_BACKSPACE;
+	keyMap["enter"] = GLFW_KEY_ENTER;
+	keyMap["space"] = GLFW_KEY_SPACE;
+
+	keyMap["left_ctrl"] = GLFW_KEY_LEFT_CONTROL;
+	keyMap["right_ctrl"] = GLFW_KEY_RIGHT_CONTROL;
+
+	keyMap["left_shift"] = GLFW_KEY_LEFT_SHIFT;
+	keyMap["right_shift"] = GLFW_KEY_RIGHT_SHIFT;
+
+	keyMap["left_alt"] = GLFW_KEY_LEFT_ALT;
+	keyMap["right_alt"] = GLFW_KEY_RIGHT_ALT;
+}
+
+int InputManager::GetKey(std::string str)
+{
+	if (keyMap.count(str) == 1)
+	{
+		return keyMap[str];
+	}
+	else
+	{
+		std::cout << "Key " << str << " not found.";
+		return -1;
+	}
+}
+
+bool InputManager::ParseInputConfig(std::string config)
+{
+	std::fstream file;
+	std::string line;
+	std::vector<std::string> parsedLine;
+	int index;
+
+	ParseMode::Mode mode = ParseMode::none;
+	bool inComment = false;
+	bool ok = true;
+	std::string current;
+
+	double pulseDelay = 0.5;
+	double pulseLength = 0.2;
+	double axisThreshold = 0.5;
+
+	file.open(config.c_str());
+	if (!file.is_open())
+	{
+		std::cout << "Input config file failed to open.\n";
+		return false;
+	}
+	MapKeys();
+	while (std::getline(file, line))
+	{
+		Parser(line, parsedLine);
+		if (parsedLine.size() == 0) { continue; }
+		if (parsedLine[0][0] == '*') { inComment = !inComment; }
+		if (inComment) { continue; }
+		
+		if (parsedLine[0] == "#Button") 
+		{ 
+			mode = ParseMode::Button; 
+			current = parsedLine[1];
+			AddButton(current); 
+		}
+		else if (parsedLine[0] == "#Axis")
+		{ 
+			mode = ParseMode::Axis; AddButton(parsedLine[1]); 
+			current = parsedLine[1];
+			AddAxis(current);
+		}
+		else if (parsedLine[0] == "#Axis2") 
+		{ 
+			mode = ParseMode::Axis2; 
+			current = parsedLine[1];
+			AddAxis2(current);
+		}
+		else
+		{
+			switch (mode)
+			{
+			case InputManager::ParseMode::Button:
+				if (parsedLine[0] == "KeyPress")
+				{
+					index = GetKey(parsedLine[1]);
+					if (index != -1)
+					{
+						ButtonAddKeyPress(current,index);
+					}
+				}
+				else if (parsedLine[0] == "JoyButtonPress")
+				{
+					//key = GetKey(parsedLine[1]);
+					index = std::stoi(parsedLine[1]);
+					ButtonAddJoyButtonPress(current, index, parsedLine[2]=="ds4");
+				}
+				else if (parsedLine[0] == "KeyDown")
+				{
+					index = GetKey(parsedLine[1]);
+					if (index != -1)
+					{
+						ButtonAddKeyDown(current, index);
+					}
+				}
+				else if (parsedLine[0] == "JoyButtonDown")
+				{
+					//key = GetKey(parsedLine[1]);
+					index = std::stoi(parsedLine[1]);
+					ButtonAddJoyButtonDown(current, index, parsedLine[2] == "ds4");
+				}
+				else if (parsedLine[0] == "KeyPulse")
+				{
+					index = GetKey(parsedLine[1]);
+					if (index != -1)
+					{
+						ButtonAddKeyPulse(current, index, pulseLength, pulseDelay);
+					}
+				}
+				else if (parsedLine[0] == "JoyButtonPulse")
+				{
+					//key = GetKey(parsedLine[1]);
+					index = std::stoi(parsedLine[1]);
+					ButtonAddJoyButtonPulse(current, index, pulseLength, pulseDelay, parsedLine[2] == "ds4");
+				}
+				else if (parsedLine[0] == "JoyAxisPulse")
+				{
+					//key = GetKey(parsedLine[1]);
+					index = std::stoi(parsedLine[1]);
+					bool inv = false;
+					double currentThreshold = axisThreshold;
+					if (parsedLine[2] == "neg") { inv = !inv; }
+					if (parsedLine[3] == "ds4" && (index == 1 || index == 5)) { inv = !inv; }
+					if (inv) { currentThreshold = -currentThreshold; }
+					ButtonAddJoyAxisPulse(current, index, pulseLength, pulseDelay, currentThreshold, inv, parsedLine[3] == "ds4");/**/
+					//std::cout << current << " " << index << " " << pulseLength << " " << pulseDelay << " " << currentThreshold << " " << inv << " " << (parsedLine[3] == "ds4") << "\n";
+					//ButtonAddJoyButtonPress(current, index, parsedLine[2] == "ds4");
+				}
+				else
+				{
+					std::cout << parsedLine[0] << " not recognized\n";
+				}
+				break;
+			case InputManager::ParseMode::Axis:
+				break;
+			case InputManager::ParseMode::Axis2:
+				ok = true;
+				if (parsedLine[0] == "Key")
+				{
+					for (size_t i = 0; i < 4; i++)
+					{
+						if (GetKey(parsedLine[1 + i]) == -1) { ok = false; }
+					}
+					if (ok == false) { continue; }
+					Axis2AddKey(current, GetKey(parsedLine[1]), GetKey(parsedLine[2]), GetKey(parsedLine[3]), GetKey(parsedLine[4]));
+				}
+				else if (parsedLine[0] == "JoyAxis")
+				{
+					Axis2AddJoyAxis(current, std::stoi(parsedLine[1]), std::stoi(parsedLine[2]), parsedLine[3]=="ds4");
+				}
+				break;
+			case InputManager::ParseMode::none:
+				break;
+			default:
+				break;
+			}
+		}
+	}
+
+	return true;
+}
+
 void InputManager::BuildControllers()
 {
 	mkController = new InputController(&inputButtons, &inputButtonMap, &inputAxes, &inputAxisMap, &inputAxes2, &inputAxis2Map);
@@ -44,7 +277,7 @@ void InputManager::AddButton(std::string alias)
 {
 	if (inputButtonMap.count(alias) == 0)
 	{
-		inputButtonMap[alias] = inputButtons.size();
+		inputButtonMap[alias] = (int)inputButtons.size();
 		inputButtons.push_back(new InputButton());
 	}
 	else
@@ -56,7 +289,7 @@ void InputManager::AddAxis(std::string alias)
 {
 	if (inputAxisMap.count(alias) == 0)
 	{
-		inputAxisMap[alias] = inputAxes.size();
+		inputAxisMap[alias] = (int)inputAxes.size();
 		inputAxes.push_back(new InputAxis());
 	}
 	else
@@ -68,7 +301,7 @@ void InputManager::AddAxis2(std::string alias)
 {
 	if (inputAxis2Map.count(alias) == 0)
 	{
-		inputAxis2Map[alias] = inputAxes2.size();
+		inputAxis2Map[alias] = (int)inputAxes2.size();
 		inputAxes2.push_back(new InputAxis2());
 	}
 	else
@@ -686,15 +919,15 @@ void InputController::SetAxis2SensitivityY(std::string alias, double sensitivity
 
 void InputController::SetXbox()
 {
-	SetAxis2InvertY("movement", false);
-	SetAxis2InvertY("aim", false);
+	//SetAxis2InvertY("movement", false);
+	//SetAxis2InvertY("aim", false);
 	controllerType = InputController::xbox;
 }
 
 void InputController::SetDualShock()
 {
-	SetAxis2InvertY("movement", true);
-	SetAxis2InvertY("aim", true);
+	//SetAxis2InvertY("movement", true);
+	//SetAxis2InvertY("aim", true);
 	controllerType = InputController::dualShock;
 }
 

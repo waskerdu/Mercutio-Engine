@@ -146,7 +146,7 @@ void Engine::EntityUpdate()
 
 void Engine::FixedUpdate()
 {
-	int numEntities = worldPtr->entities.size();
+	int numEntities = (int)worldPtr->entities.size();
 	for (unsigned int i = 0; i < worldPtr->entities.size(); i++)
 	{
 		worldPtr->entities[i]->physObject.PhysUpdate();
@@ -156,7 +156,7 @@ void Engine::FixedUpdate()
 
 void Engine::PhysicsUpdate()
 {
-	unsigned int numEntities = worldPtr->entities.size();
+	unsigned int numEntities = (unsigned int)worldPtr->entities.size();
 	for each (Entity* ent in worldPtr->entities)
 	{
 		ent->boundingBox.transform.position = ent->transform.position;

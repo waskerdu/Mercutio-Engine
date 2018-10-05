@@ -5,7 +5,7 @@ int FirstCharIndex(std::string str, int startIndex)
 {
 	for (size_t i = startIndex; i < str.length(); i++)
 	{
-		if (str[i] != ' ' && str[i] != '\t') { return i; }
+		if (str[i] != ' ' && str[i] != '\t') { return (int)i; }
 	}
 	return -1;
 }

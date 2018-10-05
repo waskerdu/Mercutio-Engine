@@ -166,13 +166,13 @@ void Actor::ManageDash()
 			physObject.velocity = glm::normalize(physObject.velocity)*dodgeSpeed;
 
 			moveAngle = glm::atan(physObject.velocity.y, physObject.velocity.x);
-			GetChild(children.size() - 1)->SetAwake(true);
-			GetChild(children.size() - 1)->transform.Rotate(glm::vec3(0, 0, moveAngle));
+			GetChild((int)children.size() - 1)->SetAwake(true);
+			GetChild((int)children.size() - 1)->transform.Rotate(glm::vec3(0, 0, moveAngle));
 		}
 		else
 		{
 			physObject.velocity = movement*speed;
-			GetChild(children.size() - 1)->SetAwake(false);
+			GetChild((int)children.size() - 1)->SetAwake(false);
 		}
 		break;
 	case Actor::Dashes::teleport:

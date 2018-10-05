@@ -1,0 +1,66 @@
+﻿meActor.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: class sf::SoundBuffer const * __cdecl sf::Sound::getBuffer(void)const " (__imp_?getBuffer@Sound@sf@@QEBAPEBVSoundBuffer@2@XZ)
+meActor.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::Sound::Sound(void)" (__imp_??0Sound@sf@@QEAA@XZ)
+meActor.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: virtual __cdecl sf::Sound::~Sound(void)" (__imp_??1Sound@sf@@UEAA@XZ)
+meActor.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::Sound::Sound(class sf::Sound const &)" (__imp_??0Sound@sf@@QEAA@AEBV01@@Z)
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewGenVertexArrays
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewGenBuffers
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewBindVertexArray
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewBindBuffer
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewBufferData
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewVertexAttribPointer
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewEnableVertexAttribArray
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewUseProgram
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewUniform1i
+meAssetManager.obj : error LNK2001: unresolved external symbol FT_Done_FreeType
+meAssetManager.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::SoundBuffer::SoundBuffer(void)" (__imp_??0SoundBuffer@sf@@QEAA@XZ)
+meAssetManager.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: bool __cdecl sf::SoundBuffer::loadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (__imp_?loadFromFile@SoundBuffer@sf@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+meAssetManager.obj : error LNK2001: unresolved external symbol __glewGenerateMipmap
+meAssetManager.obj : error LNK2001: unresolved external symbol glfwGetMonitors
+meAssetManager.obj : error LNK2001: unresolved external symbol glfwGetVideoMode
+meAssetManager.obj : error LNK2001: unresolved external symbol glfwWindowHint
+meAssetManager.obj : error LNK2001: unresolved external symbol glfwSetWindowMonitor
+meAssetManager.obj : error LNK2001: unresolved external symbol glfwSetWindowSize
+meAssetManager.obj : error LNK2001: unresolved external symbol glfwCreateWindow
+meAssetManager.obj : error LNK2001: unresolved external symbol glfwTerminate
+meAssetManager.obj : error LNK2001: unresolved external symbol glfwMakeContextCurrent
+meAssetManager.obj : error LNK2001: unresolved external symbol glewInit
+meAssetManager.obj : error LNK2001: unresolved external symbol glewGetErrorString
+meAssetManager.obj : error LNK2001: unresolved external symbol FT_Init_FreeType
+meAssetManager.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __cdecl sf::SoundBuffer::~SoundBuffer(void)" (__imp_??1SoundBuffer@sf@@QEAA@XZ)
+meAssetManager.obj : error LNK2001: unresolved external symbol FT_New_Face
+meAssetManager.obj : error LNK2001: unresolved external symbol FT_Set_Pixel_Sizes
+meAssetManager.obj : error LNK2001: unresolved external symbol FT_Load_Char
+meAssetManager.obj : error LNK2001: unresolved external symbol FT_Done_Face
+meEngine.obj : error LNK2001: unresolved external symbol glfwGetTime
+meEngine.obj : error LNK2001: unresolved external symbol glfwSetWindowShouldClose
+meEntity.obj : error LNK2001: unresolved external symbol __glewActiveTexture
+meEntity.obj : error LNK2001: unresolved external symbol __glewUniformMatrix4fv
+meEntity.obj : error LNK2001: unresolved external symbol __glewUniform1f
+meInput.obj : error LNK2001: unresolved external symbol glfwJoystickPresent
+meInput.obj : error LNK2001: unresolved external symbol glfwGetJoystickName
+meInput.obj : error LNK2001: unresolved external symbol glfwGetJoystickAxes
+meInput.obj : error LNK2001: unresolved external symbol glfwGetJoystickButtons
+meInput.obj : error LNK2001: unresolved external symbol glfwGetKey
+meInput.obj : error LNK2001: unresolved external symbol glfwGetCursorPos
+meInput.obj : error LNK2001: unresolved external symbol glfwGetMouseButton
+MercutioEngine.obj : error LNK2001: unresolved external symbol glfwInit
+MercutioEngine.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: void __cdecl sf::Sound::setBuffer(class sf::SoundBuffer const &)" (__imp_?setBuffer@Sound@sf@@QEAAXAEBVSoundBuffer@2@@Z)
+meRender.obj : error LNK2001: unresolved external symbol glfwGetFramebufferSize
+meRender.obj : error LNK2001: unresolved external symbol __glewUniform3f
+meRender.obj : error LNK2001: unresolved external symbol __glewBufferSubData
+meRender.obj : error LNK2001: unresolved external symbol glfwSwapInterval
+meRender.obj : error LNK2001: unresolved external symbol glfwSwapBuffers
+meRender.obj : error LNK2001: unresolved external symbol glfwPollEvents
+shaderset.obj : error LNK2001: unresolved external symbol __glewDeleteShader
+shaderset.obj : error LNK2001: unresolved external symbol __glewDeleteProgram
+shaderset.obj : error LNK2001: unresolved external symbol __glewCreateShader
+shaderset.obj : error LNK2001: unresolved external symbol __glewCreateProgram
+shaderset.obj : error LNK2001: unresolved external symbol __glewAttachShader
+shaderset.obj : error LNK2001: unresolved external symbol __glewShaderSource
+shaderset.obj : error LNK2001: unresolved external symbol __glewCompileShader
+shaderset.obj : error LNK2001: unresolved external symbol __glewGetShaderiv
+shaderset.obj : error LNK2001: unresolved external symbol __glewGetShaderInfoLog
+shaderset.obj : error LNK2001: unresolved external symbol __glewLinkProgram
+shaderset.obj : error LNK2001: unresolved external symbol __glewGetProgramiv
+shaderset.obj : error LNK2001: unresolved external symbol __glewGetProgramInfoLog
+C:\Users\riley\documents\visual studio 2015\Projects\MercutioEngine\x64\Release\MercutioEngine.exe : fatal error LNK1120: 65 unresolved externals

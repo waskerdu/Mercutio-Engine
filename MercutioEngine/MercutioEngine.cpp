@@ -58,86 +58,91 @@ int main()
 	renderer.debugShader = assetManager.GetShader("wireframe");
 
 	InputManager inputManager;
-	double pulseDelay = 0.5;
-	double pulseLength = 0.2;
-	inputManager.AddButton("debug");
-	inputManager.ButtonAddKeyPress("debug", GLFW_KEY_T);
+	inputManager.ParseInputConfig("assets/input_config.txt");
+	//if (inputManager.ParseInputConfig("assets/input_config.txt") == false)
+	if(true)
+	{
+		double pulseDelay = 0.5;
+		double pulseLength = 0.2;
+		inputManager.AddButton("debug");
+		inputManager.ButtonAddKeyPress("debug", GLFW_KEY_T);
 
-	inputManager.AddButton("suicide");
-	inputManager.ButtonAddKeyPress("suicide", GLFW_KEY_R);
-	inputManager.ButtonAddJoyButtonPress("suicide", 6, false);
+		inputManager.AddButton("suicide");
+		inputManager.ButtonAddKeyPress("suicide", GLFW_KEY_R);
+		inputManager.ButtonAddJoyButtonPress("suicide", 6, false);
 
-	inputManager.AddButton("menuConfirm");
-	inputManager.ButtonAddKeyPress("menuConfirm", GLFW_KEY_ENTER);
-	inputManager.ButtonAddKeyPress("menuConfirm", GLFW_KEY_SPACE);
-	inputManager.ButtonAddJoyButtonPress("menuConfirm", 0, false);
-	inputManager.ButtonAddJoyButtonPress("menuConfirm", 1, true);
+		/*inputManager.AddButton("menuConfirm");
+		inputManager.ButtonAddKeyPress("menuConfirm", GLFW_KEY_ENTER);
+		inputManager.ButtonAddKeyPress("menuConfirm", GLFW_KEY_SPACE);
+		inputManager.ButtonAddJoyButtonPress("menuConfirm", 0, false);
+		inputManager.ButtonAddJoyButtonPress("menuConfirm", 1, true);/**/
 
-	inputManager.AddButton("menuCancel");
-	inputManager.ButtonAddKeyPress("menuCancel", GLFW_KEY_TAB);
-	inputManager.ButtonAddJoyButtonPress("menuCancel", 1, false);
-	inputManager.ButtonAddJoyButtonPress("menuCancel", 2, true);
+		/*inputManager.AddButton("menuCancel");
+		inputManager.ButtonAddKeyPress("menuCancel", GLFW_KEY_TAB);
+		inputManager.ButtonAddJoyButtonPress("menuCancel", 1, false);
+		inputManager.ButtonAddJoyButtonPress("menuCancel", 2, true);/**/
 
-	inputManager.AddButton("togglePause");
-	inputManager.ButtonAddKeyPress("togglePause", GLFW_KEY_ESCAPE);
-	inputManager.ButtonAddJoyButtonPress("togglePause", 7, false);
-	inputManager.ButtonAddJoyButtonPress("togglePause", 9, true);
+		/*inputManager.AddButton("togglePause");
+		inputManager.ButtonAddKeyPress("togglePause", GLFW_KEY_ESCAPE);
+		inputManager.ButtonAddJoyButtonPress("togglePause", 7, false);
+		inputManager.ButtonAddJoyButtonPress("togglePause", 9, true);
 
-	inputManager.AddButton("menuUp");
-	inputManager.ButtonAddKeyPulse("menuUp", GLFW_KEY_W, pulseLength, pulseDelay);
-	inputManager.ButtonAddKeyPulse("menuUp", GLFW_KEY_UP, pulseLength, pulseDelay);
-	inputManager.ButtonAddJoyButtonPulse("menuUp", 10, pulseLength, pulseDelay, false);
-	inputManager.ButtonAddJoyButtonPulse("menuUp", 14, pulseLength, pulseDelay, true);
-	inputManager.ButtonAddJoyAxisPulse("menuUp", 1, pulseLength, pulseDelay, 0.5, false, false);
-	inputManager.ButtonAddJoyAxisPulse("menuUp", 1, pulseLength, pulseDelay, -0.5, true, true);
+		/*inputManager.AddButton("menuUp");
+		inputManager.ButtonAddKeyPulse("menuUp", GLFW_KEY_W, pulseLength, pulseDelay);
+		inputManager.ButtonAddKeyPulse("menuUp", GLFW_KEY_UP, pulseLength, pulseDelay);
+		inputManager.ButtonAddJoyButtonPulse("menuUp", 10, pulseLength, pulseDelay, false);
+		inputManager.ButtonAddJoyButtonPulse("menuUp", 14, pulseLength, pulseDelay, true);
+		
+		inputManager.ButtonAddJoyAxisPulse("menuUp", 1, pulseLength, pulseDelay, -0.5, true, true);
 
-	inputManager.AddButton("menuDown");
-	inputManager.ButtonAddKeyPulse("menuDown", GLFW_KEY_S, pulseLength, pulseDelay);
-	inputManager.ButtonAddKeyPulse("menuDown", GLFW_KEY_DOWN, pulseLength, pulseDelay);
-	inputManager.ButtonAddJoyButtonPulse("menuDown", 12, pulseLength, pulseDelay, false);
-	inputManager.ButtonAddJoyButtonPulse("menuDown", 16, pulseLength, pulseDelay, true);
-	inputManager.ButtonAddJoyAxisPulse("menuDown", 1, pulseLength, pulseDelay, -0.5, true, false);
-	inputManager.ButtonAddJoyAxisPulse("menuDown", 1, pulseLength, pulseDelay, 0.5, false, true);
+		inputManager.AddButton("menuDown");
+		inputManager.ButtonAddKeyPulse("menuDown", GLFW_KEY_S, pulseLength, pulseDelay);
+		inputManager.ButtonAddKeyPulse("menuDown", GLFW_KEY_DOWN, pulseLength, pulseDelay);
+		inputManager.ButtonAddJoyButtonPulse("menuDown", 12, pulseLength, pulseDelay, false);
+		inputManager.ButtonAddJoyButtonPulse("menuDown", 16, pulseLength, pulseDelay, true);
+		inputManager.ButtonAddJoyAxisPulse("menuDown", 1, pulseLength, pulseDelay, -0.5, true, false);
+		inputManager.ButtonAddJoyAxisPulse("menuDown", 1, pulseLength, pulseDelay, 0.5, false, true);/**/
 
-	inputManager.AddButton("menuLeft");
-	inputManager.ButtonAddKeyPulse("menuLeft", GLFW_KEY_A, pulseLength, pulseDelay);
-	inputManager.ButtonAddKeyPulse("menuLeft", GLFW_KEY_LEFT, pulseLength, pulseDelay);
-	inputManager.ButtonAddJoyButtonPulse("menuLeft", 13, pulseLength, pulseDelay, false);
-	inputManager.ButtonAddJoyButtonPulse("menuLeft", 17, pulseLength, pulseDelay, true);
-	inputManager.ButtonAddJoyAxisPulse("menuLeft", 0, pulseLength, pulseDelay, 0.5, false, false);
-	inputManager.ButtonAddJoyAxisPulse("menuLeft", 0, pulseLength, pulseDelay, -0.5, true, true);
+		/*inputManager.AddButton("menuLeft");
+		inputManager.ButtonAddKeyPulse("menuLeft", GLFW_KEY_A, pulseLength, pulseDelay);
+		inputManager.ButtonAddKeyPulse("menuLeft", GLFW_KEY_LEFT, pulseLength, pulseDelay);
+		inputManager.ButtonAddJoyButtonPulse("menuLeft", 13, pulseLength, pulseDelay, false);
+		inputManager.ButtonAddJoyButtonPulse("menuLeft", 17, pulseLength, pulseDelay, true);
+		inputManager.ButtonAddJoyAxisPulse("menuLeft", 0, pulseLength, pulseDelay, 0.5, false, false);
+		inputManager.ButtonAddJoyAxisPulse("menuLeft", 0, pulseLength, pulseDelay, -0.5, true, true);
 
-	inputManager.AddButton("menuRight");
-	inputManager.ButtonAddKeyPulse("menuRight", GLFW_KEY_D, pulseLength, pulseDelay);
-	inputManager.ButtonAddKeyPulse("menuRight", GLFW_KEY_RIGHT, pulseLength, pulseDelay);
-	inputManager.ButtonAddJoyButtonPulse("menuRight", 11, pulseLength, pulseDelay, false);
-	inputManager.ButtonAddJoyButtonPulse("menuRight", 15, pulseLength, pulseDelay, true);
-	inputManager.ButtonAddJoyAxisPulse("menuRight", 0, pulseLength, pulseDelay, -0.5, true, false);
-	inputManager.ButtonAddJoyAxisPulse("menuDown", 0, pulseLength, pulseDelay, 0.5, false, true);
+		inputManager.AddButton("menuRight");
+		inputManager.ButtonAddKeyPulse("menuRight", GLFW_KEY_D, pulseLength, pulseDelay);
+		inputManager.ButtonAddKeyPulse("menuRight", GLFW_KEY_RIGHT, pulseLength, pulseDelay);
+		inputManager.ButtonAddJoyButtonPulse("menuRight", 11, pulseLength, pulseDelay, false);
+		inputManager.ButtonAddJoyButtonPulse("menuRight", 15, pulseLength, pulseDelay, true);
+		inputManager.ButtonAddJoyAxisPulse("menuRight", 0, pulseLength, pulseDelay, -0.5, true, false);
+		inputManager.ButtonAddJoyAxisPulse("menuDown", 0, pulseLength, pulseDelay, 0.5, false, true);/**/
 
-	inputManager.AddButton("dodge");
-	inputManager.ButtonAddKeyPress("dodge", GLFW_KEY_LEFT_SHIFT);
-	inputManager.ButtonAddJoyButtonPress("dodge", 5, false);
-	inputManager.ButtonAddJoyButtonPress("dodge", 7, true);
+		/*inputManager.AddButton("dodge");
+		inputManager.ButtonAddKeyPress("dodge", GLFW_KEY_LEFT_SHIFT);
+		inputManager.ButtonAddJoyButtonPress("dodge", 5, false);
+		inputManager.ButtonAddJoyButtonPress("dodge", 7, true);
 
-	inputManager.AddButton("dodge_down");
-	inputManager.ButtonAddKeyDown("dodge_down", GLFW_KEY_LEFT_SHIFT);
-	inputManager.ButtonAddJoyButtonDown("dodge_down", 5, false);
-	inputManager.ButtonAddJoyButtonDown("dodge_down", 7, true);
+		inputManager.AddButton("dodge_down");
+		inputManager.ButtonAddKeyDown("dodge_down", GLFW_KEY_LEFT_SHIFT);
+		inputManager.ButtonAddJoyButtonDown("dodge_down", 5, false);
+		inputManager.ButtonAddJoyButtonDown("dodge_down", 7, true);/**/
+
+		/*inputManager.AddAxis2("movement");
+		inputManager.Axis2AddJoyAxis("movement", 0, 1, false);
+		inputManager.Axis2AddJoyAxis("movement", 0, 1, true);
+		inputManager.Axis2AddKey("movement", GLFW_KEY_D, GLFW_KEY_A, GLFW_KEY_W, GLFW_KEY_S);
+
+		inputManager.AddAxis2("aim");
+		inputManager.Axis2AddJoyAxis("aim", 2, 3, false);
+		inputManager.Axis2AddJoyAxis("aim", 2, 5, true);
+		inputManager.Axis2AddKey("aim", GLFW_KEY_RIGHT, GLFW_KEY_LEFT, GLFW_KEY_UP, GLFW_KEY_DOWN);/**/
+		inputManager.BuildControllers();
+
+		//inputManager.controllers[0]->SetAxis2Deadzone("movement", 0.5);
+	}
 	
-	inputManager.AddAxis2("movement");
-	inputManager.Axis2AddJoyAxis("movement", 0, 1, false);
-	inputManager.Axis2AddJoyAxis("movement", 0, 1, true);
-	inputManager.Axis2AddKey("movement", GLFW_KEY_D, GLFW_KEY_A, GLFW_KEY_W, GLFW_KEY_S);
-
-	inputManager.AddAxis2("aim");
-	inputManager.Axis2AddJoyAxis("aim", 2, 3, false);
-	inputManager.Axis2AddJoyAxis("aim", 2, 5, true);
-	inputManager.Axis2AddKey("aim", GLFW_KEY_RIGHT, GLFW_KEY_LEFT, GLFW_KEY_UP, GLFW_KEY_DOWN);
-	inputManager.BuildControllers();
-
-	inputManager.controllers[0]->SetAxis2Deadzone("movement", 0.5);
-
 	SceneManager* sceneManager = new SceneManager();
 	sceneManager->spawning = false;
 	world.AddEntity(sceneManager);/**/
