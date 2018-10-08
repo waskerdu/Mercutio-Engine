@@ -25,6 +25,7 @@
 #include "wokNavNode.h"
 #include "wokPressurePlate.h"
 #include "wokDoor.h"
+#include "meMenuManager.h"
 
 int main()
 {
@@ -59,89 +60,15 @@ int main()
 
 	InputManager inputManager;
 	inputManager.ParseInputConfig("assets/input_config.txt");
-	//if (inputManager.ParseInputConfig("assets/input_config.txt") == false)
-	if(true)
-	{
-		double pulseDelay = 0.5;
-		double pulseLength = 0.2;
-		inputManager.AddButton("debug");
-		inputManager.ButtonAddKeyPress("debug", GLFW_KEY_T);
+	double pulseDelay = 0.5;
+	double pulseLength = 0.2;
+	inputManager.AddButton("debug");
+	inputManager.ButtonAddKeyPress("debug", GLFW_KEY_T);
 
-		inputManager.AddButton("suicide");
-		inputManager.ButtonAddKeyPress("suicide", GLFW_KEY_R);
-		inputManager.ButtonAddJoyButtonPress("suicide", 6, false);
-
-		/*inputManager.AddButton("menuConfirm");
-		inputManager.ButtonAddKeyPress("menuConfirm", GLFW_KEY_ENTER);
-		inputManager.ButtonAddKeyPress("menuConfirm", GLFW_KEY_SPACE);
-		inputManager.ButtonAddJoyButtonPress("menuConfirm", 0, false);
-		inputManager.ButtonAddJoyButtonPress("menuConfirm", 1, true);/**/
-
-		/*inputManager.AddButton("menuCancel");
-		inputManager.ButtonAddKeyPress("menuCancel", GLFW_KEY_TAB);
-		inputManager.ButtonAddJoyButtonPress("menuCancel", 1, false);
-		inputManager.ButtonAddJoyButtonPress("menuCancel", 2, true);/**/
-
-		/*inputManager.AddButton("togglePause");
-		inputManager.ButtonAddKeyPress("togglePause", GLFW_KEY_ESCAPE);
-		inputManager.ButtonAddJoyButtonPress("togglePause", 7, false);
-		inputManager.ButtonAddJoyButtonPress("togglePause", 9, true);
-
-		/*inputManager.AddButton("menuUp");
-		inputManager.ButtonAddKeyPulse("menuUp", GLFW_KEY_W, pulseLength, pulseDelay);
-		inputManager.ButtonAddKeyPulse("menuUp", GLFW_KEY_UP, pulseLength, pulseDelay);
-		inputManager.ButtonAddJoyButtonPulse("menuUp", 10, pulseLength, pulseDelay, false);
-		inputManager.ButtonAddJoyButtonPulse("menuUp", 14, pulseLength, pulseDelay, true);
-		
-		inputManager.ButtonAddJoyAxisPulse("menuUp", 1, pulseLength, pulseDelay, -0.5, true, true);
-
-		inputManager.AddButton("menuDown");
-		inputManager.ButtonAddKeyPulse("menuDown", GLFW_KEY_S, pulseLength, pulseDelay);
-		inputManager.ButtonAddKeyPulse("menuDown", GLFW_KEY_DOWN, pulseLength, pulseDelay);
-		inputManager.ButtonAddJoyButtonPulse("menuDown", 12, pulseLength, pulseDelay, false);
-		inputManager.ButtonAddJoyButtonPulse("menuDown", 16, pulseLength, pulseDelay, true);
-		inputManager.ButtonAddJoyAxisPulse("menuDown", 1, pulseLength, pulseDelay, -0.5, true, false);
-		inputManager.ButtonAddJoyAxisPulse("menuDown", 1, pulseLength, pulseDelay, 0.5, false, true);/**/
-
-		/*inputManager.AddButton("menuLeft");
-		inputManager.ButtonAddKeyPulse("menuLeft", GLFW_KEY_A, pulseLength, pulseDelay);
-		inputManager.ButtonAddKeyPulse("menuLeft", GLFW_KEY_LEFT, pulseLength, pulseDelay);
-		inputManager.ButtonAddJoyButtonPulse("menuLeft", 13, pulseLength, pulseDelay, false);
-		inputManager.ButtonAddJoyButtonPulse("menuLeft", 17, pulseLength, pulseDelay, true);
-		inputManager.ButtonAddJoyAxisPulse("menuLeft", 0, pulseLength, pulseDelay, 0.5, false, false);
-		inputManager.ButtonAddJoyAxisPulse("menuLeft", 0, pulseLength, pulseDelay, -0.5, true, true);
-
-		inputManager.AddButton("menuRight");
-		inputManager.ButtonAddKeyPulse("menuRight", GLFW_KEY_D, pulseLength, pulseDelay);
-		inputManager.ButtonAddKeyPulse("menuRight", GLFW_KEY_RIGHT, pulseLength, pulseDelay);
-		inputManager.ButtonAddJoyButtonPulse("menuRight", 11, pulseLength, pulseDelay, false);
-		inputManager.ButtonAddJoyButtonPulse("menuRight", 15, pulseLength, pulseDelay, true);
-		inputManager.ButtonAddJoyAxisPulse("menuRight", 0, pulseLength, pulseDelay, -0.5, true, false);
-		inputManager.ButtonAddJoyAxisPulse("menuDown", 0, pulseLength, pulseDelay, 0.5, false, true);/**/
-
-		/*inputManager.AddButton("dodge");
-		inputManager.ButtonAddKeyPress("dodge", GLFW_KEY_LEFT_SHIFT);
-		inputManager.ButtonAddJoyButtonPress("dodge", 5, false);
-		inputManager.ButtonAddJoyButtonPress("dodge", 7, true);
-
-		inputManager.AddButton("dodge_down");
-		inputManager.ButtonAddKeyDown("dodge_down", GLFW_KEY_LEFT_SHIFT);
-		inputManager.ButtonAddJoyButtonDown("dodge_down", 5, false);
-		inputManager.ButtonAddJoyButtonDown("dodge_down", 7, true);/**/
-
-		/*inputManager.AddAxis2("movement");
-		inputManager.Axis2AddJoyAxis("movement", 0, 1, false);
-		inputManager.Axis2AddJoyAxis("movement", 0, 1, true);
-		inputManager.Axis2AddKey("movement", GLFW_KEY_D, GLFW_KEY_A, GLFW_KEY_W, GLFW_KEY_S);
-
-		inputManager.AddAxis2("aim");
-		inputManager.Axis2AddJoyAxis("aim", 2, 3, false);
-		inputManager.Axis2AddJoyAxis("aim", 2, 5, true);
-		inputManager.Axis2AddKey("aim", GLFW_KEY_RIGHT, GLFW_KEY_LEFT, GLFW_KEY_UP, GLFW_KEY_DOWN);/**/
-		inputManager.BuildControllers();
-
-		//inputManager.controllers[0]->SetAxis2Deadzone("movement", 0.5);
-	}
+	inputManager.AddButton("suicide");
+	inputManager.ButtonAddKeyPress("suicide", GLFW_KEY_R);
+	inputManager.ButtonAddJoyButtonPress("suicide", 6, false);
+	inputManager.BuildControllers();
 	
 	SceneManager* sceneManager = new SceneManager();
 	sceneManager->spawning = false;
@@ -185,7 +112,6 @@ int main()
 	actor->materialPtr = assetManager.GetMaterial("red");
 	actor->meshPtr = assetManager.GetMesh("quad");
 	actor->shootSound.setBuffer(*assetManager.GetSoundBuffer("shoot"));
-	//actor->transform.scale.y = 1.3f;
 	actor->transform.scale *= 2.0f;
 	actor->collides = true;
 	actor->redMatter = assetManager.GetMaterial("red");
@@ -194,6 +120,9 @@ int main()
 	actor->tanMatter = assetManager.GetMaterial("tan");
 	actor->ninjaMatter= assetManager.GetMaterial("ninja");
 	actor->controller = inputManager.aggregateController;
+	actor->numFrames = 3;
+	actor->currentFrame = 1;
+	actor->flip = -1.0f;
 	world.AddPrototype(actor);
 
 	Entity* belt1 = new Entity();
@@ -244,7 +173,6 @@ int main()
 	projectile->physObject.drag = 5;
 	projectile->staticP = staticP;
 	projectile->speed = 1200;
-	//projectile->explodes = true;
 	world.AddPrototype(projectile);/**/
 
 	//add projectiles to actor. actors no longer spawn their own
@@ -290,7 +218,6 @@ int main()
 	chopstick->materialPtr = assetManager.GetMaterial("chopstick");
 	chopstick->boundingBox.transform.scale *= 0.1f;
 	chopstick->speed = 2000.0f;
-	//chopstick->explodes = true;
 	world.AddPrototype(chopstick);
 	actor->chopstick = chopstick;
 
@@ -321,10 +248,6 @@ int main()
 	enemy->meshPtr = assetManager.GetMesh("quad");
 	enemy->collides = true;
 	enemy->boundingBox.transform.scale *= 2.0f;
-	//enemy->navSystem.navPath.push_back(glm::vec3(0, 400, 0));
-	//enemy->navSystem.navPath.push_back(glm::vec3(400, 400, 0));
-	//enemy->navSystem.navPath.push_back(glm::vec3(400, 0, 0));
-	//enemy->navSystem.navPath.push_back(glm::vec3(0, 0, 0));
 	enemy->boundingBox.debugColor = glm::vec3(1, 0, 0);
 	world.AddPrototype(enemy);
 
@@ -438,15 +361,29 @@ int main()
 	camera->input = &inputManager;
 	world.AddCamera(camera);
 
-	/*Text* textPtr = new Text();
-	textPtr->font = assetManager.GetFont("arial200");
-	textPtr->shader = assetManager.GetShader("text");
-	textPtr->text = "YOU DIED";
-	textPtr->color = glm::vec3(0, 0, 0);
-	textPtr->SetAwake(true);
-	textPtr->SetParent(camera);
-	textPtr->localTransform.position = glm::vec3(-500, 0, -1);
-	world.AddEntity(textPtr);*/
+	Text* text = new Text();
+	text->layer = Entity::ui;
+	text->font = assetManager.GetFont("arial80");
+	text->shader = assetManager.GetShader("text");
+	text->color = glm::vec3(0, 0, 0);
+	world.AddPrototype(text);
+
+	Menu* menu = new Menu();
+	menu->controller = inputManager.aggregateController;
+	menu->lowestIndex = 0;
+	menu->selectedIndex = 0;
+	world.AddPrototype(menu);
+
+	MenuManager* menuManager = new MenuManager();
+	menuManager->localTransform.position = glm::vec3(-960, 450, -1);
+	menuManager->text = text;
+	menuManager->menu = menu;
+	menuManager->titleFont = assetManager.GetFont("arial200");
+	menuManager->SetParent(camera);
+	menuManager->CreateMenus("assets/menus/other.txt");
+	menuManager->sceneManager = sceneManager;
+	sceneManager->menuManager = menuManager;
+	world.AddEntity(menuManager);
 
 	Text* timeSurvived = new Text();
 	timeSurvived->layer = Entity::ui;
@@ -468,185 +405,6 @@ int main()
 	killCount->SetParent(camera);
 	killCount->localTransform.position = glm::vec3(-1700, 600, -1);
 	world.AddEntity(killCount);
-
-	Text* gameTitle = new Text();
-	gameTitle->font = assetManager.GetFont("arial200");
-	gameTitle->shader = assetManager.GetShader("text");
-	gameTitle->text = "WOK THE WOK";
-	gameTitle->color = glm::vec3(0, 0, 0);
-	gameTitle->SetAwake(true);
-	world.AddEntity(gameTitle);
-
-	Text* singleplayer = new Text();
-	singleplayer->alias = "singleplayer";
-	singleplayer->font = assetManager.GetFont("arial80");
-	singleplayer->shader = assetManager.GetShader("text");
-	singleplayer->text = "SINGLE PLAYER";
-	singleplayer->color = glm::vec3(0, 0, 0);
-	singleplayer->SetAwake(true);
-	world.AddEntity(singleplayer);
-
-	Text* coop = new Text();
-	coop->alias = "coop";
-	coop->font = assetManager.GetFont("arial80");
-	coop->shader = assetManager.GetShader("text");
-	coop->text = "CO-OP";
-	coop->color = glm::vec3(0, 0, 0);
-	coop->SetAwake(true);
-	world.AddEntity(coop);/**/
-
-	Text* exit = new Text();
-	exit->alias = "exit";
-	exit->font = assetManager.GetFont("arial80");
-	exit->shader = assetManager.GetShader("text");
-	exit->text = "EXIT";
-	exit->color = glm::vec3(0, 0, 0);
-	exit->SetAwake(true);
-	world.AddEntity(exit);
-
-	/*Text* options = dynamic_cast<Text*>(exit->Copy());
-	options->alias = "options";
-	options->text = "OPTIONS";
-	world.AddEntity(options);/**/
-
-	Menu* mainMenu = new Menu();
-	mainMenu->localTransform.position = glm::vec3(0, 300, -1);
-	mainMenu->AddChild(gameTitle);
-	mainMenu->AddChild(singleplayer);
-	mainMenu->AddChild(coop);
-	//mainMenu->AddChild(options);
-	mainMenu->AddChild(exit);
-	mainMenu->SetParent(camera);
-	mainMenu->controller = inputManager.aggregateController;
-	//mainMenu->SetAwake(false);
-	world.AddEntity(mainMenu);
-
-	Menu* pauseMenu = new Menu();
-	pauseMenu->SetParent(camera);
-	pauseMenu->localTransform.position = glm::vec3(0, 300, -1);
-	pauseMenu->controller = inputManager.aggregateController;
-	world.AddEntity(pauseMenu);
-
-	Text* pauseText = new Text();
-	pauseText->font= assetManager.GetFont("arial200");
-	pauseText->shader = assetManager.GetShader("text");
-	pauseText->color = glm::vec3(0, 0, 0);
-	pauseText->text = "PAUSED";
-	pauseText->SetParent(pauseMenu);
-	world.AddEntity(pauseText);
-
-	pauseText = dynamic_cast<Text*>(pauseText->Copy());
-	pauseText->alias = "resume";
-	pauseText->font = assetManager.GetFont("arial80");
-	pauseText->text = "RESUME";
-	pauseText->SetParent(pauseMenu);
-	world.AddEntity(pauseText);
-
-	/*pauseText = dynamic_cast<Text*>(pauseText->Copy());
-	pauseText->alias = "reset";
-	pauseText->font = assetManager.GetFont("arial80");
-	pauseText->text = "RESET";
-	pauseText->SetParent(pauseMenu);
-	world.AddEntity(pauseText);*/
-
-	pauseText = dynamic_cast<Text*>(pauseText->Copy());
-	pauseText->alias = "mainMenu";
-	pauseText->text = "MAIN MENU";
-	pauseText->SetParent(pauseMenu);
-	world.AddEntity(pauseText);
-
-	/*pauseText = dynamic_cast<Text*>(pauseText->Copy());
-	pauseText->text = "OPTIONS";
-	pauseText->alias = "options";
-	pauseText->SetParent(pauseMenu);
-	world.AddEntity(pauseText);/**/
-
-	pauseText = dynamic_cast<Text*>(pauseText->Copy());
-	pauseText->text = "EXIT";
-	pauseText->alias = "exit";
-	pauseText->SetParent(pauseMenu);
-	world.AddEntity(pauseText);
-
-	pauseMenu->SetAwake(false);/**/
-
-	Menu* gameEndMenu = new Menu();
-	gameEndMenu->SetParent(camera);
-	gameEndMenu->localTransform.position = glm::vec3(0, 300, -1);
-	gameEndMenu->controller = inputManager.aggregateController;
-	world.AddEntity(gameEndMenu);
-
-	pauseText = dynamic_cast<Text*>(pauseText->Copy());
-	pauseText->font = assetManager.GetFont("arial200");
-	pauseText->text = "YOU DIED";
-	pauseText->SetParent(gameEndMenu);
-	world.AddEntity(pauseText);
-
-	pauseText = dynamic_cast<Text*>(pauseText->Copy());
-	pauseText->alias = "reset";
-	pauseText->font = assetManager.GetFont("arial80");
-	pauseText->text = "TRY AGAIN";
-	pauseText->SetParent(gameEndMenu);
-	world.AddEntity(pauseText);
-
-	pauseText = dynamic_cast<Text*>(pauseText->Copy());
-	pauseText->alias = "mainMenu";
-	pauseText->text = "MAIN MENU";
-	pauseText->SetParent(gameEndMenu);
-	world.AddEntity(pauseText);
-
-	pauseText = dynamic_cast<Text*>(pauseText->Copy());
-	pauseText->alias = "exit";
-	pauseText->text = "EXIT";
-	pauseText->SetParent(gameEndMenu);
-	world.AddEntity(pauseText);
-
-	gameEndMenu->SetAwake(false);
-
-	Menu* levelSelectMenu = new Menu();
-	levelSelectMenu->SetParent(camera);
-	levelSelectMenu->localTransform.position = glm::vec3(0, 300, -1);
-	levelSelectMenu->controller = inputManager.aggregateController;
-	world.AddEntity(levelSelectMenu);
-
-	pauseText = dynamic_cast<Text*>(pauseText->Copy());
-	pauseText->alias = "arena";
-	pauseText->text = "LEVEL SELECT";
-	pauseText->SetParent(levelSelectMenu);
-	world.AddEntity(pauseText);
-
-	pauseText = dynamic_cast<Text*>(pauseText->Copy());
-	pauseText->alias = "arena";
-	pauseText->text = "ARENA";
-	pauseText->SetParent(levelSelectMenu);
-	world.AddEntity(pauseText);
-
-	pauseText = dynamic_cast<Text*>(pauseText->Copy());
-	pauseText->alias = "back";
-	pauseText->text = "BACK";
-	pauseText->SetParent(levelSelectMenu);
-	world.AddEntity(pauseText);
-
-	levelSelectMenu->SetAwake(false);
-
-	/*Menu* optionsMenu = new Menu();
-	pauseMenu->SetParent(camera);
-	pauseMenu->localTransform.position = glm::vec3(0, 300, -1);
-	pauseMenu->controller = inputManager.aggregateController;
-	world.AddEntity(pauseMenu);
-
-	Text* menuText = new Text();
-	menuText->font = assetManager.GetFont("arial200");
-	menuText->shader = assetManager.GetShader("text");
-	menuText->color = glm::vec3(0, 0, 0);
-	menuText->text = "OPTIONS";
-	menuText->SetParent(optionsMenu);
-	world.AddEntity(menuText);
-
-	menuText = dynamic_cast<Text*>(menuText->Copy());
-	menuText->text = "Window Mode: Borderless Fullscreen";
-	menuText->alias = "mode";
-	menuText->SetParent(optionsMenu);
-	world.AddEntity(menuText);/**/
 
 	CharacterSelector* charSelector = new CharacterSelector();
 	charSelector->isTrigger = true;
@@ -718,15 +476,11 @@ int main()
 	sceneManager->barrier = barrier;
 	sceneManager->enemiesKilledText = killCount;
 	sceneManager->survivedTimeText = timeSurvived;
-	sceneManager->mainMenu = mainMenu;
 	sceneManager->inputManager = &inputManager;
-	sceneManager->pauseMenu = pauseMenu;
-	sceneManager->gameOverMenu = gameEndMenu;
 	sceneManager->characterSelector = charSelector;
 	sceneManager->armoredEnemyMatter = assetManager.GetMaterial("armored_goblin");
 	sceneManager->monsterSpawn = monsterSpawn;
 	sceneManager->editor = editor;
-	sceneManager->levelSelectMenu = levelSelectMenu;
 
 	Engine engine(&world, &assetManager, &renderer);
 	engine.inputManager = &inputManager;

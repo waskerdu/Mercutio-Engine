@@ -14,7 +14,11 @@ public:
 	std::string startText;
 	std::string endText;
 	std::vector<std::string> inserts;
-	std::string message;
+	std::string message = "";
+	std::string leftMessage = "leftMessage";
+	std::string rightMessage = "rightMessage";
+	std::string defaultText = "";
+	bool blocked = false;
 	int messagesSent = 0;
 	float width = 0;
 	float height = 20;
@@ -38,7 +42,7 @@ public:
 	GLuint VAO, VBO;
 	GLuint* shader;
 	void Render(RenderData* data);
-
+	void SetText(std::string text) { this->text = defaultText + text; }
 	Entity* Copy();
 
 	Text();

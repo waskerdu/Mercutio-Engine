@@ -122,6 +122,7 @@ void Entity::Render(RenderData* data)
 	glUniformMatrix4fv(WORLD_MATRIX_ATTRIB_LOCATION, 1, GL_FALSE, glm::value_ptr(data->worldMatrix));
 	glUniform1f(CURRENT_FRAME_LOCATION, currentFrame + 1.0f);
 	glUniform1f(TOTAL_FRAMES_LOCATION, numFrames);
+	glUniform1f(FRAME_FLIP_LOCATION, flip);
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
 	glBindTexture(GL_TEXTURE_2D, 0);

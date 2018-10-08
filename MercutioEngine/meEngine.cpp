@@ -18,49 +18,58 @@ void Engine::Reset()
 		{
 			worldPtr->entities[i]->SetAwake(false);
 		}
-	}/**/
-	/*for (uint32_t i = worldPtr->entities.size()-1; i > -1; i--)
-	{
-		Entity* ent = worldPtr->entities[i];
-		if(ent->doNotDelete)
-		{
-			ent->lastWakeState = false;
-			//std::cout << "got here\n";
-			ent->Reset();
-		}
-		else
-		{
-			for (uint32_t f = ent->initQueue.size() - 1; f > -1; f--)
-			{
-				delete ent->initQueue[f];
-			}
-			delete ent;
-			//std::cout << "got here\n";
-			worldPtr->entities.erase(worldPtr->entities.begin() + i);
-		}
 	}
-	for (uint32_t i = worldPtr->cameras.size() - 1; i > -1; i--)
-	{
-		Entity* ent = worldPtr->cameras[i];
-		if (ent->doNotDelete)
-		{
-			ent->lastWakeState = false;
-			ent->Reset();
-		}
-		else
-		{
-			delete ent;
-			worldPtr->cameras.erase(worldPtr->cameras.begin() + i);
-		}
-	}
-	worldPtr->RebuildLayers();/**/
 	std::cout << "reset\n";
 	needsReset = false;
+}
+
+void Engine::ConfirmOptions()
+{
+	std::cout << "options confirmed\n";
+	confirmOptions = false;
+	currentMonitorMode = *tempMonitorMode;
+	glfwSetWindowSize(window, currentMonitorMode.windowWidth, currentMonitorMode.windowHeight);
+	glViewport(0, 0, currentMonitorMode.viewWidth, currentMonitorMode.viewHeight);
+	glfwSetWindowMonitor(window, currentMonitorMode.monitor, 100, 100, currentMonitorMode.viewWidth, currentMonitorMode.viewHeight, GLFW_DONT_CARE);
+}
+
+void Engine::ChangeMode()
+{
+	std::cout << "changed mode\n";
+	modeChanged = false;
+	//std::cout << &borderlessMonitorMode;
+	if (windowMode == MonitorMode::borderlessFullscreen)
+	{
+		tempMonitorMode = &borderlessMonitorMode;
+	}
+	else if (windowMode == MonitorMode::windowed)
+	{
+		tempMonitorMode = &windowedMonitorMode;
+	}
+	/*else if (windowMode == MonitorMode::fullscreen)
+	{
+		tempMonitorMode = &fullscreenMonitorMode;
+		//windowMode = fullscreenMonitorMode.windowMode;
+	}/**/
 }
 
 void Engine::Init()
 {
 	needsInit = false;
+	monitors = glfwGetMonitors(&numMonitors);
+	window = assetManagerPtr->window;
+	borderlessMonitorMode.vsync = 1;
+	borderlessMonitorMode.monitor = monitors[borderlessMonitorMode.monitorIndex];
+	fullscreenMonitorMode.monitor = monitors[fullscreenMonitorMode.monitorIndex];
+	windowedMonitorMode.viewWidth = 800;
+	windowedMonitorMode.windowWidth = 800;
+	windowedMonitorMode.viewHeight = 600;
+	windowedMonitorMode.windowHeight = 600;
+	windowedMonitorMode.windowMode = MonitorMode::windowed;
+	windowedMonitorMode.monitorIndex = -1;
+	windowedMonitorMode.monitor = NULL;
+	tempMonitorMode = &borderlessMonitorMode;
+	currentMonitorMode = borderlessMonitorMode;
 }
 
 bool Engine::GameRunning() { return gameRunning; }
@@ -92,7 +101,6 @@ Engine::Engine(World* worldPtr, AssetManager* assetManagerPtr, Renderer* renderP
 
 void Engine::UpdateHelper(Entity* ent)
 {
-	//if (ent->random == nullptr) { ent->random = &random; }
 	if (ent->awake == false)
 	{
 		ent->lastWakeState = false;
@@ -107,10 +115,16 @@ void Engine::UpdateHelper(Entity* ent)
 		ent->isPaused = &isPaused;
 		ent->gameRunning = &gameRunning;
 		ent->entities = &worldPtr->entities;
+		ent->tempMonitorMode = &tempMonitorMode;
+		ent->optionsConfirm = &confirmOptions;
+		ent->modeChanged = &modeChanged;
+		ent->windowMode = &windowMode;
+		//ent->vsync = &vsync;
+		//if (ent->windowMode != currentMonitorMode->windowMode) { modeChanged = true; }
 	}
 	ent->lastWakeState = ent->awake;
-	ent->windowWidth = (float)assetManagerPtr->windowWidth;
-	ent->windowHeight = (float)assetManagerPtr->windowHeight;
+	ent->windowWidth = (float)currentMonitorMode.windowWidth;
+	ent->windowHeight = (float)currentMonitorMode.windowHeight;
 	ent->deltaTime = deltaTime*deltaTimeCo*timeCo;
 	
 	ent->rawDeltaTime = deltaTime;
@@ -182,6 +196,8 @@ void Engine::Update()
 {
 	if (needsInit) { Init(); }
 	if (needsReset) { Reset(); }
+	if (modeChanged) { ChangeMode(); }
+	if (confirmOptions) { ConfirmOptions(); }
 	time = glfwGetTime();
 	deltaTime = time - lastTime;
 	lastTime = time;
@@ -209,6 +225,10 @@ void Engine::Update()
 	PhysicsUpdate();
 	//render update
 	renderPtr->Update(worldPtr->cameras[0]);
+
+	glfwSwapInterval(currentMonitorMode.vsync);
+	glfwSwapBuffers(window);
+	glfwPollEvents();
 	//glfwSwapBuffers(assetManagerPtr->window);
 
 	if (deltaTimeCoClock > 0) { deltaTimeCoClock -= deltaTime; }

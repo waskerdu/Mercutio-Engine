@@ -13,6 +13,115 @@ SceneManager::~SceneManager()
 {
 }
 
+void SceneManager::SendMessage(std::string message, Entity* ent)
+{
+	//
+	std::cout << message << "\n";
+	if (message == "singleplayer") 
+	{
+		menuManager->SelectMenu("levelSelect");
+	}
+	else if (message == "coop") 
+	{
+		menuManager->SelectMenu("levelSelect");
+		canOptInOut = true;
+	}
+	else if (message == "options") 
+	{
+		menuManager->SelectMenu("options");
+	}
+	else if (message == "exit") 
+	{
+		EngineInterface::Quit(this);
+	}
+	else if (message == "resume") 
+	{
+		EngineInterface::Pause(this, false);
+		menuManager->SetAwake(false);
+	}
+	else if (message == "restart") 
+	{
+		state = running;
+		lastState = none;
+		currentLevel = lobbyFilepath;
+		EngineInterface::Reset(this);
+		EngineInterface::Pause(this, false);
+		menuManager->SetAwake(false);
+	}
+	else if (message == "back")
+	{
+		menuManager->SelectPreviousMenu();
+	}
+	else if (message == "checkpoint")
+	{
+		currentLevel = checkpointLevel;
+		state = running;
+		lastState = none;
+		menuManager->SetAwake(false);
+		EngineInterface::Reset(this);
+		EngineInterface::Pause(this, false);
+	}
+	else if (message == "mainMenu") 
+	{
+		state = titleMenu;
+		lastState = none;
+		EngineInterface::Reset(this);
+	}
+	else if (message == "graphics")
+	{
+		menuManager->SelectMenu("graphics");
+	}
+	else if (message == "audio")
+	{
+		menuManager->SelectMenu("audio");
+	}
+	else if (message == "resolution")
+	{
+		menuManager->SelectMenu("resolution");
+	}
+	else if (message[0] == '!')//is a level file
+	{
+		message.erase(0, 1);
+		savedLevel = message;
+		state = running;
+		lastState = none;
+		currentLevel = lobbyFilepath;
+		checkpointLevel = currentLevel;
+		menuManager->SetAwake(false);
+	}
+	else if (message == "options_confirm")
+	{
+		EngineInterface::OptionsConfirm(this);
+	}
+	else if (message == "window_mode_inc" || message == "window_mode_dec")
+	{
+		if (EngineInterface::GetWindowMode(this) == MonitorMode::borderlessFullscreen)
+		{
+			EngineInterface::SetMode(this, MonitorMode::windowed);
+			dynamic_cast<Text*>(ent)->SetText("WINDOW MODE: WINDOWED");
+			std::cout << "windowed\n";
+		}
+		else
+		{
+			EngineInterface::SetMode(this, MonitorMode::borderlessFullscreen);
+			dynamic_cast<Text*>(ent)->SetText("WINDOW MODE: BORDERLESS FULLSCREEN");
+		}
+	}
+	else if (message == "vsync")
+	{
+		if (EngineInterface::GetVsync(this) == 1)
+		{
+			EngineInterface::SetVsync(this, 0);
+			dynamic_cast<Text*>(ent)->SetText("V-SYNC: OFF");
+		}
+		else
+		{
+			EngineInterface::SetVsync(this, 1);
+			dynamic_cast<Text*>(ent)->SetText("V-SYNC: ON");
+		}
+	}
+}
+
 void SceneManager::AddActor(int numActors)
 {
 	for (int i = 0; i < numActors; i++)
@@ -33,6 +142,16 @@ void SceneManager::Reset()
 
 void SceneManager::Update() 
 {
+	if (inputManager->aggregateController->GetButton("resize"))
+	{
+		EngineInterface::SetMode(this, MonitorMode::windowed);
+		EngineInterface::OptionsConfirm(this);
+	}
+	if (inputManager->aggregateController->GetButton("resize2"))
+	{
+		EngineInterface::SetMode(this, MonitorMode::borderlessFullscreen);
+		EngineInterface::OptionsConfirm(this);
+	}
 	if (firstTime)
 	{
 		AddActor(6);
@@ -58,8 +177,13 @@ void SceneManager::Update()
 	}
 
 	bool newState = state != lastState;
-	if (newState && state != running) { survivedTimeText->SetAwake(false); }
+	//if (newState && state != running) { survivedTimeText->SetAwake(false); }
 	lastState = state;
+
+	if (inputManager->aggregateController->GetButton("menuCancel"))
+	{
+		menuManager->SelectPreviousMenu();
+	}
 
 	switch (state)
 	{
@@ -67,60 +191,39 @@ void SceneManager::Update()
 		if (newState)
 		{
 			//make title menu visible
-			mainMenu->SetAwake(true);
+			menuManager->SelectMenu("main");
 			for (uint32_t i = 0; i < spawnedActors.size(); i++)
 			{
 				spawnedActors[i]->SetAwake(false);
 			}
-		}
-		//manage menu
-		if (mainMenu->FindMessage("exit", Menu::confirm))
-		{
-			EngineInterface::Quit(this);
-		}
-		else if (mainMenu->FindMessage("singleplayer", Menu::confirm))
-		{
-			mainMenu->SetAwake(false);
-			state = levelSelect;
-		}
-		else if (mainMenu->FindMessage("coop", Menu::confirm))
-		{
-			mainMenu->SetAwake(false);
-			canOptInOut = true;
-			state = levelSelect;
-		}
-		break;
-	case SceneManager::singleplayer://not used
-		break;
-	case SceneManager::coop://not used
-		break;
-	case SceneManager::levelSelect:
-		if (newState)
-		{
-			levelSelectMenu->SetAwake(true);
-		}
-		if (levelSelectMenu->FindMessage("arena", Menu::confirm))
-		{
-			currentLevel = "assets/levels/official/lobby.txt";
-			levelSelectMenu->SetAwake(false);
-			if (canOptInOut == false) 
-			{ 
-				spawnedActors[5]->SetAwake(true);
-				spawnedActors[5]->SetCharacter(Actor::Character::none);
-			}
-			state = running;
-		}
-		if (levelSelectMenu->FindMessage("back", Menu::confirm) || inputManager->aggregateController->GetButton("menuCancel"))
-		{
-			state = titleMenu;
-			levelSelectMenu->SetAwake(false);
-			EngineInterface::Reset(this);
+			canOptInOut = false;
 		}
 		break;
 	case SceneManager::running:
 		if (newState)
 		{
+			if (currentLevel == "saved") 
+			{ 
+				currentLevel = savedLevel;
+			}
+			if (currentLevel == "checkpoint") { currentLevel = checkpointLevel; }
 			editor->LoadLevel(currentLevel);
+			if (currentLevel == lobbyFilepath)
+			{
+				if (canOptInOut == false)
+				{
+					spawnedActors[5]->SetAwake(true);
+					spawnedActors[5]->SetCharacter(Actor::Character::none);
+				}
+				else
+				{
+					EngineInterface::Pause(this, false);
+				}
+			}
+			else
+			{
+				canOptInOut = false;
+			}
 			for (uint32_t i = 0; i < spawnedActors.size(); i++)
 			{
 				editor->GetStartPos(&spawnedActors[i]->transform.position);
@@ -132,49 +235,13 @@ void SceneManager::Update()
 			if (EngineInterface::IsPaused(this))
 			{
 				EngineInterface::Pause(this, false);
-				pauseMenu->SetAwake(false);
+				menuManager->SetAwake(false);
 			}
 			else
 			{
 				EngineInterface::Pause(this, true);
-				pauseMenu->SetAwake(true);
-			}
-		}
-		if (pauseMenu->isAwake())
-		{
-			if (pauseMenu->FindMessage("resume", Menu::confirm) || inputManager->aggregateController->GetButton("menuCancel"))
-			{
-				EngineInterface::Pause(this, false);
-				pauseMenu->SetAwake(false);
-				pauseMenu->Clear();
-				return;
-			}
-			if (pauseMenu->FindMessage("reset", Menu::confirm))
-			{
-				EngineInterface::Reset(this);
-				EngineInterface::Pause(this, false);
-				pauseMenu->SetAwake(false);
-				for (uint32_t i = 0; i < spawnedActors.size(); i++)
-				{
-					if (spawnedActors[i]->isAwake()) { spawnedActors[i]->SetCharacter(spawnedActors[i]->character); }//sets dead actors to full health
-				}
-				//load current level
-				editor->LoadLevel(currentLevel);
-			}
-			if (pauseMenu->FindMessage("exit", Menu::confirm))
-			{
-				EngineInterface::Quit(this);
-			}
-			else if (pauseMenu->FindMessage("mainMenu", Menu::confirm))
-			{
-				state = titleMenu;
-				EngineInterface::Reset(this);
-				EngineInterface::Pause(this, false);
-				pauseMenu->SetAwake(false);
-				for (uint32_t i = 0; i < spawnedActors.size(); i++)
-				{
-					spawnedActors[i]->SetCharacter(Actor::none);
-				}
+				menuManager->SetAwake(true);
+				menuManager->SelectMenu("pause");
 			}
 		}
 		if (canOptInOut)
@@ -190,8 +257,6 @@ void SceneManager::Update()
 			}
 		}
 		SceneUpdate();
-		break;
-	case SceneManager::lobby://not used
 		break;
 	case SceneManager::gameEnd:
 		if (newState)
@@ -231,7 +296,6 @@ void SceneManager::SceneUpdate()
 	{
 		if (editor->Wave() == false) 
 		{ 
-			//std::cout << "you win!\n"; 
 			if (editor->levelEnds.size() == 0)
 			{
 				SetDeltaTimeCo(0);
@@ -239,17 +303,8 @@ void SceneManager::SceneUpdate()
 				if (survivedTimeText->isAwake() == false)
 				{
 					survivedTimeText->SetAwake(true);
-					//enemiesKilledText->SetAwake(true);
-					//survivedTimeText->text = survivedTimeString + std::to_string(timeInt / (int)precision) + " seconds";
 					survivedTimeText->text = survivedTimeString + std::to_string(timeInt / (int)precision) + " seconds";
 				}
-				/*SetDeltaTimeCo(0);
-				int timeInt = (int)(timeSurvived*precision);
-				survivedTimeText->SetAwake(true);
-				//enemiesKilledText->SetAwake(true);
-				survivedTimeText->text = survivedTimeString + std::to_string(timeInt / (int)precision) + " seconds";*/
-				//enemiesKilledText->text = enemiesKilledString + std::to_string(enemiesKilled);/**/
-				//state = gameEnd;
 			}
 			for (uint32_t i = 0; i < editor->levelEnds.size(); i++)
 			{
@@ -300,11 +355,12 @@ void SceneManager::SceneUpdate()
 		else if (openLevel == false && levelEnd->IsOpen()) { levelEnd->SetOpen(false); }
 		if (load&&oneAlive&&openLevel)
 		{
-			std::cout << levelEnd->nextLevel << " loaded.\n";
+			//std::cout << levelEnd->nextLevel << " loaded.\n";
 			canOptInOut = false;
 			currentLevel = levelEnd->nextLevel;
 			EngineInterface::Reset(this);
-			lastState = titleMenu;
+			lastState = none;
+			//std::cout << state << " " << lastState << "\n";
 			break;
 		}
 	}

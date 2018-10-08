@@ -8,6 +8,7 @@
 #include "meInput.h"
 #include "meCharacterSelector.h"
 #include "wokEditor.h"
+#include "meMenuManager.h"
 class SceneManager : public Entity
 {
 public:
@@ -17,15 +18,16 @@ public:
 	Camera* camera;
 	Entity* red;
 	Barrier* barrier;
-	Menu* mainMenu;
+	/*Menu* mainMenu;
 	Menu* pauseMenu;
 	Menu* gameOverMenu;
-	Menu* levelSelectMenu;
+	Menu* levelSelectMenu;/**/
 	Text* survivedTimeText;
 	Text* enemiesKilledText;
 	Material* armoredEnemyMatter;
 	InputManager* inputManager;
 	CharacterSelector* characterSelector;
+	MenuManager* menuManager;
 	enum State
 	{
 		titleMenu,
@@ -34,10 +36,11 @@ public:
 		running,
 		levelSelect,
 		lobby,
-		gameEnd
+		gameEnd,
+		none
 	};
 	State state = titleMenu;
-	State lastState = lobby;
+	State lastState = none;
 	State lastActiveState = singleplayer;
 	float arenaRadius = 1500;
 	std::vector<Actor::Character> heros = {Actor::ted, Actor::key, Actor::tan };
@@ -48,35 +51,20 @@ public:
 	std::string enemiesKilledString = "ENEMIES KILLED: ";
 	double timeSurvived = 0;
 	double precision = 100;
-	double slowdownDuration = 0.3;
-	double slowdown = 0.5;
-	int enemiesKilled = 0;
 	bool spawning = true;
-	bool reincarnate = true;
-	bool gameOver = true;
-	float enemyDistance = 800.0f;
-	int waveMaxSize = 10;
-	int waveMinSize = 2;
-	int waveSize = 2;
-	double lobbyLaunchRadius = 200;
-	double throwerProb = 0.5;
-	bool lastNeedsWave = false;
 	bool canOptInOut = false;
 	std::string currentLevel = "";
+	std::string savedLevel = "";
+	std::string checkpointLevel = "";
+	std::string lobbyFilepath = "assets/levels/official/lobby.txt";
 	bool firstTime = true;
-
-	//void EnemyWave(int enemies);
-	//void EnemyWave();
-	//void LaunchMatch();
 	void SceneUpdate();
 	void AddActor(int numActors);
-	//void CreateLobby();
-	//void PlaceBarriers();
 
 	SceneManager();
 	~SceneManager();
 	void Update();
-	//void Awake();
 	void Reset();
+	void SendMessage(std::string message, Entity* ent);
 };
 

@@ -2,12 +2,12 @@
 #include "meRender.h"
 #include <string>
 #include "meWorld.h"
-
 #include "meTime.h"
 #include "meAssetManager.h"
 #include "meText.h"
 #include "meRandom.h"
 #include "meInput.h"
+#include "meMonitorMode.h"
 
 class Engine
 {
@@ -29,7 +29,18 @@ class Engine
 	bool toggle = false;
 	Random* random;
 	bool resetButtonState = false;
-	
+	MonitorMode windowedMonitorMode;
+	MonitorMode borderlessMonitorMode;
+	MonitorMode fullscreenMonitorMode;
+	MonitorMode* tempMonitorMode;
+	MonitorMode currentMonitorMode;
+	bool confirmOptions = false;
+	bool modeChanged = false;
+	MonitorMode::WindowMode windowMode = MonitorMode::borderlessFullscreen;
+	GLFWwindow* window;
+	int numMonitors;
+	GLFWmonitor** monitors;
+	//int vsync = 1;
 public:
 	Renderer* renderPtr;
 	bool resizedLastFrame = false;
@@ -47,4 +58,6 @@ public:
 	void FixedUpdate();
 	void Update();
 	void Reset();
+	void ConfirmOptions();
+	void ChangeMode();
 };

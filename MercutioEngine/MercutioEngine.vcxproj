@@ -200,6 +200,7 @@
     <ClInclude Include="meMenuManager.h" />
     <ClInclude Include="meMesh.h" />
     <ClInclude Include="meMessage.h" />
+    <ClInclude Include="meMonitorMode.h" />
     <ClInclude Include="meNavSystem.h" />
     <ClInclude Include="meParser.h" />
     <ClInclude Include="mePhysics.h" />

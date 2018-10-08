@@ -1,4 +1,4 @@
-ninja assets/textures/ninja.png animated
+ninja assets/textures/mmrun.png animated
 red assets/textures/cam_text/red.png simple
 ted assets/textures/cam_text/ted.png simple
 key assets/textures/cam_text/key.png simple

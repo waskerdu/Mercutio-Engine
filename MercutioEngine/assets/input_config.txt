@@ -5,9 +5,15 @@ JoyButtonPress 0 xbox
 JoyButtonPress 1 ds4
 
 #Button menuCancel
-KeyPress tab
+KeyPress escape
 JoyButtonPress 1 xbox
 JoyButtonPress 2 ds4
+
+#Button resize
+KeyPress r
+
+#Button resize2
+KeyPress e
 
 #Button menuUp
 KeyPulse w

@@ -29,11 +29,11 @@ Character tan
 
 #LevelEnd 
 Position 0 0 0
-NextLevel assets/levels/official/intro.txt 
-
+NextLevel saved
 Radius 4
 
 *
+assets/levels/official/intro.txt 
 #PressurePlate
 Position -10 10 0
 Message open

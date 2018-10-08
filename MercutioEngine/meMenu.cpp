@@ -28,21 +28,27 @@ void Menu::Awake()
 		GetChild(i)->localTransform.position.y = i * -(float)spacing;
 	}
 	message = GetChild(selectedIndex)->alias;
+	supressInput = true;
 }
 
-void Menu::ChangeSelected()
+void Menu::ChangeSelected(int bump)
 {
-	if (loopSelection)
+	selectedIndex += bump;
+	for (size_t i = 0; i < children.size(); i++)//will only try to find a valid selected index so many times
 	{
-		if (selectedIndex < lowestIndex) { selectedIndex = (int)children.size() - 1; }
-		else if (selectedIndex == children.size()) { selectedIndex = lowestIndex; }
+		if (loopSelection)
+		{
+			if (selectedIndex < lowestIndex) { selectedIndex = (int)children.size() - 1; }
+			else if (selectedIndex == children.size()) { selectedIndex = lowestIndex; }
+		}
+		else
+		{
+			if (selectedIndex < lowestIndex) { selectedIndex = lowestIndex; }
+			else if (selectedIndex == children.size()) { selectedIndex = (int)children.size() - 1; }
+		}
+		if (dynamic_cast<Text*>(GetChild(selectedIndex))->blocked == false) { break; }
+		selectedIndex += bump;
 	}
-	else
-	{
-		if (selectedIndex < lowestIndex) { selectedIndex = lowestIndex; }
-		else if (selectedIndex == children.size()) { selectedIndex = (int)children.size() - 1; }
-	}
-	message = GetChild(selectedIndex)->alias;
 	SetColors();
 }
 
@@ -55,6 +61,10 @@ void Menu::SetColors()
 		{
 			dynamic_cast<Text*>(children[i])->color = selectedColor;
 		}
+		else if (dynamic_cast<Text*>(children[i])->blocked)
+		{
+			dynamic_cast<Text*>(children[i])->color = blockedColor;
+		}
 		else
 		{
 			dynamic_cast<Text*>(children[i])->color = defaultColor;
@@ -64,35 +74,14 @@ void Menu::SetColors()
 
 void Menu::BumpUp()
 {
-	//std::cout << "menu bump up\n";
-	selectedIndex--;
-	ChangeSelected();
+	//selectedIndex--;
+	ChangeSelected(-1);
 }
 
 void Menu::BumpDown()
 {
-	//std::cout << "menu bump down\n";
-	//if (selectedIndex < lowestIndex) { selectedIndex = children.size() - 1; }
-	selectedIndex++;
-	ChangeSelected();
-}
-
-bool Menu::FindMessage(std::string text, Message mess)
-{
-	/*for (int i = 0; i < messages.size(); i += 1)
-	{
-		if ((messages[i].first == text) && (messages[i].second == mess))
-		{
-			return true;
-		}
-	}
-	return false;*/
-	if (text == message&&mess == messageType)
-	{
-		Clear();
-		return true;
-	}
-	return false;
+	//selectedIndex++;
+	ChangeSelected(1);
 }
 
 void Menu::Reset()
@@ -112,6 +101,11 @@ void Menu::Update()
 		std::cout << "menu has no attached controller\n";
 		return;
 	}
+	if (supressInput)
+	{
+		supressInput = false;
+		return;
+	}
 	if (controller->GetButton("menuDown"))
 	{
 		BumpDown();
@@ -122,29 +116,15 @@ void Menu::Update()
 	}
 	if (controller->GetButton("menuLeft"))
 	{
-		//std::pair<std::string, Message> mess;
-		//mess.first = GetChild(selectedIndex)->alias;
-		//mess.second = left;
 		messageType = left;
-		//messages.push_back(mess);/**/
-		//std::cout << "left\n";
+		parent->SendMessage(dynamic_cast<Text*>(GetChild(selectedIndex))->leftMessage, GetChild(selectedIndex));
 	}
 	if (controller->GetButton("menuRight"))
 	{
-		//std::cout << "right\n";
-		//std::pair<std::string, Message> mess;
-		//mess.first = GetChild(selectedIndex)->alias;
-		//mess.second = right;
-		messageType = right;
-		//messages.push_back(mess);/**/
+		parent->SendMessage(dynamic_cast<Text*>(GetChild(selectedIndex))->rightMessage, GetChild(selectedIndex));
 	}
 	if (controller->GetButton("menuConfirm"))
 	{
-		//std::cout << "confirm\n";
-		//std::pair<std::string, Message> mess;
-		//mess.first = GetChild(selectedIndex)->alias;
-		//mess.second = confirm;
-		messageType = confirm;
-		//messages.push_back(mess);/**/
+		parent->SendMessage(dynamic_cast<Text*>(GetChild(selectedIndex))->message, GetChild(selectedIndex));
 	}
 }

@@ -108,9 +108,9 @@ void Renderer::RenderLayered(Camera* camera)
 		}
 	}
 	glBindVertexArray(0);
-	glfwSwapInterval(1);
+	/*glfwSwapInterval(1);
 	glfwSwapBuffers(window);
-	glfwPollEvents();
+	glfwPollEvents();*/
 }
 
 /*void Renderer::RenderZBuffer(Camera* camera)

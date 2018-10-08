@@ -12,6 +12,7 @@
 #include "assets\shaders\preamble.glsl"
 #include "meMessage.h"
 #include "meRenderData.h"
+#include "meMonitorMode.h"
 
 class Entity
 {
@@ -29,7 +30,11 @@ class Entity
 	friend class World;
 	friend class Renderer;
 	std::vector<glm::vec3> debugVerts;
-	
+	MonitorMode** tempMonitorMode;
+	MonitorMode::WindowMode* windowMode;
+	bool* optionsConfirm;
+	bool* modeChanged;
+	int* vsync;
 public:
 	enum Layer
 	{
@@ -68,8 +73,9 @@ public:
 	bool doNotDelete = true;
 	bool kinematic = true;
 	Layer layer = terrain;
-	float currentFrame = 0;
-	float numFrames = 1;
+	float currentFrame = 0.0f;
+	float numFrames = 1.0f;
+	float flip = 1.0f;
 private:
 	
 	friend class Engine;
@@ -125,4 +131,5 @@ public:
 	virtual void Reset(){}
 	virtual void SendMessage(std::string name){}
 	virtual void SendMessage(std::string name, float val){}
+	virtual void SendMessage(std::string name, Entity* ent) {}
 };

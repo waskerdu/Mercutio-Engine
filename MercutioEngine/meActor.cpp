@@ -381,6 +381,8 @@ Entity* Actor::Copy()
 void Actor::Update()
 {
 	Hit hit;
+	currentFrame++;
+	if (currentFrame == 3.0f) { currentFrame = 0.0f; }
 	if (health < 0)
 	{
 		health = -1;

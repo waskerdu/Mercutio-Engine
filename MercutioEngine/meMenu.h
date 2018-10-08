@@ -3,6 +3,7 @@
 #include "meInput.h"
 class Menu : public Entity
 {
+	bool supressInput = false;
 public:
 	enum Message
 	{
@@ -18,15 +19,15 @@ public:
 	double spacing = 200;
 	glm::vec3 defaultColor;
 	glm::vec3 selectedColor = glm::vec3(1, 1, 1);
+	glm::vec3 blockedColor = glm::vec3(0.5f, 0.5f, 0.5f);
 	std::string message = "";
 	Message messageType = none;
-	//std::vector<std::pair<std::string, Message>> messages;
 	
 private:
 	void BumpUp();
 	void BumpDown();
 	void SetColors();
-	void ChangeSelected();
+	void ChangeSelected(int bump);
 public:
 	Menu();
 	~Menu();
@@ -34,7 +35,7 @@ public:
 	void Awake();
 	void Reset();
 	Entity* Copy();
-	bool FindMessage(std::string text, Message mess);
+
 	void Clear();
 };
 

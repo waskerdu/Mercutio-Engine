@@ -1,0 +1,89 @@
+#Menu main 
+#Title WOK THE WOK
+TitleSize 200 /default
+TextSize 80 /default
+#Text SINGLE PLAYER
+Message singleplayer
+#Text CO-OP
+Message coop
+#Text OPTIONS
+Message options /reserved
+#Text EXIT
+Message exit
+
+#Menu pause 
+#Title PAUSED
+#Text RESUME
+Message resume
+#Text RESTART GAME
+Message restart
+#Text RESTART FROM CHECKPOINT
+Message checkpoint
+#Text MAIN MENU
+Message mainMenu
+#Text OPTIONS
+Message options
+#Text EXIT
+Message exit
+
+#Menu gameOver 
+#Title GAME OVER
+#Text RESTART CHECKPOINT
+Message checkpoint
+#Text RESTART
+Message restart
+#Text MAIN MENU
+Message mainMenu
+#Text EXIT
+Message exit
+
+#Menu levelSelect
+#Title LEVEL SELECT
+#Text CAMPAIGN
+Message !assets/levels/official/intro.txt
+#Text HALLWAY
+Message !assets/levels/official/hallway.txt
+#Text BACK
+Message back
+#Text EXIT
+Message exit
+
+#Menu options
+#Title OPTIONS
+#Text GRAPHICS
+Message graphics
+#Text AUDIO
+Message audio
+#Text BACK
+Message back
+
+#Menu graphics
+#Title GRAPHICS
+#Text WINDOW MODE: BORDERLESS FULLSCREEN
+Message window_mode_inc window_mode_inc window_mode_dec
+#Text RESOLUTION
+Message resolution
+#Text V-SYNC: ON
+Message vsync vsync vsync
+#Text MONITOR: 1
+Message monitor_inc monitor_dec monitor_inc
+#Text CONFIRM
+Message options_confirm
+#Text BACK
+Message back
+
+#Menu resolution
+#Title RESOLUTION
+#Text BACK
+Message back
+
+#Menu audio
+#Title AUDIO
+#Text MASTER VOLUME: 100%
+#Message master_volume_up master_volume_down master_volume_up
+#Text MUSIC VOLUME: 100%
+#Message music_volume_up music_volume_down music_volume_up
+#Text EFFECT VOLUME: 100%
+#Message effect_volume_up effect_volume_down effect_volume_up
+#Text BACK
+Message back

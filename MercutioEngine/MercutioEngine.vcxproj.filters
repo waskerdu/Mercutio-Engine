@@ -177,6 +177,9 @@
     <ClInclude Include="meMenuManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="meMonitorMode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

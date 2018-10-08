@@ -90,8 +90,6 @@ void AssetManager::CreateMesh(std::string alias, std::string base, glm::mat4 tra
 	meshPtr->Init();
 	meshes.push_back(meshPtr);
 	meshRef[alias] = (int)meshes.size() - 1;
-	//meshRef.insert(std::pair<std::string, int>(alias, meshes.size() - 1));
-	//std::cout << meshRef.count(alias) << "\n";
 }
 
 sf::SoundBuffer* AssetManager::GetSoundBuffer(std::string alias)
