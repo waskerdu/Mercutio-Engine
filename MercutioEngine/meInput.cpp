@@ -919,15 +919,15 @@ void InputController::SetAxis2SensitivityY(std::string alias, double sensitivity
 
 void InputController::SetXbox()
 {
-	//SetAxis2InvertY("movement", false);
-	//SetAxis2InvertY("aim", false);
+	SetAxis2InvertY("movement", false);
+	SetAxis2InvertY("aim", false);
 	controllerType = InputController::xbox;
 }
 
 void InputController::SetDualShock()
 {
-	//SetAxis2InvertY("movement", true);
-	//SetAxis2InvertY("aim", true);
+	SetAxis2InvertY("movement", true);
+	SetAxis2InvertY("aim", true);
 	controllerType = InputController::dualShock;
 }
 

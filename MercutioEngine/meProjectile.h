@@ -29,5 +29,18 @@ public:
 	void OnCollision(Entity* collider);
 	Entity* Copy();
 	void Update();
+	void SendMessage(std::string message)
+	{
+		if (message == "active") 
+		{ 
+			state = active; 
+			health += 1; 
+			//physObject.velocity *= -1.0f;
+			alive = true;
+			collides = true;
+			targetTag = "bad";
+			tags.insert("hero");
+		}
+	}
 };
 

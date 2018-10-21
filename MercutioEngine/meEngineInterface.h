@@ -27,4 +27,31 @@ struct EngineInterface
 	//static void SetFramerateCap(Entity* ent, int cap) { ent->monitorMode->framerateCap = cap; }
 	static void OptionsConfirm(Entity* ent) { *ent->optionsConfirm = true; }
 	static MonitorMode::WindowMode GetWindowMode(Entity* ent) { return (*ent->tempMonitorMode)->windowMode; }
+	static int GetNumberOfMonitors(Entity* ent) { return *ent->numMonitors; }
+	static MonitorMode* GetMonitorMode(Entity* ent) { return *ent->tempMonitorMode; }
+	static void SetCurrentMonitor(Entity* ent, int num) 
+	{ 
+		(*ent->tempMonitorMode)->monitorIndex = num; 
+		(*ent->tempMonitorMode)->monitorChanged = true;
+	}
+	static const GLFWvidmode* GetSupportedResolutions(Entity* ent, int* numSupported)
+	{
+		//
+		*numSupported = *ent->numSupportedResolutions;
+		return *ent->supportedResolutions;
+	}
+	static void SetVideoMode(Entity* ent, const GLFWvidmode* mode)
+	{
+		MonitorMode* temp = *ent->tempMonitorMode;
+		temp->videoMode = mode;
+		temp->windowWidth = mode->width;
+		temp->viewWidth = mode->width;
+		temp->windowHeight = mode->height;
+		temp->viewHeight = mode->height;
+		temp->framerateCap = mode->refreshRate;
+	}
+	static const GLFWvidmode* GetVideoMode(Entity* ent)
+	{
+		return (*ent->tempMonitorMode)->videoMode;
+	}
 };

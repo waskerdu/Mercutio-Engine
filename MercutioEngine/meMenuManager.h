@@ -22,12 +22,15 @@ private:
 public:
 	MenuManager();
 	~MenuManager();
+	std::string GetCurrentMenu() { return currentMenu->alias; }
 	void CreateMenus(std::string str = "other.txt");
 	void SelectMenu(std::string name);
 	void SelectPreviousMenu();
 	void Update();
 	void SendMessage(std::string message, Entity* ent);
 	void AddText(std::string menu, std::string text, std::string message, std::string leftMessage = "leftMessage", std::string rightMessage = "rightMessage");
-	void RemoveChildTexts();
+	void AddImage(std::string menu, Entity* ent);
+	Text* GetText(std::string menu, std::string alias);
+	void RemoveChildTexts(std::string menu, std::string ignore = "none");
 };
 

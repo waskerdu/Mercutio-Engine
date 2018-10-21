@@ -40,6 +40,9 @@ class Engine
 	GLFWwindow* window;
 	int numMonitors;
 	GLFWmonitor** monitors;
+	int videoModeCount = 0;
+	const GLFWvidmode* videoModes;
+	std::vector<GLFWvidmode> defaultVidModes;
 	//int vsync = 1;
 public:
 	Renderer* renderPtr;

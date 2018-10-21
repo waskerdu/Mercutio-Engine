@@ -1,6 +1,3 @@
-// MercutioEngine.cpp : Defines the entry point for the console application.
-//
-
 #include "stdafx.h"
 #include "meEngine.h"
 #include "meMath.h"
@@ -26,10 +23,14 @@
 #include "wokPressurePlate.h"
 #include "wokDoor.h"
 #include "meMenuManager.h"
+#include "meEase.h"
 
 int main()
 {
 	World world = World();
+
+	std::cout << Linear::easeNone(0.5f, 5.0f, 5.0f, 1.0f) << "\n";
+	std::cout << Quint::easeInOut(0.9f) << "\n";
 
 	glfwInit();
 
@@ -66,13 +67,17 @@ int main()
 	inputManager.ButtonAddKeyPress("debug", GLFW_KEY_T);
 
 	inputManager.AddButton("suicide");
-	inputManager.ButtonAddKeyPress("suicide", GLFW_KEY_R);
-	inputManager.ButtonAddJoyButtonPress("suicide", 6, false);
+	//inputManager.ButtonAddKeyPress("suicide", GLFW_KEY_R);
+	//inputManager.ButtonAddJoyButtonPress("suicide", 6, false);
 	inputManager.BuildControllers();
+
+	SoundHolder*  soundHolder = new SoundHolder();
+	soundHolder->LoadSounds("assets/sound_effects/sound_manifest.txt");
+	world.AddEntity(soundHolder);
 	
 	SceneManager* sceneManager = new SceneManager();
 	sceneManager->spawning = false;
-	world.AddEntity(sceneManager);/**/
+	world.AddEntity(sceneManager);
 
 	Entity* terrain = new Entity();
 	terrain->meshPtr = assetManager.GetMesh("terrain");
@@ -80,12 +85,20 @@ int main()
 	terrain->transform.position = glm::vec3(0, 0, -10);
 	world.AddEntity(terrain);
 
+	Entity* logo = new Entity();
+	logo->meshPtr = assetManager.GetMesh("quad");
+	logo->materialPtr = assetManager.GetMaterial("logo");
+	logo->localTransform.position.z = -1.0f;
+	world.AddEntity(logo);
+	logo->transform.scale *= 8.0f;
+	sceneManager->logo = logo;
+
 	Barrier* barrier = new Barrier();
 	barrier->meshPtr = assetManager.GetMesh("quad");
 	barrier->materialPtr = assetManager.GetMaterial("wall");
 	barrier->transform.position = glm::vec3(0, 0, -9);
 	barrier->collides = true;
-	world.AddPrototype(barrier);/**/
+	world.AddPrototype(barrier);
 
 	PressurePlate* pressurePlate = new PressurePlate();
 	pressurePlate->meshPtr = assetManager.GetMesh("quad");
@@ -112,6 +125,7 @@ int main()
 	actor->materialPtr = assetManager.GetMaterial("red");
 	actor->meshPtr = assetManager.GetMesh("quad");
 	actor->shootSound.setBuffer(*assetManager.GetSoundBuffer("shoot"));
+	actor->soundHolder = soundHolder;
 	actor->transform.scale *= 2.0f;
 	actor->collides = true;
 	actor->redMatter = assetManager.GetMaterial("red");
@@ -119,47 +133,38 @@ int main()
 	actor->keyMatter = assetManager.GetMaterial("key");
 	actor->tanMatter = assetManager.GetMaterial("tan");
 	actor->ninjaMatter= assetManager.GetMaterial("ninja");
+	actor->heartMatter = assetManager.GetMaterial("heart");
+	actor->heartDeadMatter = assetManager.GetMaterial("heart_dead");
 	actor->controller = inputManager.aggregateController;
-	actor->numFrames = 3;
+	actor->numFrames = 4;
 	actor->currentFrame = 1;
 	actor->flip = -1.0f;
 	world.AddPrototype(actor);
 
-	Entity* belt1 = new Entity();
-	belt1->layer = Entity::belt;
-	belt1->tags.insert("belt");
-	belt1->localTransform.position = glm::vec3(0, 0, 1);
-	belt1->meshPtr= assetManager.GetMesh("ninja");
-	belt1->materialPtr = assetManager.GetMaterial("belt1");
-	belt1->transform.scale *= 1.0f;
-	belt1->SetParent(actor);
-	belt1->isVisible = false;
-	world.AddPrototype(belt1);
+	Entity* heart = new Entity();
+	heart->layer = Entity::ui;
+	heart->meshPtr = assetManager.GetMesh("quad");
+	heart->materialPtr = assetManager.GetMaterial("heart");
+	heart->SetParent(actor);
+	world.AddPrototype(heart);
 
-	Entity* belt2 = belt1->Copy();
-	belt2->materialPtr= assetManager.GetMaterial("belt2");
-	belt2->SetParent(actor);
-	world.AddPrototype(belt2);
-
-	Entity* belt3 = belt1->Copy();
-	belt3->materialPtr = assetManager.GetMaterial("belt3");
-	belt3->SetParent(actor);
-	world.AddPrototype(belt3);
-
-	Entity* belt4 = belt1->Copy();
-	belt4->materialPtr = assetManager.GetMaterial("belt4");
-	belt4->SetParent(actor);
-	world.AddPrototype(belt4);
-
-	Entity* belt5 = belt1->Copy();
-	belt5->materialPtr = assetManager.GetMaterial("belt5");
-	belt5->SetParent(actor);
-	world.AddPrototype(belt5);
+	heart = heart->Copy();
+	heart->SetParent(actor);
+	world.AddPrototype(heart);
+	heart = heart->Copy();
+	heart->SetParent(actor);
+	world.AddPrototype(heart);
+	heart = heart->Copy();
+	heart->SetParent(actor);
+	world.AddPrototype(heart);
+	heart = heart->Copy();
+	heart->SetParent(actor);
+	world.AddPrototype(heart);
 
 	Entity* staticP = new Entity();
 	staticP->layer = Entity::static_projectile;
 	staticP->SetAwake(false);
-	world.AddPrototype(staticP);/**/
+	world.AddPrototype(staticP);
 
 	Projectile* projectile = new Projectile();
 	projectile->layer = Entity::live_projectiles;
@@ -173,7 +178,7 @@ int main()
 	projectile->physObject.drag = 5;
 	projectile->staticP = staticP;
 	projectile->speed = 1200;
-	world.AddPrototype(projectile);/**/
+	world.AddPrototype(projectile);
 
 	//add projectiles to actor. actors no longer spawn their own
 	Projectile* nProjectile;
@@ -211,6 +216,7 @@ int main()
 	Projectile* wok = dynamic_cast<Projectile*>(projectile->Copy());
 	wok->physObject.bounceType = PhysObject::slide;
 	world.AddPrototype(wok);
+	wok->alias = "wok";
 	actor->wok = wok;
 
 	Projectile* chopstick = dynamic_cast<Projectile*>(projectile->Copy());
@@ -286,11 +292,11 @@ int main()
 	enemyProjectile->isTrigger = true;
 	enemyProjectile->collides = false;
 	enemyProjectile->kinematic = false;
+	enemyProjectile->staticP = staticP;
 	enemyProjectile->targetTag = "hero";
 	enemyProjectile->SetAwake(false);
 	enemyProjectile->physObject.drag = 5;
 	enemyProjectile->transform.scale *= 3.0f;
-	enemyProjectile->boundingBox.transform.scale *= 0.1;
 	world.AddPrototype(enemyProjectile);
 
 	Entity* bombTarget = new Entity();
@@ -320,7 +326,7 @@ int main()
 	enemyBody->materialPtr = assetManager.GetMaterial("goblin_dead");
 	enemyBody->meshPtr = assetManager.GetMesh("quad");
 	enemy->body = enemyBody;
-	world.AddPrototype(enemyBody);/**/
+	world.AddPrototype(enemyBody);
 
 	Entity* enemyArmoredBody = new Entity();
 	enemyArmoredBody->isVisible = false;
@@ -328,7 +334,7 @@ int main()
 	enemyArmoredBody->materialPtr = assetManager.GetMaterial("armored_goblin_dead");
 	enemyArmoredBody->meshPtr = assetManager.GetMesh("quad");
 	enemyArmoredBody->transform.scale = glm::vec3(1);
-	world.AddPrototype(enemyArmoredBody);/**/
+	world.AddPrototype(enemyArmoredBody);
 
 	Entity* bomberBody = new Entity();
 	bomberBody->isVisible = false;
@@ -336,7 +342,7 @@ int main()
 	bomberBody->materialPtr = assetManager.GetMaterial("bomber_dead");
 	bomberBody->meshPtr = assetManager.GetMesh("quad");
 	bomberBody->transform.scale = glm::vec3(4.0f);
-	world.AddPrototype(bomberBody);/**/
+	world.AddPrototype(bomberBody);
 
 	Enemy* thrower = dynamic_cast<Enemy*>(enemy->Copy());
 	thrower->body = enemyArmoredBody;
@@ -352,13 +358,13 @@ int main()
 	bomber->transform.scale = glm::vec3(4.0f);
 	bomber->boundingBox.transform.scale *= 2.0f;
 	bomber->body = bomberBody;
-	//enemy->boundingBox.transform.scale *= 2.0f;
 	bomber->type = Enemy::bomber;
 	world.AddPrototype(bomber);
 
 	Camera* camera = new Camera();
 	camera->transform.position = glm::vec3(0, 0, 10);
 	camera->input = &inputManager;
+	camera->AddChild(logo);
 	world.AddCamera(camera);
 
 	Text* text = new Text();
@@ -418,6 +424,7 @@ int main()
 	charSelector->materials.push_back(assetManager.GetMaterial("tan_select"));
 	charSelector->materials.push_back(assetManager.GetMaterial("key_select"));
 	charSelector->materials.push_back(assetManager.GetMaterial("wormhole"));
+	charSelector->soundHolder = soundHolder;
 	world.AddPrototype(charSelector);
 
 	SpawnWarning* spawnWarning = new SpawnWarning();
@@ -458,7 +465,6 @@ int main()
 	levelStart->meshPtr = assetManager.GetMesh("quad");
 	levelStart->boundingBox.transform.scale *= 2;
 	editor->levelStart = levelStart;
-	//levelStart->isVisible = false;
 	world.AddEntity(levelStart);
 
 	LevelEnd* levelEnd = new LevelEnd();

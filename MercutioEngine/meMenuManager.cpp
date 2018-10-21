@@ -12,28 +12,57 @@ MenuManager::~MenuManager()
 {
 }
 
-void MenuManager::AddText(std::string menu, std::string text, std::string message, std::string leftMessage, std::string rightMessage)
-{
-	Menu* currentMenu = menus[menu];
-	newText = dynamic_cast<Text*>(this->text->Copy());
-	initQueue.push_back(newText);
-	newText->SetParent(currentMenu);
-	newText->text == text;
-	newText->message = message;
-	newText->leftMessage = leftMessage;
-	newText->rightMessage = rightMessage;
-}
-
-void MenuManager::RemoveChildTexts()
+void MenuManager::AddImage(std::string menu, Entity* ent)
 {
 	//
-	for (size_t i = 0; i < children.size(); i++)
+	Menu* currentMenu = menus[menu];
+}
+
+Text* MenuManager::GetText(std::string menu, std::string alias)
+{
+	Menu* currentMenu = menus[menu];
+	for (size_t i = 0; i < currentMenu->children.size(); i++)
 	{
-		children[i]->parent = nullptr;
-		children[i]->SetAwake(false);
-		children[i]->DeleteOnReset(true);
+		if (currentMenu->children[i]->alias == alias)
+		{
+			return dynamic_cast<Text*>(currentMenu->children[i]);
+		}
 	}
-	children.clear();
+	std::cout << "no text of alias " << alias << " found.";
+	return nullptr;
+}
+
+void MenuManager::AddText(std::string menu, std::string text_str, std::string message, std::string leftMessage, std::string rightMessage)
+{
+	Menu* currentMenu = menus[menu];
+	newText = dynamic_cast<Text*>(text->Copy());
+	initQueue.push_back(newText);
+	newText->SetParent(currentMenu);
+	newText->text = text_str;
+	newText->message = message;
+	newText->leftMessage = leftMessage;
+	newText->rightMessage = rightMessage;/**/
+	currentMenu->SetChildPositions();
+	newText->SetAwake(false);
+}
+
+void MenuManager::RemoveChildTexts(std::string menu, std::string ignore)
+{
+	Menu* currentMenu = menus[menu];
+	std::vector<Entity*> tempChildren;
+	for (size_t i = 0; i < currentMenu->children.size(); i++)
+	{
+		if (currentMenu->children[i]->alias == ignore || (int)i < currentMenu->lowestIndex)
+		{ 
+			tempChildren.push_back(currentMenu->children[i]);
+			continue; 
+		}
+		currentMenu->children[i]->parent = nullptr;
+		currentMenu->children[i]->SetAwake(false);
+		currentMenu->children[i]->DeleteOnReset(true);
+	}
+	currentMenu->children.clear();
+	currentMenu->children = tempChildren;
 }
 
 void MenuManager::SendMessage(std::string message, Entity* ent)
@@ -74,6 +103,7 @@ void MenuManager::CreateMenus(std::string str)
 			newMenu->SetParent(this);
 			newMenu->DeleteOnReset(false);
 			menus[parsedLine[1]] = newMenu;
+			newMenu->alias = parsedLine[1];
 			if (parsedLine[1] == "main") { currentMenu = newMenu; }
 		}
 		else if (parsedLine[0] == "#Text" || parsedLine[0] == "#Title")
@@ -117,6 +147,15 @@ void MenuManager::CreateMenus(std::string str)
 				//std::cout << parsedLine[1] << " grrrrraaaaa " << parsedLine[3] << "\n";
 			}
 		}
+		else if (parsedLine[0] == "Alias")
+		{
+			if (newText == nullptr)
+			{
+				std::cout << "No text defined for " << parsedLine[1] << ".\n";
+				continue;
+			}
+			newText->alias = parsedLine[1];
+		}
 	}
 	//SelectChildren();
 	//SelectMenu("gameOver");
@@ -146,6 +185,7 @@ void MenuManager::SelectPreviousMenu()
 {
 	if (visitedMenus.size() == 1) { return; }
 	visitedMenus.pop_back();
+	currentMenu->ResetPosition();
 	currentMenu = visitedMenus[visitedMenus.size() - 1];
 	SelectChildren();
 }

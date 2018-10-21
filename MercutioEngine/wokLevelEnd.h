@@ -10,6 +10,7 @@ public:
 	Material* closedMatter;
 	std::string nextLevel;
 	bool locked = false;
+	float spinSpeed = 5.0f;
 public:
 	LevelEnd();
 	~LevelEnd();
@@ -25,6 +26,14 @@ public:
 		LevelEnd* ent = new LevelEnd(*this);
 		DeepCopy(this, ent);
 		return ent;
+	}
+
+	void Update()
+	{
+		if (isOpen)
+		{
+			transform.RotateRelative(glm::vec3(0.0f, 0.0f, -spinSpeed*deltaTime));
+		}
 	}
 };
 

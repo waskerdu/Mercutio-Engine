@@ -20,15 +20,33 @@ Entity* Menu::Copy()
 	return copy;
 }
 
+void Menu::SetChildPositions()
+{
+	//std::cout << children.size() << " num children\n";
+	int inc = 0;
+	for (size_t i = 0; i < children.size(); i++)
+	{
+		if (GetChild(i)->tags.count("menu_ignore") == 0)
+		{
+			GetChild(inc)->localTransform.position.y = inc * -(float)spacing;
+			inc++;
+		}
+		
+	}
+}
+
+void Menu::ResetPosition()
+{
+	localTransform.position = tempPos;
+}
+
 void Menu::Awake()
 {
 	SetColors();
-	for (uint32_t i = 0; i < children.size(); i++)
-	{
-		GetChild(i)->localTransform.position.y = i * -(float)spacing;
-	}
+	SetChildPositions();
 	message = GetChild(selectedIndex)->alias;
 	supressInput = true;
+	tempPos = localTransform.position;
 }
 
 void Menu::ChangeSelected(int bump)
@@ -96,6 +114,11 @@ void Menu::Clear()
 
 void Menu::Update()
 {
+	if (selectedIndex > visibleRows)
+	{
+		localTransform.position.y = tempPos.y + (float)spacing * (selectedIndex - visibleRows);
+	}
+	else { localTransform.position = tempPos; }
 	if (controller == nullptr)
 	{
 		std::cout << "menu has no attached controller\n";

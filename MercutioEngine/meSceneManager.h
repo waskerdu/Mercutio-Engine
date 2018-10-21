@@ -18,6 +18,7 @@ public:
 	Camera* camera;
 	Entity* red;
 	Barrier* barrier;
+	Entity* logo;
 	/*Menu* mainMenu;
 	Menu* pauseMenu;
 	Menu* gameOverMenu;
@@ -28,6 +29,11 @@ public:
 	InputManager* inputManager;
 	CharacterSelector* characterSelector;
 	MenuManager* menuManager;
+	int numVideoModes;
+	const GLFWvidmode* modes;
+	//const GLFWvidmode* videoMode;
+	bool unsavedChanges = false;
+	int currentMonitorIndex = 0;
 	enum State
 	{
 		titleMenu,
@@ -66,5 +72,6 @@ public:
 	void Update();
 	void Reset();
 	void SendMessage(std::string message, Entity* ent);
+	void OptionsUpdate();
 };
 

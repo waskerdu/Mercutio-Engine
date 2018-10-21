@@ -70,6 +70,8 @@ void SceneManager::SendMessage(std::string message, Entity* ent)
 	else if (message == "graphics")
 	{
 		menuManager->SelectMenu("graphics");
+		unsavedChanges = false; 
+		OptionsUpdate();
 	}
 	else if (message == "audio")
 	{
@@ -89,9 +91,20 @@ void SceneManager::SendMessage(std::string message, Entity* ent)
 		checkpointLevel = currentLevel;
 		menuManager->SetAwake(false);
 	}
+	else if (message[0] == '&')//is a video mode
+	{
+		message.erase(0, 1);
+		EngineInterface::SetVideoMode(this, &modes[std::stoi(message)]);
+		unsavedChanges = true;
+		menuManager->GetText("graphics", "confirm")->text = "CONFIRM*";
+		menuManager->SelectPreviousMenu();
+	}
 	else if (message == "options_confirm")
 	{
 		EngineInterface::OptionsConfirm(this);
+		unsavedChanges = false;
+		menuManager->GetText("graphics", "confirm")->text = "CONFIRM";
+		OptionsUpdate();
 	}
 	else if (message == "window_mode_inc" || message == "window_mode_dec")
 	{
@@ -99,13 +112,14 @@ void SceneManager::SendMessage(std::string message, Entity* ent)
 		{
 			EngineInterface::SetMode(this, MonitorMode::windowed);
 			dynamic_cast<Text*>(ent)->SetText("WINDOW MODE: WINDOWED");
-			std::cout << "windowed\n";
 		}
 		else
 		{
 			EngineInterface::SetMode(this, MonitorMode::borderlessFullscreen);
 			dynamic_cast<Text*>(ent)->SetText("WINDOW MODE: BORDERLESS FULLSCREEN");
 		}
+		unsavedChanges = true;
+		menuManager->GetText("graphics", "confirm")->text = "CONFIRM*";
 	}
 	else if (message == "vsync")
 	{
@@ -119,6 +133,78 @@ void SceneManager::SendMessage(std::string message, Entity* ent)
 			EngineInterface::SetVsync(this, 1);
 			dynamic_cast<Text*>(ent)->SetText("V-SYNC: ON");
 		}
+		unsavedChanges = true;
+		menuManager->GetText("graphics", "confirm")->text = "CONFIRM*";
+	}
+	else if (message == "monitor_inc")
+	{
+		currentMonitorIndex++;
+		if (currentMonitorIndex == EngineInterface::GetNumberOfMonitors(this)) { currentMonitorIndex = 0; }
+		EngineInterface::SetCurrentMonitor(this, currentMonitorIndex);
+		dynamic_cast<Text*>(ent)->SetText("MONITOR: " + std::to_string(currentMonitorIndex + 1));
+		unsavedChanges = true;
+		menuManager->GetText("graphics", "confirm")->text = "CONFIRM*";
+	}
+	else if (message == "monitor_dec")
+	{
+		currentMonitorIndex--;
+		if (currentMonitorIndex == -1) { currentMonitorIndex = EngineInterface::GetNumberOfMonitors(this); }
+		EngineInterface::SetCurrentMonitor(this, currentMonitorIndex);
+		dynamic_cast<Text*>(ent)->SetText("MONITOR: " + std::to_string(currentMonitorIndex + 1));
+		unsavedChanges = true;
+		menuManager->GetText("graphics", "confirm")->text = "CONFIRM*";
+	}
+}
+
+void SceneManager::OptionsUpdate()
+{
+	if (unsavedChanges)
+	{
+		menuManager->GetText("graphics", "confirm")->text = "CONFIRM*"; 
+	}
+	else
+	{
+		menuManager->GetText("graphics", "confirm")->text = "CONFIRM";
+	}
+	if (EngineInterface::GetWindowMode(this) == MonitorMode::borderlessFullscreen)
+	{
+		menuManager->GetText("graphics", "window_mode")->text = "WINDOW MODE: BORDERLESS FULLSCREEN";
+	}
+	else
+	{
+		menuManager->GetText("graphics", "window_mode")->text = "WINDOW MODE: WINDOWED";
+	}
+	if (EngineInterface::GetVsync(this) == 1)
+	{
+		menuManager->GetText("graphics", "vsync")->text = "V-SYNC: ON";
+	}
+	else
+	{
+		menuManager->GetText("graphics", "vsync")->text = "V-SYNC: OFF";
+	}
+	if (EngineInterface::GetMonitorMode(this)->windowMode != windowed)
+	{
+		modes = glfwGetVideoModes(EngineInterface::GetMonitorMode(this)->monitor, &numVideoModes);
+		std::cout << EngineInterface::GetVideoMode(this)->width << "\n";
+		menuManager->GetText("graphics", "resolution")->text = "RESOLUTION: " + std::to_string(EngineInterface::GetVideoMode(this)->width) + " " + std::to_string(EngineInterface::GetVideoMode(this)->height) + " " + std::to_string(EngineInterface::GetVideoMode(this)->refreshRate) + "hz";
+		menuManager->RemoveChildTexts("resolution");
+		for (int i = numVideoModes - 1; i > -1; i--)
+		{
+			menuManager->AddText("resolution", std::to_string(modes[i].width) + " " + std::to_string(modes[i].height) + " " + std::to_string(modes[i].refreshRate) + "hz", "&" + std::to_string(i));
+		}
+	}
+	else
+	{
+		menuManager->RemoveChildTexts("resolution");
+		modes = defaultVidModes->data();
+		//std::cout << EngineInterface::GetVideoMode(this)->width << "\n";
+		//glfwGetWindowSize
+		menuManager->GetText("graphics", "resolution")->text = "RESOLUTION";
+		menuManager->RemoveChildTexts("resolution");
+		for (int i = (int)defaultVidModes->size() - 1; i > -1; i--)
+		{
+			menuManager->AddText("resolution", std::to_string(modes[i].width) + " " + std::to_string(modes[i].height) + " " + std::to_string(modes[i].refreshRate) + "hz", "&" + std::to_string(i));
+		}
 	}
 }
 
@@ -130,7 +216,7 @@ void SceneManager::AddActor(int numActors)
 		initQueue.push_back(newRed);
 		camera->targets.push_back(newRed);
 		spawnedActors.push_back(newRed);
-		newRed->SetCharacter(Actor::red);
+		newRed->SetCharacter(Actor::none);
 	}
 }
 
@@ -142,7 +228,7 @@ void SceneManager::Reset()
 
 void SceneManager::Update() 
 {
-	if (inputManager->aggregateController->GetButton("resize"))
+	/*if (inputManager->aggregateController->GetButton("resize"))
 	{
 		EngineInterface::SetMode(this, MonitorMode::windowed);
 		EngineInterface::OptionsConfirm(this);
@@ -151,7 +237,7 @@ void SceneManager::Update()
 	{
 		EngineInterface::SetMode(this, MonitorMode::borderlessFullscreen);
 		EngineInterface::OptionsConfirm(this);
-	}
+	}/**/
 	if (firstTime)
 	{
 		AddActor(6);
@@ -180,10 +266,11 @@ void SceneManager::Update()
 	//if (newState && state != running) { survivedTimeText->SetAwake(false); }
 	lastState = state;
 
-	if (inputManager->aggregateController->GetButton("menuCancel"))
+	if (inputManager->aggregateController->GetButton("menuCancel") && menuManager->isAwake() == true && menuManager->GetCurrentMenu()!="pause")
 	{
 		menuManager->SelectPreviousMenu();
 	}
+	logo->SetAwake(false);
 
 	switch (state)
 	{
@@ -198,10 +285,12 @@ void SceneManager::Update()
 			}
 			canOptInOut = false;
 		}
+		logo->SetAwake(true);
 		break;
 	case SceneManager::running:
 		if (newState)
 		{
+			EngineInterface::Pause(this, false);
 			if (currentLevel == "saved") 
 			{ 
 				currentLevel = savedLevel;
@@ -298,13 +387,14 @@ void SceneManager::SceneUpdate()
 		{ 
 			if (editor->levelEnds.size() == 0)
 			{
-				SetDeltaTimeCo(0);
-				int timeInt = (int)(timeSurvived*precision);
+				/*SetDeltaTimeCo(0);
+				/*int timeInt = (int)(timeSurvived*precision);
 				if (survivedTimeText->isAwake() == false)
 				{
-					survivedTimeText->SetAwake(true);
+					survivedTimeTex
+					t->SetAwake(true);
 					survivedTimeText->text = survivedTimeString + std::to_string(timeInt / (int)precision) + " seconds";
-				}
+				}/**/
 			}
 			for (uint32_t i = 0; i < editor->levelEnds.size(); i++)
 			{
@@ -324,14 +414,14 @@ void SceneManager::SceneUpdate()
 	else
 	{
 		SetDeltaTimeCo(0);
-		int timeInt = (int)(timeSurvived*precision);
+		/*int timeInt = (int)(timeSurvived*precision);
 		if (survivedTimeText->isAwake() == false)
 		{
 			survivedTimeText->SetAwake(true);
 			//enemiesKilledText->SetAwake(true);
 			//survivedTimeText->text = survivedTimeString + std::to_string(timeInt / (int)precision) + " seconds";
 			survivedTimeText->text = survivedTimeString + std::to_string(timeInt / (int)precision) + " seconds";
-		}
+		}/**/
 	}
 	bool load = true;
 	bool openLevel = false;

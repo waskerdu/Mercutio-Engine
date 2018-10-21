@@ -1,6 +1,7 @@
 #pragma once
 #include "meEntity.h"
 #include "meActor.h"
+#include "meSoundHolder.h"
 class CharacterSelector :
 	public Entity
 {
@@ -13,5 +14,6 @@ public:
 	void OnCollision(Entity* ent);
 	void Awake();
 	Entity* Copy();
+	SoundHolder* soundHolder;
 };
 

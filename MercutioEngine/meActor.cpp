@@ -2,6 +2,7 @@
 #include "meActor.h"
 #include <math.h>
 #include "mePhysics.h"
+#include "meEase.h"
 
 void Actor::ManageProjectiles()
 {
@@ -17,7 +18,8 @@ void Actor::ManageProjectiles()
 	glm::vec3 tempV;
 	bool fire = false;
 	//init variables
-	offset = itemOffset * charge / maxCharge;
+	//offset = itemOffset * charge / maxCharge;
+	offset = itemOffset * Quad::easeOut(charge / maxCharge);
 	aim = controller->GetAxis2("aim");
 	if (canFire == false) { aim *= 0; }
 	tempPos = glm::vec3(chargeVec, 0) * offset;
@@ -120,10 +122,11 @@ void Actor::ManageProjectiles()
 			initQueue.push_back(newProjectilePtr);
 		}
 		charge = 0;
-		if (shootSound.getBuffer() != NULL)
+		/*if (shootSound.getBuffer() != NULL)
 		{
 			shootSound.play();
-		}
+		}/**/
+		soundHolder->Play(attackSound);
 	}
 }
 
@@ -131,7 +134,8 @@ void Actor::ManageDash()
 {
 	Hit hit;
 	glm::vec3 movement = glm::vec3(controller->GetAxis2("movement"), 0);
-	float moveAngle;
+	float moveAngle  = glm::atan(movement.y, movement.x);
+	float offset;
 	switch (dash)
 	{
 	case Actor::Dashes::normal:
@@ -155,7 +159,38 @@ void Actor::ManageDash()
 		}
 		break;
 	case Actor::Dashes::damage:
-		if (controller->GetButton("dodge") && isDodging == false && glm::length(movement) > 0)
+		offset = dashClock / dashMax;
+		
+		offset = Quad::easeOut(offset);
+		if (controller->GetButton("dodge_down") && isDodging == false)
+		{
+			dashClock += (float)deltaTime;
+			if (dashClock > dashMax) { dashClock = dashMax; }
+			GetChild((int)children.size() - 1)->transform.Rotate(glm::vec3(0, 0, moveAngle));
+			GetChild((int)children.size() - 1)->localTransform.position = movement * damageDashOffset * offset;
+			
+			if (dashClock > dashThreshold)
+			{
+				GetChild((int)children.size() - 1)->SetAwake(true);
+			}
+			canMove = false;
+		}
+		else if (dashClock > dashThreshold && glm::length(movement) > 0.0f)
+		{
+			dashClock = 0.0f;
+			isDodging = true;
+			invulnClock = dodgeTime * offset;
+			moveLockClock = moveLockTime * offset;
+			physObject.velocity = glm::normalize(movement)*dodgeSpeed;
+			canMove = true;
+		}/**/
+		else if (invulnClock == 0.0f)
+		{
+			canMove = true;
+			dashClock = 0.0f;
+			GetChild((int)children.size() - 1)->SetAwake(false);
+		}
+		/*if (controller->GetButton("dodge") && isDodging == false && glm::length(movement) > 0)
 		{
 			isDodging = true;
 			invulnClock = dodgeTime;
@@ -173,7 +208,7 @@ void Actor::ManageDash()
 		{
 			physObject.velocity = movement*speed;
 			GetChild((int)children.size() - 1)->SetAwake(false);
-		}
+		}/**/
 		break;
 	case Actor::Dashes::teleport:
 		if (controller->GetButton("dodge"))
@@ -208,6 +243,7 @@ void Actor::SetWeapon(Entity* newWeapon)
 		oldPro->boundingBox.transform = newPro->boundingBox.transform;
 		oldPro->physObject.drag = newPro->physObject.drag;
 		oldPro->physObject.bounceType = newPro->physObject.bounceType;
+		oldPro->alias = newPro->alias;
 		//oldPro->explodes = true;
 	}
 }
@@ -235,6 +271,29 @@ void Actor::SetCharacter(Character character)
 	moveLockClock = 0;
 	charge = 0;
 
+	if (RandInt(0, 1) == 0)
+	{
+		attackSound = "tan_attack";
+		damageSound = "tan_damage";
+		deathSound = "tan_death";
+		selectSound = "tan_select";
+	}
+	else
+	{
+		attackSound = "red_attack";
+		damageSound = "red_damage";
+		deathSound = "red_death";
+		selectSound = "red_select";
+	}
+
+	/*if (character != Actor::none && character != Actor::Character::none)
+	{
+		soundHolder->Play(selectSound);
+	}/**/
+	//
+
+	
+
 	switch (character)
 	{
 	case Actor::red:
@@ -253,7 +312,7 @@ void Actor::SetCharacter(Character character)
 		//speed = 400;
 		projectileSpeed = 600;
 		maxHealth = 5;
-		invulnTime = 3;
+		invulnTime = 4;
 		SetWeapon(roller);
 		dash = Dashes::damage;
 		break;
@@ -304,7 +363,29 @@ void Actor::SetCharacter(Character character)
 		}*/
 		children[i]->SetAwake(false);
 	}
-	SetBelts(false);
+	//SetBelts(false);
+	SetHearts();
+}
+
+bool Actor::ShieldDeflected(Entity* ent)
+{
+	//
+	float shunt = 5.0f;
+	if (GetChild(5)->alias == "wok")
+	{
+		if (charge == maxCharge)
+		{
+			float dot = glm::dot(glm::normalize(glm::vec3(chargeVec, 0)), glm::normalize(transform.position - ent->transform.position));
+			if (dot < -0.6f)
+			{
+				ent->physObject.velocity.x = -ent->physObject.velocity.x;
+				ent->physObject.velocity.y = -ent->physObject.velocity.y;
+				ent->SendMessage("active");
+				return true;
+			}
+		}
+	}
+	return false;
 }
 
 void Actor::OnCollision(Entity* ent)
@@ -315,15 +396,18 @@ void Actor::OnCollision(Entity* ent)
 		{ 
 			if (ent->tags.count("bomb") == 1) 
 			{ 
+				if (ShieldDeflected(ent)) { return; }
 				if (invulnClock == 0)
 				{
 					health-=2;
-					SetBelts();
+					//SetBelts();
+					SetHearts();
 					invulnClock = invulnTime;
 				}
 			}
 			else
 			{
+				if (ShieldDeflected(ent)) { return; }
 				Damage();
 			}
 		}
@@ -331,6 +415,34 @@ void Actor::OnCollision(Entity* ent)
 	if (ent->tags.count("bad") == 1 && dash == Dashes::damage && isDodging)
 	{
 		ent->Damage();
+	}
+}
+
+void Actor::SetHearts()
+{
+	float yoffset = 70.0f;
+	float xoffset = - maxHealth * heartSpacing / 2.0f;
+	for (size_t i = 0; i < 5; i++)
+	{
+		//GetChild(i)->localTransform.position.y = 50.0f;
+		//GetChild(i)->localTransform.position.x = -50.0f + i * 20.0f;
+		GetChild(i)->localTransform.position = glm::vec3(xoffset + heartSpacing * i, yoffset, 0.0f);
+		if ((int)i < health)
+		{
+			GetChild(i)->materialPtr = heartMatter;
+		}
+		else
+		{
+			GetChild(i)->materialPtr = heartDeadMatter;
+		}
+		if ((int)i < maxHealth)
+		{
+			GetChild(i)->SetAwake(true);
+		}
+		else
+		{
+			GetChild(i)->SetAwake(false);
+		}
 	}
 }
 
@@ -357,7 +469,17 @@ void Actor::Damage()
 	if (invulnClock == 0)
 	{
 		health--;
-		SetBelts();
+		if (health < 0)
+		{
+			soundHolder->Play(deathSound);
+		}
+		else
+		{
+			soundHolder->Play(damageSound);
+		}
+		
+		//SetBelts();
+		SetHearts();
 		invulnClock = invulnTime;
 	}
 }
@@ -381,8 +503,24 @@ Entity* Actor::Copy()
 void Actor::Update()
 {
 	Hit hit;
-	currentFrame++;
-	if (currentFrame == 3.0f) { currentFrame = 0.0f; }
+	animTimer++;
+	if (animTimer % 6 == 0)
+	{
+		currentFrame++;
+	}
+	if (currentFrame == 4.0f) { currentFrame = 0.0f; }
+	for (size_t i = 0; i < 5; i++)
+	{
+		if ((int)i < maxHealth && controller->GetButton("healthDisplay"))
+		{
+			GetChild(i)->SetAwake(true);
+		}
+		else if (invulnClock == 0.0f)
+		{
+			GetChild(i)->SetAwake(false);
+		}
+	}
+
 	if (health < 0)
 	{
 		health = -1;
@@ -453,8 +591,20 @@ void Actor::Update()
 		
 		angle = glm::atan(tempPos.y, tempPos.x);
 		glm::vec3 movement = glm::vec3(controller->GetAxis2("movement"), 0);
+		
 		if (!canMove) { movement *= 0; }
-		if(canChangeCourse){ physObject.velocity = movement*speed; }
+		if(canChangeCourse)
+		{ 
+			//physObject.velocity = movement*speed; 
+			if (glm::length(movement) > 0.0f)
+			{
+				physObject.velocity = speed * glm::normalize(movement) * Quad::easeIn(glm::length(movement));
+			}
+			else
+			{
+				physObject.velocity *= 0.0f;
+			}
+		}
 		ManageDash();
 		ManageProjectiles();
 	}

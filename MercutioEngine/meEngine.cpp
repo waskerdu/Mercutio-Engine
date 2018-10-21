@@ -27,10 +27,21 @@ void Engine::ConfirmOptions()
 {
 	std::cout << "options confirmed\n";
 	confirmOptions = false;
+	if (tempMonitorMode->monitorChanged)
+	{
+		if (tempMonitorMode->windowMode == MonitorMode::windowed)
+		{
+			tempMonitorMode->monitor = NULL;
+			tempMonitorMode->monitorIndex = -1;
+		}
+		else
+		{
+			tempMonitorMode->monitor = monitors[tempMonitorMode->monitorIndex];
+		}
+	}
 	currentMonitorMode = *tempMonitorMode;
-	glfwSetWindowSize(window, currentMonitorMode.windowWidth, currentMonitorMode.windowHeight);
-	glViewport(0, 0, currentMonitorMode.viewWidth, currentMonitorMode.viewHeight);
-	glfwSetWindowMonitor(window, currentMonitorMode.monitor, 100, 100, currentMonitorMode.viewWidth, currentMonitorMode.viewHeight, GLFW_DONT_CARE);
+	glViewport(0, 0, currentMonitorMode.windowWidth, currentMonitorMode.windowHeight);
+	glfwSetWindowMonitor(window, currentMonitorMode.monitor, 100, 100, currentMonitorMode.windowWidth, currentMonitorMode.windowHeight, currentMonitorMode.framerateCap);
 }
 
 void Engine::ChangeMode()
@@ -56,10 +67,22 @@ void Engine::ChangeMode()
 void Engine::Init()
 {
 	needsInit = false;
+	//std::cout << "got here\n";
+	/*for (int i = 0; i < videoModeCount; i++)
+	{
+		std::cout << videoModes[i].width << " " << videoModes[i].height << " " << videoModes[i].refreshRate << "\n";
+	}/**/
 	monitors = glfwGetMonitors(&numMonitors);
 	window = assetManagerPtr->window;
 	borderlessMonitorMode.vsync = 1;
 	borderlessMonitorMode.monitor = monitors[borderlessMonitorMode.monitorIndex];
+	videoModes = glfwGetVideoModes(borderlessMonitorMode.monitor, &videoModeCount);
+	borderlessMonitorMode.videoMode = &videoModes[videoModeCount - 1];
+	for (int i = 0; i < videoModeCount; i++)
+	{
+		defaultVidModes.push_back(videoModes[i]);
+	}
+	//std::cout << borderlessMonitorMode.videoMode << "\n";
 	fullscreenMonitorMode.monitor = monitors[fullscreenMonitorMode.monitorIndex];
 	windowedMonitorMode.viewWidth = 800;
 	windowedMonitorMode.windowWidth = 800;
@@ -69,7 +92,9 @@ void Engine::Init()
 	windowedMonitorMode.monitorIndex = -1;
 	windowedMonitorMode.monitor = NULL;
 	tempMonitorMode = &borderlessMonitorMode;
+	//tempMonitorMode = &windowedMonitorMode;
 	currentMonitorMode = borderlessMonitorMode;
+	//currentMonitorMode = windowedMonitorMode;
 }
 
 bool Engine::GameRunning() { return gameRunning; }
@@ -119,12 +144,17 @@ void Engine::UpdateHelper(Entity* ent)
 		ent->optionsConfirm = &confirmOptions;
 		ent->modeChanged = &modeChanged;
 		ent->windowMode = &windowMode;
+		ent->numMonitors = &numMonitors;
+		ent->numSupportedResolutions = &videoModeCount;
+		ent->supportedResolutions = &videoModes;
+		ent->defaultVidModes = &defaultVidModes;
 		//ent->vsync = &vsync;
 		//if (ent->windowMode != currentMonitorMode->windowMode) { modeChanged = true; }
 	}
 	ent->lastWakeState = ent->awake;
 	ent->windowWidth = (float)currentMonitorMode.windowWidth;
 	ent->windowHeight = (float)currentMonitorMode.windowHeight;
+	//ent->windowWidth = glfwGetWindowSize(window, (int)&ent->windowWidth, (int)&ent->windowHeight);
 	ent->deltaTime = deltaTime*deltaTimeCo*timeCo;
 	
 	ent->rawDeltaTime = deltaTime;
@@ -194,6 +224,7 @@ void Engine::PhysicsUpdate()
 
 void Engine::Update()
 {
+	//glfwGetWindowSize(window, &windowWidth, &windowHeight);
 	if (needsInit) { Init(); }
 	if (needsReset) { Reset(); }
 	if (modeChanged) { ChangeMode(); }

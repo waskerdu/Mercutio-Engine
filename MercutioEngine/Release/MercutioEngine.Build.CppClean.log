@@ -1,9 +1,7 @@
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\mercutioengine.pch
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\vc140.pdb
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\stdafx.obj
-c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\stb_image.obj
-c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\shaderset.obj
-c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\metext.obj
+c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\mesoundholder.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\mescenemanager.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\merender.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\mercutioengine.obj
@@ -11,12 +9,14 @@ c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengi
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\meprojectile.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\meparser.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\menavsystem.obj
+c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\memenumanager.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\memenu.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\meinput.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\meentity.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\meengine.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\meenemyaggro.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\meenemy.obj
+c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\meease.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\mecharacterselector.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\mebarrier.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\meassetmanager.obj
@@ -28,7 +28,9 @@ c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengi
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\wokenemyspawner.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\wokeditor.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\wokdoor.obj
-c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\memenumanager.obj
+c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\stb_image.obj
+c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\shaderset.obj
+c:\users\riley\documents\visual studio 2015\projects\mercutioengine\mercutioengine\release\metext.obj
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\release\mercutioengine.exe
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\release\mercutioengine.ipdb
 c:\users\riley\documents\visual studio 2015\projects\mercutioengine\release\mercutioengine.iobj

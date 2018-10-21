@@ -23,6 +23,7 @@ void CharacterSelector::OnCollision(Entity* ent)
 		if (actor->character != character)
 		{
 			actor->SetCharacter(character);
+			soundHolder->Play(actor->selectSound);
 		}
 	}
 }

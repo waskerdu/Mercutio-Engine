@@ -16,7 +16,9 @@ struct MonitorMode
 	int viewHeight = 1080;
 	WindowMode windowMode = borderlessFullscreen;
 	int monitorIndex = 0;
+	bool monitorChanged = false;
 	GLFWmonitor* monitor;
+	const GLFWvidmode* videoMode;
 	int vsync = 0;
-	int framerateCap = -1;
+	int framerateCap = 60;
 };

@@ -22,7 +22,8 @@ public:
 	glm::vec3 blockedColor = glm::vec3(0.5f, 0.5f, 0.5f);
 	std::string message = "";
 	Message messageType = none;
-	
+	int visibleRows = 6;
+	glm::vec3 tempPos;
 private:
 	void BumpUp();
 	void BumpDown();
@@ -34,6 +35,8 @@ public:
 	void Update();
 	void Awake();
 	void Reset();
+	void SetChildPositions();
+	void ResetPosition();
 	Entity* Copy();
 
 	void Clear();

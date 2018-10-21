@@ -1,0 +1,63 @@
+#PlayerSpawner 
+Position 0 0 0
+
+#EnemySpawner 
+Position -10 0 0 
+Radius 2 /spawn radius
+WaveSize 1 /inital size of wave
+WaveIncrement 3 /how much the wave size grows by each wave
+NumberOfWaves 4 /number of waves until expended. set to negative for indefinite waves
+ChargerChance 1
+ThrowerChance 1
+BomberChance 1
+
+#EnemySpawner 
+Position 10 0 0 
+Radius 2 /spawn radius
+WaveSize 1 /inital size of wave
+WaveIncrement 3 /how much the wave size grows by each wave
+NumberOfWaves 4 /number of waves until expended. set to negative for indefinite waves
+ChargerChance 1
+ThrowerChance 1
+BomberChance 1
+
+#EnemySpawner 
+Position 0 -10 0 
+Radius 2 /spawn radius
+WaveSize 1 /inital size of wave
+WaveIncrement 3 /how much the wave size grows by each wave
+NumberOfWaves 4 /number of waves until expended. set to negative for indefinite waves
+ChargerChance 1
+ThrowerChance 1
+BomberChance 1
+
+#EnemySpawner 
+Position 0 10 0
+Radius 2 /spawn radius
+WaveSize 1 /inital size of wave
+WaveIncrement 3 /how much the wave size grows by each wave
+NumberOfWaves 4 /number of waves until expended. set to negative for indefinite waves
+ChargerChance 1
+ThrowerChance 1
+BomberChance 1
+
+#Barrier
+Position -30 0 0
+Scale 1 30 1
+#Barrier
+Position 30 0 0
+Scale 1 30 1
+#Barrier
+Position 0 -30 0
+Scale 30 1 1
+#Barrier
+Position 0 30 0
+Scale 30 1 1
+
+*
+#LevelEnd 
+Position 0 0 0
+NextLevel assets/levels/official/level2.txt 
+Locked
+Radius 4
+*

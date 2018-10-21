@@ -35,6 +35,10 @@ class Entity
 	bool* optionsConfirm;
 	bool* modeChanged;
 	int* vsync;
+	int* numMonitors;
+	const GLFWvidmode** supportedResolutions;
+	int* numSupportedResolutions;
+	
 public:
 	enum Layer
 	{
@@ -48,6 +52,7 @@ public:
 		belt,
 		ui
 	};
+	std::vector<GLFWvidmode>* defaultVidModes;
 	Transform transform;
 	Transform localTransform;
 	Mesh* meshPtr;
@@ -56,7 +61,7 @@ public:
 	Entity* parent;
 	std::vector<Entity*> initQueue;
 	PhysObject physObject;
-	std::string alias;
+	std::string alias = "";
 	//Random* random;
 	double* deltaTimeCoClock; //should be moved up to private and getter and setter methods added
 	double localDeltaTimeCo = 1;

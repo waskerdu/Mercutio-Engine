@@ -1,0 +1,52 @@
+#Holder tan_attack
+assets/sound_effects/tan_sounds/tan_attack_1.wav
+assets/sound_effects/tan_sounds/tan_attack_2.wav
+assets/sound_effects/tan_sounds/tan_attack_3.wav
+assets/sound_effects/tan_sounds/tan_attack_4.wav
+assets/sound_effects/tan_sounds/tan_attack_5.wav
+assets/sound_effects/tan_sounds/tan_attack_6.wav
+assets/sound_effects/tan_sounds/tan_attack_7.wav
+#Holder tan_damage
+assets/sound_effects/tan_sounds/tan_damage_1.wav
+assets/sound_effects/tan_sounds/tan_damage_2.wav
+assets/sound_effects/tan_sounds/tan_damage_3.wav
+assets/sound_effects/tan_sounds/tan_damage_4.wav
+assets/sound_effects/tan_sounds/tan_damage_5.wav
+#Holder tan_death
+assets/sound_effects/tan_sounds/tan_death_1.wav
+assets/sound_effects/tan_sounds/tan_death_2.wav
+assets/sound_effects/tan_sounds/tan_death_3.wav
+assets/sound_effects/tan_sounds/tan_death_4.wav
+#Holder tan_select
+assets/sound_effects/tan_sounds/tan_select_1.wav
+assets/sound_effects/tan_sounds/tan_select_2.wav
+assets/sound_effects/tan_sounds/tan_select_3.wav
+#Holder red_attack
+assets/sound_effects/red_sounds/red_attack_1.wav
+assets/sound_effects/red_sounds/red_attack_2.wav
+assets/sound_effects/red_sounds/red_attack_3.wav
+assets/sound_effects/red_sounds/red_attack_4.wav
+assets/sound_effects/red_sounds/red_attack_5.wav
+assets/sound_effects/red_sounds/red_attack_6.wav
+#Holder red_damage
+assets/sound_effects/red_sounds/red_damage_1.wav
+assets/sound_effects/red_sounds/red_damage_2.wav
+assets/sound_effects/red_sounds/red_damage_3.wav
+assets/sound_effects/red_sounds/red_damage_4.wav
+assets/sound_effects/red_sounds/red_damage_5.wav
+assets/sound_effects/red_sounds/red_damage_6.wav
+assets/sound_effects/red_sounds/red_damage_7.wav
+#Holder red_death
+assets/sound_effects/red_sounds/red_death_1.wav
+assets/sound_effects/red_sounds/red_death_2.wav
+assets/sound_effects/red_sounds/red_death_3.wav
+assets/sound_effects/red_sounds/red_death_4.wav
+assets/sound_effects/red_sounds/red_death_5.wav
+assets/sound_effects/red_sounds/red_death_6.wav
+assets/sound_effects/red_sounds/red_death_7.wav
+#Holder red_select
+assets/sound_effects/red_sounds/red_select_1.wav
+assets/sound_effects/red_sounds/red_select_2.wav
+assets/sound_effects/red_sounds/red_select_3.wav
+assets/sound_effects/red_sounds/red_select_4.wav
+assets/sound_effects/red_sounds/red_select_5.wav

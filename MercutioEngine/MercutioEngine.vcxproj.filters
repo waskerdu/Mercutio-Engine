@@ -180,6 +180,12 @@
     <ClInclude Include="meMonitorMode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="meEase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="meSoundHolder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -267,6 +273,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="meMenuManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="meEase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="meSoundHolder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

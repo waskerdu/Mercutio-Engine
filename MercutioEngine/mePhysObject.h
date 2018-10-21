@@ -35,26 +35,6 @@ struct BoundingRect
 	glm::vec3 debugColor;
 	bool isLineColliding(glm::vec3 pos0, glm::vec3 pos1)
 	{
-		/*float tmin = -INFINITY, tmax = INFINITY;
-		if (pos0.x != pos1.x)
-		{
-			float tx1 = (transform.position.x - transform.scale.x - pos0.x) / (pos1.x - pos0.x);
-			float tx2 = (transform.position.x + transform.scale.x - pos0.x) / (pos1.x - pos0.x);
-			tmin = std::max(tmin, std::min(tx1, tx2));
-			tmax = std::min(tmax, std::max(tx1, tx2));
-		}
-		if (pos0.y != pos1.y)
-		{
-
-		}
-		return tmax >= tmin;
-		/*float lineMinX = std::min(pos0.x, pos1.x);
-		float lineMaxX = std::max(pos0.x, pos1.x);
-		float lineMinY = std::min(pos0.y, pos1.y);
-		float lineMaxY = std::max(pos0.y, pos1.y);
-
-		lineMinX = std::max(lineMinX, transform.position.x - transform.scale.x);//minx is now at line min or left line of box, whichever is greater
-		lineMaxX = std::min(lineMaxX, transform.position.x + transform.scale.x);/**/
 		return false;
 	}
 	bool isColliding(BoundingRect &other)
@@ -64,9 +44,6 @@ struct BoundingRect
 	}
 	void CollisionDepth(BoundingRect &other, bool* xLimited, float* distance)
 	{
-		//float xOverlapUnsigned = (transform.scale.x + other.transform.scale.x) - abs(transform.position.x - other.transform.position.x);
-		//float yOverlapUnsigned = (transform.scale.y + other.transform.scale.y) - abs(transform.position.y - other.transform.position.y);
-		//std::cout << xOverlapUnsigned << "\n";
 		float xDistance = (transform.scale.x + other.transform.scale.x) - abs(transform.position.x - other.transform.position.x);
 		float yDistance = (transform.scale.y + other.transform.scale.y) - abs(transform.position.y - other.transform.position.y);
 		if (xDistance < yDistance)

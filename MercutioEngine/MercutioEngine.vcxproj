@@ -187,6 +187,7 @@
     <ClInclude Include="meCharacterSelector.h" />
     <ClInclude Include="meControllerData.h" />
     <ClInclude Include="meDebug.h" />
+    <ClInclude Include="meEase.h" />
     <ClInclude Include="meEnemy.h" />
     <ClInclude Include="meEnemyAggro.h" />
     <ClInclude Include="meEngine.h" />
@@ -211,6 +212,7 @@
     <ClInclude Include="meRenderData.h" />
     <ClInclude Include="meSceneManager.h" />
     <ClInclude Include="meShaderLoader.h" />
+    <ClInclude Include="meSoundHolder.h" />
     <ClInclude Include="meText.h" />
     <ClInclude Include="meTime.h" />
     <ClInclude Include="meTransform.h" />
@@ -239,6 +241,7 @@
     <ClCompile Include="meAssetManager.cpp" />
     <ClCompile Include="meBarrier.cpp" />
     <ClCompile Include="meCharacterSelector.cpp" />
+    <ClCompile Include="meEase.cpp" />
     <ClCompile Include="meEnemy.cpp" />
     <ClCompile Include="meEnemyAggro.cpp" />
     <ClCompile Include="meEngine.cpp" />
@@ -253,6 +256,7 @@
     <ClCompile Include="MercutioEngine.cpp" />
     <ClCompile Include="meRender.cpp" />
     <ClCompile Include="meSceneManager.cpp" />
+    <ClCompile Include="meSoundHolder.cpp" />
     <ClCompile Include="meText.cpp" />
     <ClCompile Include="shaderset.cpp" />
     <ClCompile Include="stb_image.cpp" />

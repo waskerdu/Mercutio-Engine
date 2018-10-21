@@ -2,6 +2,7 @@
 
 #include "meEntity.h"
 #include <SFML\Audio.hpp>
+#include "meSoundHolder.h"
 #include "meProjectile.h"
 #include "meInput.h"
 
@@ -12,10 +13,12 @@ public:
 	float projectileSpeed = 800.0f;
 	int health = 3;
 	int maxHealth = 3;
+	float heartSpacing = 25.0f;
 	bool alive = true;
 	float invulnTime = 1.0f;
 	float invulnClock = 0.0f;
 	bool isDodging = false;
+	bool isDamaged = false;
 	float dodgeTime = 0.3f;
 	float moveLockTime = 0.5f;
 	float moveLockClock = 0.0f;
@@ -43,6 +46,18 @@ public:
 	float projectileSpeedMult = 1.0f;
 	bool projectilesParallel = true;
 	bool instantCharge = false;
+	int animTimer = 0;
+	float dashClock = 0.0f;
+	float dashThreshold = 0.3f;
+	float dashMax = 1.0f;
+	float damageDashOffset = 100.0f;
+
+	std::string attackSound = "red_attack";
+	std::string damageSound = "red_damage";
+	std::string deathSound = "red_death";
+	std::string selectSound = "red_select";
+
+	SoundHolder* soundHolder;
 
 	Material* redMatter;
 	Material* tedMatter;
@@ -50,6 +65,9 @@ public:
 	Material* tanMatter;
 	Material* ninjaMatter;
 	Material* lastMatter;
+
+	Material* heartMatter;
+	Material* heartDeadMatter;
 
 	const int maxProjectiles = 5;
 	const int numBelts = 5;
@@ -131,13 +149,13 @@ public:
 	glm::vec2 chargeVec;
 
 	void SetBelts(bool spawn = true);
-
+	void SetHearts();
 	void SetCharacter(Character newChar);
 	//void SetCharacter(Characters::Character newChar);
 	void SetWeapon(Weapons::Weapon newWeapon);
 	void SetWeapon(Entity* newWeapon);
 	void SetDash(Dashes::Dash newDash);
-
+	bool ShieldDeflected(Entity* ent);
 	void Damage();
 
 	Actor();
