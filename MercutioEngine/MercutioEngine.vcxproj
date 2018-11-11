@@ -96,7 +96,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Riley\Documents\mercutioengine\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
@@ -143,6 +143,7 @@
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <ShowIncludes>false</ShowIncludes>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalIncludeDirectories>C:\Users\Riley\Documents\mercutioengine\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -197,6 +198,7 @@
     <ClInclude Include="meInput.h" />
     <ClInclude Include="meMaterial.h" />
     <ClInclude Include="meMath.h" />
+    <ClInclude Include="meMemoryManager.h" />
     <ClInclude Include="meMenu.h" />
     <ClInclude Include="meMenuManager.h" />
     <ClInclude Include="meMesh.h" />
@@ -247,6 +249,7 @@
     <ClCompile Include="meEngine.cpp" />
     <ClCompile Include="meEntity.cpp" />
     <ClCompile Include="meInput.cpp" />
+    <ClCompile Include="meMemoryManager.cpp" />
     <ClCompile Include="meMenu.cpp" />
     <ClCompile Include="meMenuManager.cpp" />
     <ClCompile Include="meNavSystem.cpp" />

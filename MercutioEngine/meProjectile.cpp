@@ -15,21 +15,8 @@ void Projectile::OnCollision(Entity* collider)
 	if (collider->tags.count(targetTag) == 1 || collider->tags.count("barrier") == 1)
 	{
 		health--;//gets fired twice per bad guy. kind of annoying fix later
-		//collider->Damage();
 		if (health <= 0 && state == active)
 		{
-			/*physObject.velocity *= 0;
-			collides = false;
-			if (staticP != nullptr && alive)
-			{
-				initQueue.push_back(staticP->Copy());
-				initQueue.back()->materialPtr = materialPtr;
-				initQueue.back()->meshPtr = meshPtr;
-				initQueue.back()->SetAwake(true);
-				initQueue.back()->transform = transform;
-				//staticP = nullptr;
-			}
-			if (alive) { alive = false; }/**/
 			state = dead;
 			if (explodes) { state = exploding; }
 		}
@@ -58,6 +45,7 @@ void Projectile::Update()
 			collides = false;
 			//break;
 		}
+		freed = true;
 		physObject.velocity *= 0.0f;
 		if (staticP != nullptr && alive && explodes == false)
 		{
@@ -67,7 +55,7 @@ void Projectile::Update()
 			initQueue.back()->SetAwake(true);
 			initQueue.back()->transform = transform;
 		}
-		if (alive) { alive = false; }
+		if (alive) { alive = false;}
 		break;
 	case Projectile::exploding:
 		if (newState) 

@@ -116,10 +116,10 @@ void MenuManager::CreateMenus(std::string str)
 			newText = dynamic_cast<Text*>(text->Copy());
 			initQueue.push_back(newText);
 			newText->SetParent(newMenu);
-			newText->text = parsedLine[1];
-			for (size_t i = 2; i < parsedLine.size(); i++)
+			newText->text = "";
+			for (size_t i = 1; i < parsedLine.size(); i++)
 			{
-				newText->text += " " + parsedLine[i];
+				newText->text += parsedLine[i] + " ";
 			}
 			newText->DeleteOnReset(false);
 			//std::cout << newText->text << "\n";

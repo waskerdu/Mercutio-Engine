@@ -29,9 +29,6 @@ int main()
 {
 	World world = World();
 
-	std::cout << Linear::easeNone(0.5f, 5.0f, 5.0f, 1.0f) << "\n";
-	std::cout << Quint::easeInOut(0.9f) << "\n";
-
 	glfwInit();
 
 	AssetManager assetManager;

@@ -2,6 +2,14 @@
 #include "meEntity.h"
 #include <math.h>
 
+Entity* Entity::Instantiate(Entity* ent)
+{
+	//
+	Entity* newEnt = (Entity*)memoryManager->New(ent);
+	initQueue.push_back(newEnt);
+	return newEnt;
+}
+
 double Entity::RandReal()
 {
 	return random->random();

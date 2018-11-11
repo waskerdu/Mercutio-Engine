@@ -148,6 +148,7 @@ void Engine::UpdateHelper(Entity* ent)
 		ent->numSupportedResolutions = &videoModeCount;
 		ent->supportedResolutions = &videoModes;
 		ent->defaultVidModes = &defaultVidModes;
+		ent->memoryManager = &memoryManager;
 		//ent->vsync = &vsync;
 		//if (ent->windowMode != currentMonitorMode->windowMode) { modeChanged = true; }
 	}
@@ -173,14 +174,25 @@ void Engine::UpdateHelper(Entity* ent)
 void Engine::EntityUpdate()
 {
 	//use a while loop to ensure all objects are instantiated. could lead to infinite loop
-	uint32_t i = 0;
+	for (std::vector<Entity*>::iterator it = worldPtr->entities.begin(); it != worldPtr->entities.end(); )
+	{
+		if ((*it)->freed)
+		{
+			it = worldPtr->entities.erase(it);
+		}
+		else
+		{
+			++it;
+		}
+	}
+	unsigned int i = 0;
 	while (i < worldPtr->entities.size())
 	{
 		Entity* ent = worldPtr->entities[i];
 		UpdateHelper(worldPtr->entities[i]);
 		//if (needsReset) { return; }
 		i++;
-	}
+	}/**/
 	//cameras go last to accurately follow their subjects
 	for (uint32_t i = 0; i < worldPtr->cameras.size(); i++)
 	{

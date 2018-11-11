@@ -8,6 +8,7 @@
 #include "meRandom.h"
 #include "meInput.h"
 #include "meMonitorMode.h"
+#include "meMemoryManager.h"
 
 class Engine
 {
@@ -43,7 +44,7 @@ class Engine
 	int videoModeCount = 0;
 	const GLFWvidmode* videoModes;
 	std::vector<GLFWvidmode> defaultVidModes;
-	//int vsync = 1;
+	MemoryManager memoryManager;
 public:
 	Renderer* renderPtr;
 	bool resizedLastFrame = false;

@@ -29,7 +29,7 @@ class Renderer
 	//void RenderText(Shader &shader, std::string text, GLfloat x, GLfloat y, GLfloat scale, glm::vec3 color);
 
 public:
-	bool debug = false;
+	bool debug = true;
 	GLuint* debugShader;
 	Renderer(World* worldPtr, GLFWwindow* window);
 	~Renderer();

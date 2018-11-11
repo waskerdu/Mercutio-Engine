@@ -1,13 +1,10 @@
-#Menu main 
-#Title WOK THE WOK
-TitleSize 200 /default
-TextSize 80 /default
+#Menu main
 #Text SINGLE PLAYER
 Message singleplayer
 #Text CO-OP
 Message coop
 #Text OPTIONS
-Message options /reserved
+Message options
 #Text EXIT
 Message exit
 

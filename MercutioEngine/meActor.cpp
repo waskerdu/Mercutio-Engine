@@ -106,20 +106,30 @@ void Actor::ManageProjectiles()
 	//fire control
 	if (fire)
 	{
+		//Entity* tempWok = Instantiate(wok);
+		//tempWok->freed = true;
 		float fireSpeed = projectileSpeed;
 		if (instantCharge == false) { fireSpeed = fireSpeed * charge; }
 		for (int i = 0; i < numCurrentProjectiles; i++)
 		{
 			Entity* newProjectilePtr;
-			newProjectilePtr = GetChild(numBelts + i)->Copy();
+			newProjectilePtr = Instantiate(GetChild(numBelts + i));
+			//newProjectilePtr = Instantiate(wok);
+			//newProjectilePtr = GetChild(numBelts + i)->Copy();
 			newProjectilePtr->parent = nullptr;
+			newProjectilePtr->transform.position.z = -10.0f;
 			newProjectilePtr->SetAwake(true);
 			newProjectilePtr->kinematic = true;
 			newProjectilePtr->SetDeleteStatus(false);
 			newProjectilePtr->collides = true;
 			newProjectilePtr->transform.RotateRelative(glm::vec3(0, 0, glm::radians(180.0f)));
 			newProjectilePtr->physObject.velocity *= fireSpeed;
-			initQueue.push_back(newProjectilePtr);
+			newProjectilePtr->SendMessage("active");
+			if (newProjectilePtr->hasBeenFreed == false)
+			{
+				initQueue.push_back(newProjectilePtr);
+			}
+			//initQueue.push_back(newProjectilePtr);
 		}
 		charge = 0;
 		/*if (shootSound.getBuffer() != NULL)

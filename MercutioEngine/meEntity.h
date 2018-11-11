@@ -13,6 +13,7 @@
 #include "meMessage.h"
 #include "meRenderData.h"
 #include "meMonitorMode.h"
+#include "meMemoryManager.h"
 
 class Entity
 {
@@ -38,7 +39,8 @@ class Entity
 	int* numMonitors;
 	const GLFWvidmode** supportedResolutions;
 	int* numSupportedResolutions;
-	
+	MemoryManager* memoryManager;
+
 public:
 	enum Layer
 	{
@@ -52,6 +54,7 @@ public:
 		belt,
 		ui
 	};
+
 	std::vector<GLFWvidmode>* defaultVidModes;
 	Transform transform;
 	Transform localTransform;
@@ -70,6 +73,7 @@ public:
 	bool isTrigger = false;
 	bool collides = false;
 	bool isVisible = true;
+	bool lastVisible = true;
 	double deltaTime = 0;
 	double rawDeltaTime = 0;
 	float windowHeight = 0;
@@ -81,6 +85,8 @@ public:
 	float currentFrame = 0.0f;
 	float numFrames = 1.0f;
 	float flip = 1.0f;
+	bool freed = false;
+	bool hasBeenFreed = false;
 private:
 	
 	friend class Engine;
@@ -109,6 +115,7 @@ public:
 	Entity* GetChild(int ind);
 	void SetAwake(bool awakeState);
 	bool isAwake() { return awake; }
+	Entity* Instantiate(Entity* ent);
 	double RandReal();
 	int RandInt(int min, int max);
 	void RandSetSeed(uint32_t seed);
